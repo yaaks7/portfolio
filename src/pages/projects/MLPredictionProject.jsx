@@ -220,7 +220,7 @@ function MLPredictionProject() {
       {/* Interface Showcase */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🌐 Interface</h2>
+          <h2>🌐 User Interface</h2>
           
           <h3>Three-Step Workflow</h3>
           <p>

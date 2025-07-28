@@ -227,7 +227,7 @@ function GridTradingProject() {
       {/* Interface Showcase */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🌐 Interface</h2>
+          <h2>🌐 User Interface</h2>
           
           <h3>Two-Step Workflow</h3>
           <p>
@@ -266,7 +266,7 @@ function GridTradingProject() {
       {/* Performance Analytics */}
       <div className="note-card">
         <div className="note-content">
-          <h2>📈 Advanced Analytics</h2>
+          <h2>📈 Analytics</h2>
           
           <h3>Performance Metrics</h3>
           <div className="metrics-grid">

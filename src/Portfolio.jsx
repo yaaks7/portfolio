@@ -9,6 +9,7 @@ import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail.jsx'
 import GridTradingProject from './pages/projects/GridTradingProject'
 import MLPredictionProject from './pages/projects/MLPredictionProject'
+import OptionsPricingProject from './pages/projects/OptionsPricingProject'
 import Contact from './pages/Contact'
 
 function Portfolio() {
@@ -31,6 +32,7 @@ function Portfolio() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/grid-trading" element={<GridTradingProject />} />
             <Route path="/projects/ml-prediction" element={<MLPredictionProject />} />
+            <Route path="/projects/options-pricing" element={<OptionsPricingProject />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
