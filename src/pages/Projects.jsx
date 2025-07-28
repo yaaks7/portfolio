@@ -71,7 +71,6 @@ function Projects() {
     >
       <div className="page-header">
         <h1>Projects</h1>
-        <p className="page-subtitle">Innovation at the intersection of AI, finance, and technology</p>
       </div>
       
       <div className="projects-grid">

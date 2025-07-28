@@ -8,6 +8,7 @@ import Certificates from './pages/Certificates'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail.jsx'
 import GridTradingProject from './pages/projects/GridTradingProject'
+import MLPredictionProject from './pages/projects/MLPredictionProject'
 import Contact from './pages/Contact'
 
 function Portfolio() {
@@ -29,6 +30,7 @@ function Portfolio() {
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/grid-trading" element={<GridTradingProject />} />
+            <Route path="/projects/ml-prediction" element={<MLPredictionProject />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

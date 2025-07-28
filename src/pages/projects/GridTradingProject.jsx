@@ -227,7 +227,7 @@ function GridTradingProject() {
       {/* Interface Showcase */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🌐 Professional Interface</h2>
+          <h2>🌐 Interface</h2>
           
           <h3>Two-Step Workflow</h3>
           <p>
@@ -415,6 +415,54 @@ function GridTradingProject() {
         </div>
       </div>
 
+      {/* Command Line Interface */}
+      <div className="note-card">
+        <div className="note-content">
+          <h2>💻 Command Line Interface</h2>
+          
+          <div className="code-highlight">
+            <h4>Quick Start Examples</h4>
+            <pre className="code-block">
+{`# Default backtest (AAPL, 2024)
+python main.py
+
+# Custom asset and dates
+python main.py --asset BTC-USD --start 2024-06-01 --end 2024-12-31
+
+# Dynamic midprice with verbose output
+python main.py --asset EURUSD=X --dynamic --verbose
+
+# Quick system test
+python -m pytest tests/ -v`}
+            </pre>
+          </div>
+          
+          <h3>Supported Arguments</h3>
+          <div className="parameter-grid">
+            <div className="parameter-item">
+              <h4>--asset</h4>
+              <p>Asset to backtest (AAPL, BTC-USD, EURUSD=X, etc.)</p>
+            </div>
+            <div className="parameter-item">
+              <h4>--start / --end</h4>
+              <p>Date range for analysis (YYYY-MM-DD format)</p>
+            </div>
+            <div className="parameter-item">
+              <h4>--dynamic</h4>
+              <p>Use dynamic midprice (MA-20) instead of static</p>
+            </div>
+            <div className="parameter-item">
+              <h4>--verbose</h4>
+              <p>Enable detailed logging and progress tracking</p>
+            </div>
+            <div className="parameter-item">
+              <h4>--output-dir</h4>
+              <p>Output directory for results (default: data/results)</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
 
       {/* Project Impact */}
       <div className="note-card">

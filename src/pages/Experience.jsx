@@ -25,7 +25,7 @@ function Experience() {
               <div className="education-info">
                 <h2>📊 Software Developer</h2>
                 <h3>
-                  <span className="university-link">PolyFinance</span>
+                  <span className="university-link">PolyFinances</span>
                 </h3>
                 <div className="education-meta">
                   <span className="duration">Jan. 2025 – May 2025</span>
