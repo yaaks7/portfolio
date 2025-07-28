@@ -697,6 +697,55 @@ ul, ol, li {
   transform: translateY(-1px);
 }
 
+/* Performance Rankings Table - Simplified */
+.performance-table {
+  background: var(--surface-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  margin: var(--spacing-lg) 0;
+}
+
+.performance-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.performance-table th {
+  background: var(--surface-secondary);
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.performance-table td {
+  padding: var(--spacing-md);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.9rem;
+}
+
+.performance-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.performance-table tbody tr:hover {
+  background: var(--surface-secondary);
+}
+
+.performance-table .model-name {
+  font-weight: 600;
+  color: #007acc !important;
+}
+
+.performance-table .best-value {
+  font-weight: 700;
+  color: #007acc !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .project-header {

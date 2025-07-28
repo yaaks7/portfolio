@@ -27,7 +27,7 @@ function GridTradingProject() {
 
       {/* Project Header */}
       <div className="project-header">
-        <div className="project-icon">🔁</div>
+        <div className="project-icon">💹</div>
         <div className="project-title-section">
           <h1>Grid Trading Strategy Backtester</h1>
           <p className="project-subtitle">

@@ -6,10 +6,10 @@ const projects = [
   {
     id: 'grid-trading',
     title: "Grid Trading Backtester",
-    icon: "🔁",
+    icon: "💹",
     color: "#34D399",
     description: "Advanced algorithmic trading system",
-    gif: "🔄"
+    gif: "💹"
   },
   {
     id: 'ml-prediction',
@@ -17,7 +17,7 @@ const projects = [
     icon: "🤖",
     color: "#60A5FA", 
     description: "Machine learning for financial markets",
-    gif: "📈"
+    gif: "🤖"
   },
   {
     id: 'options-pricing',
@@ -25,12 +25,12 @@ const projects = [
     icon: "📊",
     color: "#F59E0B",
     description: "Black-Scholes, Monte Carlo & Neural Networks",
-    gif: "💹"
+    gif: "📊"
   },
   {
     id: 'energy-optimization',
     title: "Energy Production Model",
-    icon: "⚡",
+    icon: "🔋",
     color: "#10B981",
     description: "Hydro-Québec optimization system",
     gif: "🔋"
@@ -38,7 +38,7 @@ const projects = [
   {
     id: 'ml-optimization',
     title: "ML Optimization Algorithm",
-    icon: "🧠",
+    icon: "⚙️",
     color: "#8B5CF6",
     description: "Differential evolution in C++",
     gif: "⚙️"
@@ -46,15 +46,15 @@ const projects = [
   {
     id: 'attention-comparator',
     title: "AI Attention Comparator",
-    icon: "👁",
+    icon: "🧠",
     color: "#EC4899",
-    description: "Neural network attention analysis",
-    gif: "🔍"
+    description: "Analysis of transformers attention mechanisms",
+    gif: "🧠"
   },
   {
     id: 'sentiment-analysis',
     title: "Financial Sentiment Analysis",
-    icon: "💬",
+    icon: "📰",
     color: "#06B6D4",
     description: "NLP for financial reports",
     gif: "📰"
