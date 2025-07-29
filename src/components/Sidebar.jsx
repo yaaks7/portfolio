@@ -25,7 +25,7 @@ function Sidebar() {
     >
       <div className="sidebar-header">
         <h1 className="sidebar-title">Yanis Aksas</h1>
-        <p className="sidebar-subtitle">Mechanical Engineering Student</p>
+        <p className="sidebar-subtitle">BEng Mechanical Engineering</p>
         <button 
           className="theme-toggle-sidebar"
           onClick={toggleTheme}
