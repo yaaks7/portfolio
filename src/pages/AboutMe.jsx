@@ -80,7 +80,7 @@ function AboutMe() {
           </p>
           
           <h4>What drives me</h4>
-          <ul>
+          <ul className="no-bullets">
             <li>🧠 Exploring the frontiers of AI and machine learning</li>
             <li>📊 Applying quantitative methods to financial markets</li>
             <li>⚙️ Building efficient, scalable software tools</li>

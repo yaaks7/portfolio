@@ -65,7 +65,7 @@ function App() {
                   transition={{ delay: 0.5, duration: 0.5 }}
                   className="app-name"
                 >
-                  Portfolio
+                  Portfolio - Yanis Aksas
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0 }}

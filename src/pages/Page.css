@@ -61,31 +61,6 @@
   margin-bottom: var(--spacing-lg);
 }
 
-.note-content ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: var(--spacing-lg);
-}
-
-.note-content li {
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-sm);
-  padding-left: var(--spacing-md);
-  position: relative;
-  line-height: 1.6;
-}
-
-.note-content li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  width: 4px;
-  height: 4px;
-  background-color: var(--text-tertiary);
-  border-radius: 50%;
-}
-
 .note-content em {
   font-style: italic;
   color: var(--text-tertiary);
@@ -96,6 +71,11 @@
   background-color: var(--bg-secondary);
   border-radius: var(--border-radius-md);
   border-left: 3px solid var(--text-tertiary);
+}
+
+/* Professional Experience specific styles */
+.note-content ul + h4 {
+  margin-top: 1rem;
 }
 
 /* Projects grid */
@@ -612,40 +592,6 @@
   .section-card {
     padding: var(--spacing-lg);
   }
-}
-
-/* Content section styles */
-.content-section {
-  margin-top: var(--spacing-lg);
-  padding-top: var(--spacing-lg);
-  border-top: 1px solid var(--border-light);
-}
-
-.content-section h4 {
-  margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-md);
-  color: var(--text-primary);
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.content-section h4:first-child {
-  margin-top: 0;
-}
-
-.content-section p {
-  margin-bottom: var(--spacing-md);
-  line-height: 1.6;
-}
-
-.content-section ul {
-  margin: var(--spacing-md) 0;
-  padding-left: var(--spacing-lg);
-}
-
-.content-section li {
-  margin-bottom: var(--spacing-xs);
-  line-height: 1.5;
 }
 
 /* Education Timeline Styles */
