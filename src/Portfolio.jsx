@@ -12,6 +12,7 @@ import MLPredictionProject from './pages/projects/MLPredictionProject'
 import OptionsPricingProject from './pages/projects/OptionsPricingProject'
 import AttentionComparatorProject from './pages/projects/AttentionComparatorProject'
 import SentimentAnalysisProject from './pages/projects/SentimentAnalysisProject'
+import EnergyOptimizationProject from './pages/projects/EnergyOptimizationProject'
 import Contact from './pages/Contact'
 
 function Portfolio() {
@@ -37,6 +38,7 @@ function Portfolio() {
             <Route path="/projects/options-pricing" element={<OptionsPricingProject />} />
             <Route path="/projects/attention-comparator" element={<AttentionComparatorProject />} />
             <Route path="/projects/sentiment-analysis" element={<SentimentAnalysisProject />} />
+            <Route path="/projects/energy-optimization" element={<EnergyOptimizationProject />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
