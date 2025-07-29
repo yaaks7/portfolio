@@ -116,6 +116,53 @@
   text-align: center;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--bg-sidebar-hover);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-link.github:hover {
+  background-color: #333;
+  color: white;
+}
+
+.social-link.linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+}
+
+.social-link.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  color: white;
+}
+
 .footer-text {
   font-size: var(--font-size-xs);
   color: var(--text-tertiary);

@@ -110,21 +110,6 @@ function Projects() {
         ))}
       </div>
       
-      <div className="note-card" style={{ marginTop: 'var(--spacing-2xl)' }}>
-        <div className="note-content">
-          <h3>Project Philosophy</h3>
-          <p>
-            Each project represents a unique exploration into the convergence of 
-            technology, mathematics, and practical problem-solving. From algorithmic 
-            trading systems to machine learning models, every solution is designed 
-            with both innovation and real-world application in mind.
-          </p>
-          <p>
-            Click on any project icon above to explore the technical details, 
-            implementation approaches, and results achieved.
-          </p>
-        </div>
-      </div>
     </motion.div>
   )
 }

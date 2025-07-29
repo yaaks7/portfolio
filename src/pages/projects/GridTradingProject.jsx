@@ -475,14 +475,13 @@ python -m pytest tests/ -v`}
               <div className="skills-grid">
                 <span className="skill-tag">Quantitative Finance</span>
                 <span className="skill-tag">Algorithmic Trading</span>
-                <span className="skill-tag">Python Development</span>
+                <span className="skill-tag">Python</span>
                 <span className="skill-tag">Data Analysis</span>
                 <span className="skill-tag">Risk Management</span>
                 <span className="skill-tag">Software Architecture</span>
                 <span className="skill-tag">Financial Mathematics</span>
                 <span className="skill-tag">Performance Optimization</span>
-                <span className="skill-tag">UI/UX Design</span>
-                <span className="skill-tag">Testing & Validation</span>
+                <span className="skill-tag">Streamlit Development</span>
               </div>
             </div>
           </div>

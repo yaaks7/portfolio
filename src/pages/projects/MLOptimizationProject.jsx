@@ -502,6 +502,7 @@ protected:
               <span className="skill-tag">Neural Networks</span>
               <span className="skill-tag">Performance Analysis</span>
               <span className="skill-tag">Research Methodology</span>
+              <span className="skill-tag">Deep Learning</span>
             </div>
           </div>
         </div>

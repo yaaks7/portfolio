@@ -512,6 +512,20 @@
 .card-icon {
   font-size: var(--font-size-2xl);
   margin-right: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .card-title {

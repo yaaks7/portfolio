@@ -454,6 +454,7 @@ python api_requests.py`}
                 <span className="skill-tag">Python</span>
                 <span className="skill-tag">Full-Stack Development</span>
                 <span className="skill-tag">Quantitative Finance</span>
+                <span className="skill-tag">Neural Networks</span>
               </div>
             </div>
           </div>
