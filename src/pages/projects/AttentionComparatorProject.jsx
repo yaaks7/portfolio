@@ -292,6 +292,7 @@ function AttentionComparatorProject() {
           <div className="code-section">
             <h3>Model Loading & Configuration</h3>
             <div className="code-highlight">
+              <h4>Transformer Models Setup</h4>
               <pre className="code-block">
 {`# Model configuration and loading
 MODELS = {
@@ -322,6 +323,7 @@ def load_model_and_tokenizer(model_name):
             
             <h3>Attention Pattern Analysis</h3>
             <div className="code-highlight">
+              <h4>Attention Computation Engine</h4>
               <pre className="code-block">
 {`def analyze_attention_patterns(sentence, models_data):
     patterns_analysis = {}
