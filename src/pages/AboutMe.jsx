@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import './Page.css'
 // Import your portrait image here once it's added
 import portraitImg from '../assets/img/portrait.jpg'
-import resumePdf from '../assets/docs/resume.pdf'
+import resumePdf from '../assets/docs/Yanis_Aksas_Resume.pdf'
 
 function AboutMe() {
   return (
@@ -36,7 +36,7 @@ function AboutMe() {
           <div className="profile-description">
             <p>
               At the intersection of mathematics, code, and real-world impact, I build 
-              tools that solve complex problems with clarity and precision — from 
+              tools that solve complex problems with clarity and precision from 
               backtesting trading strategies and pricing financial derivatives to 
               optimizing renewable energy systems.
             </p>
@@ -67,7 +67,7 @@ function AboutMe() {
             <h4>A little more about me</h4>
           <p>
             Beyond the screen, I'm someone who finds balance between logic and creativity. 
-            I'm a lifelong basketball player — the rhythm of the game has shaped my mindset: 
+            I'm a lifelong basketball player, the rhythm of the game has shaped my mindset: 
             strategic, fast-paced, and resilient. I also have a deep love for music and 
             sound design. As a former sound engineer and co-founder of a recording studio 
             in France, I've spent countless hours mixing, mastering, and helping artists 
@@ -76,7 +76,7 @@ function AboutMe() {
           
           <p>
             These passions taught me to listen closely, work collaboratively, and never 
-            stop learning — whether I'm on the court, in the studio, or writing code.
+            stop learning whether I'm on the court, in the studio, or writing code.
           </p>
           
           <h4>What drives me</h4>

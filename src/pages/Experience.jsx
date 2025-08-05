@@ -126,7 +126,7 @@ function Experience() {
                   <span className="university-link">MMPROD</span>
                 </h3>
                 <div className="education-meta">
-                  <span className="duration">Sept. 2024 – Present</span>
+                  <span className="duration">Sept. 2024 – Dec. 2024</span>
                 </div>
               </div>
               <div className="university-logo">
