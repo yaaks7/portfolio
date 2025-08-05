@@ -25,7 +25,7 @@ function Experience() {
               <div className="education-info">
                 <h2>📊 Software Developer</h2>
                 <h3>
-                  <span className="university-link">PolyFinances</span>
+                  <a href="https://www.polyfinances.ca/" target="_blank" rel="noopener noreferrer" className="university-link">PolyFinances</a>
                 </h3>
                 <div className="education-meta">
                   <span className="duration">Jan. 2025 – May 2025</span>
@@ -74,7 +74,7 @@ function Experience() {
               <div className="education-info">
                 <h2>🚀 Co-founder & CTO</h2>
                 <h3>
-                  <span className="university-link">DataRank</span>
+                  <a href="https://data-rank.com/" target="_blank" rel="noopener noreferrer" className="university-link">DataRank</a>
                 </h3>
                 <div className="education-meta">
                   <span className="duration">Dec. 2024 – Present</span>
@@ -123,7 +123,7 @@ function Experience() {
               <div className="education-info">
                 <h2>🛠 Freelance Developer</h2>
                 <h3>
-                  <span className="university-link">MMPROD</span>
+                  <a href="https://mmprod.org/" target="_blank" rel="noopener noreferrer" className="university-link">MMPROD</a>
                 </h3>
                 <div className="education-meta">
                   <span className="duration">Sept. 2024 – Dec. 2024</span>
@@ -172,7 +172,7 @@ function Experience() {
               <div className="education-info">
                 <h2>🌐 Software Engineer Intern</h2>
                 <h3>
-                  <span className="university-link">FENIX</span>
+                  <a href="https://fxhotsauce.com/" target="_blank" rel="noopener noreferrer" className="university-link">FENIX</a>
                 </h3>
                 <div className="education-meta">
                   <span className="duration">May 2024 – Aug. 2024</span>
