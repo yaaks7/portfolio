@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Portfolio from './Portfolio'
 import './styles/App.css'
@@ -16,11 +16,17 @@ export const useTheme = () => {
 }
 
 function App() {
-  const [isLaunched, setIsLaunched] = useState(false)
+  // Vérifier si l'application a déjà été lancée auparavant
+  const [isLaunched, setIsLaunched] = useState(() => {
+    const savedLaunchState = localStorage.getItem('portfolio-launched')
+    return savedLaunchState === 'true'
+  })
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   const handleLaunch = () => {
     setIsLaunched(true)
+    // Sauvegarder l'état dans le localStorage
+    localStorage.setItem('portfolio-launched', 'true')
   }
 
   const toggleTheme = () => {

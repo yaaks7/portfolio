@@ -35,8 +35,8 @@ function AboutMe() {
           
           <div className="profile-description">
             <p>
-              At the intersection of mathematics, code, and real-world impact, I build 
-              tools that solve complex problems with clarity and precision from 
+              At the intersection of mathematics and code, I build 
+              tools that solve problems from 
               backtesting trading strategies and pricing financial derivatives to 
               optimizing renewable energy systems.
             </p>
@@ -81,7 +81,7 @@ function AboutMe() {
           
           <h4>What drives me</h4>
           <ul className="no-bullets">
-            <li>🧠 Exploring the frontiers of AI and machine learning</li>
+            <li>🧠 Exploring AI and machine learning</li>
             <li>📊 Applying quantitative methods to financial markets</li>
             <li>⚙️ Building efficient, scalable software tools</li>
             <li>📚 Bridging theory and real-world decision making</li>

@@ -59,7 +59,7 @@ function Experience() {
               <div className="coursework-grid">
                 <span className="course-item">Angular</span>
                 <span className="course-item">Python</span>
-                <span className="course-item">FastAPI</span>
+                <span className="course-item">Flash</span>
                 <span className="course-item">Financial APIs</span>
                 <span className="course-item">Data Visualization</span>
               </div>

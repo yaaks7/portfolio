@@ -128,7 +128,7 @@ function Contact() {
               <span className="tag">Research Collaborations</span>
             </div>
             <p style={{ marginTop: 'var(--spacing-lg)', marginBottom: 0 }}>
-              Whether you're looking for someone to bridge the gap between complex mathematics and real-world applications, or just want to chat about ideas — I'd love to hear from you.
+              Whether you're looking for someone to bridge the gap between mathematics and real-world applications, or just want to chat about ideas — I'd love to hear from you.
             </p>
           </motion.div>
         </div>

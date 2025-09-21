@@ -56,9 +56,10 @@ function AcademicBackground() {
                 <span className="course-item">Python Programming</span>
                 <span className="course-item">IT Systems</span>
                 <span className="course-item">Numerical Modeling</span>
-                <span className="course-item">Mathematics for Engineers</span>
+                <span className="course-item">Probability & Statistics</span>
+                <span className="course-item">Calculus & Linear Algebra</span>
                 <span className="course-item">Data Structures</span>
-                <span className="course-item">Algorithm Design</span>
+                <span className="course-item">Differential Equations</span>
               </div>
               
               <p className="education-description">
@@ -105,7 +106,7 @@ function AcademicBackground() {
               <div className="coursework-grid">
                 <span className="course-item">Introductory Mathematical Finance</span>
                 <span className="course-item">Derivatives and Risk Management</span>
-                <span className="course-item">Development Economics</span>
+                <span className="course-item">Foundations of Data Engineering</span>
               </div>
               
               <p className="education-description">

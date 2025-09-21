@@ -8,7 +8,7 @@ const projects = [
     title: "Grid Trading Backtester",
     icon: "💹",
     color: "#34D399",
-    description: "Advanced algorithmic trading system",
+    description: "Algorithmic trading system",
     gif: "💹"
   },
   {
