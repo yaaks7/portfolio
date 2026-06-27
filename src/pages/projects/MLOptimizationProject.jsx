@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { GitBranch, Target, Shuffle, TrendingUp, Wrench } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
 
@@ -23,15 +24,17 @@ function MLOptimizationProject() {
 
       {/* Project Header */}
       <div className="project-header">
-        <div className="project-icon">⚙️</div>
         <div className="project-title-section">
-          <h1>Machine Learning Optimization Algorithms</h1>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <span style={{ display: 'flex', color: '#8B5CF6' }}><Target size={28} strokeWidth={1.5} /></span>
+            <h1>Machine Learning Optimization Algorithms</h1>
+          </div>
           <p className="project-subtitle">
             Benchmarking study of optimization algorithms (CLPSO, ADE vs RSO) for reinforcement learning applications using MNIST neural network training
           </p>
           <div className="project-links">
             <a href="#" target="_blank" rel="noopener noreferrer" className="project-link github">
-              <span>🖥️</span> View on Github
+              <GitBranch size={14} strokeWidth={1.5} /> View on Github
             </a>
           </div>
         </div>
@@ -40,16 +43,14 @@ function MLOptimizationProject() {
       {/* Project Overview */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎯 Project Overview</h2>
+          <h2>Project Overview</h2>
           <p>
-            This research project focuses on benchmarking the efficiency of new optimization algorithms 
-            for reinforcement learning applications. The study compares three optimization algorithms: 
-            Random Search Optimization (RSO) as a baseline, my implementation of Comprehensive Learning 
-            Particle Swarm Optimization (CLPSO), and my novel Adaptive Differential Evolution (ADE) algorithm. 
-            The MNIST dataset serves as the primary benchmark for evaluating neural network training performance 
+            I benchmarked three optimization algorithms for RL applications: RSO as the baseline,
+            my CLPSO implementation, and ADE — a novel hybrid I designed. All tested on MNIST neural
+            network training in C++ with ArrayFire.
             and algorithm effectiveness in machine learning contexts.
           </p>
-          
+
           <div className="key-stats">
             <div className="stat-item">
               <div className="stat-number">RL</div>
@@ -70,48 +71,42 @@ function MLOptimizationProject() {
       {/* System Architecture */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🏗️ System Architecture</h2>
-          
+          <h2>System Architecture</h2>
+
           <div className="tech-section">
             <h3>Core Components</h3>
             <div className="tech-grid">
               <div className="tech-item">
-                <span className="tech-icon">🎯</span>
                 <div>
                   <strong>Functor Handler</strong>
                   <p>Abstract interface for optimization problems with Paraboloid, Ackley, and MNIST implementations</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">⚡</span>
                 <div>
                   <strong>Optimizer Engine</strong>
                   <p>Multi-algorithm optimization framework with RSO, ADE, and CLPSO implementations</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">🧠</span>
                 <div>
                   <strong>Neural Network</strong>
                   <p>Perceptron-based neural network with ReLU, Sigmoid, and SoftMax activation functions</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">📊</span>
                 <div>
                   <strong>Performance Analyzer</strong>
                   <p>Comprehensive metrics and visualization tools for algorithm performance evaluation</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">💾</span>
                 <div>
                   <strong>Memory Management</strong>
                   <p>Efficient ArrayFire-based memory handling for GPU acceleration</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">🔧</span>
                 <div>
                   <strong>I/O Handler</strong>
                   <p>Data loading and preprocessing for MNIST dataset and mathematical functions</p>
@@ -126,43 +121,43 @@ function MLOptimizationProject() {
       {/* My Contributions - CLPSO & ADE Algorithm */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎖️ Algorithm Benchmarking</h2>
-          
+          <h2>Algorithm Benchmarking</h2>
+
           <p>
-            As the lead researcher, I conducted a comprehensive benchmarking study to evaluate the 
-            efficiency of new optimization algorithms for reinforcement learning applications. I implemented 
-            CLPSO (Comprehensive Learning Particle Swarm Optimization) and created my novel ADE 
-            (Adaptive Differential Evolution) algorithm, comparing both against RSO baseline using 
+            As the lead researcher, I conducted a comprehensive benchmarking study to evaluate the
+            efficiency of new optimization algorithms for reinforcement learning applications. I implemented
+            CLPSO (Comprehensive Learning Particle Swarm Optimization) and created my novel ADE
+            (Adaptive Differential Evolution) algorithm, comparing both against RSO baseline using
             MNIST neural network training as the primary benchmark.
           </p>
 
           <div className="highlight-grid">
             <div className="highlight-item">
-              <div className="highlight-icon">🎯</div>
+              <div className="highlight-icon"><Target size={20} strokeWidth={1.5} /></div>
               <h4>CLPSO Implementation</h4>
               <p><strong>Algorithm:</strong> Comprehensive Learning Particle Swarm Optimization</p>
               <p><strong>Purpose:</strong> Benchmark advanced PSO variant for RL optimization</p>
               <p><strong>Result:</strong> Enhanced exploration capabilities for neural network training</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">�</div>
+              <div className="highlight-icon"><Shuffle size={20} strokeWidth={1.5} /></div>
               <h4>ADE Creation (My Algorithm)</h4>
               <p><strong>Innovation:</strong> Novel hybrid combining RSO adaptive search with DE evolution</p>
               <p><strong>Objective:</strong> Test efficiency for reinforcement learning applications</p>
               <p><strong>Benchmark:</strong> MNIST neural network training performance evaluation</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">🚀</div>
+              <div className="highlight-icon"><TrendingUp size={20} strokeWidth={1.5} /></div>
               <h4>MNIST Benchmarking</h4>
               <p><strong>Dataset:</strong> MNIST digit recognition for neural network training</p>
               <p><strong>Comparison:</strong> CLPSO and ADE performance vs RSO baseline</p>
               <p><strong>Focus:</strong> Evaluation for reinforcement learning optimization potential</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">🔧</div>
+              <div className="highlight-icon"><Wrench size={20} strokeWidth={1.5} /></div>
               <h4>Research Framework</h4>
               <p><strong>Architecture:</strong> Template-based C++ design for algorithm comparison</p>
               <p><strong>Validation:</strong> Comprehensive benchmarking on MNIST dataset</p>
@@ -175,8 +170,8 @@ function MLOptimizationProject() {
       {/* Technical Implementation */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🔬 Technical Deep Dive</h2>
-          
+          <h2>Technical Deep Dive</h2>
+
           <div className="code-section">
             <h3>CLPSO Core Algorithm</h3>
             <div className="code-highlight">
@@ -201,7 +196,7 @@ public:
         pbest = af::array(num_dimensions);
         pbest_cost = 1000000;
         cost = -1;
-        
+
         // Initialize with random position within bounds
         // ... initialization code
     }
@@ -210,7 +205,7 @@ public:
     void evaluate(functorHandler::FunctorHandler<T>& functorHandler) {
         af::array costArray = functorHandler.eval(position);
         cost = costArray.scalar<T>();
-        
+
         // Update personal best if improved
         if (cost < pbest_cost) {
             pbest_cost = cost;
@@ -220,7 +215,7 @@ public:
 };`}
               </pre>
             </div>
-            
+
             <div className="code-highlight">
               <h4>CLPSO Main Algorithm</h4>
               <pre className="code-block">
@@ -232,22 +227,22 @@ private:
     int num_particles;
     int maxiter;
     int threshold_no_improvement;
-    
+
 public:
-    CLPSO(functorHandler::FunctorHandler<T>& functor, 
+    CLPSO(functorHandler::FunctorHandler<T>& functor,
           int dimensions, int min_bound, int max_bound,
           int num_particles, int max_iterations, int threshold)
         : num_particles(num_particles), maxiter(max_iterations),
           threshold_no_improvement(threshold) {
-        
+
         bounds = af::constant(max_bound - min_bound, dimensions);
-        
+
         // Initialize particle swarm
         for (int i = 0; i < num_particles; ++i) {
             particles.emplace_back(bounds);
         }
     }
-    
+
     // Comprehensive learning update mechanism
     void update_swarm(functorHandler::FunctorHandler<T>& functorHandler) {
         // Update each particle using comprehensive learning
@@ -268,20 +263,20 @@ public:
       {/* Optimization Algorithms Comparison */}
       <div className="note-card">
         <div className="note-content">
-          <h2>⚖️ Algorithm Comparison & Performance</h2>
-          
+          <h2>Algorithm Comparison & Performance</h2>
+
           <div className="image-showcase">
             <div className="showcase-item">
-              <img 
-                src={optimizationGraph} 
+              <img
+                src={optimizationGraph}
                 alt="Optimization Algorithm Performance Results"
                 className="project-image large"
               />
               <div className="image-caption">
                 <h4>Comparative Performance Analysis</h4>
                 <p>
-                  Performance comparison showing convergence characteristics, final optimization results, 
-                  and computational efficiency for RSO, ADE, and CLPSO algorithms across different 
+                  Performance comparison showing convergence characteristics, final optimization results,
+                  and computational efficiency for RSO, ADE, and CLPSO algorithms across different
                   test functions and dimensionalities.
                 </p>
               </div>
@@ -290,7 +285,7 @@ public:
 
           <div className="comparison-grid">
             <div className="algorithm-comparison">
-              <h4>🎲 Random Search Optimization (RSO) - Baseline</h4>
+              <h4>Random Search Optimization (RSO) — Baseline</h4>
               <div className="algorithm-details">
                 <p><strong>Role:</strong> Baseline algorithm for benchmarking comparison</p>
                 <p><strong>Characteristics:</strong> Simple implementation, random exploration strategy</p>
@@ -298,9 +293,9 @@ public:
                 <p><strong>Application:</strong> Foundation component and comparison standard</p>
               </div>
             </div>
-            
+
             <div className="algorithm-comparison">
-              <h4>🧬 Adaptive Differential Evolution (My Innovation)</h4>
+              <h4>Adaptive Differential Evolution (My Innovation)</h4>
               <div className="algorithm-details">
                 <p><strong>Innovation:</strong> My novel hybrid combining RSO adaptive search with DE evolution</p>
                 <p><strong>Objective:</strong> Test efficiency for reinforcement learning optimization</p>
@@ -308,9 +303,9 @@ public:
                 <p><strong>Target:</strong> Enhanced optimization for machine learning applications</p>
               </div>
             </div>
-            
+
             <div className="algorithm-comparison">
-              <h4>🎯 CLPSO (My Implementation)</h4>
+              <h4>CLPSO (My Implementation)</h4>
               <div className="algorithm-details">
                 <p><strong>Implementation:</strong> Comprehensive learning particle swarm optimization</p>
                 <p><strong>Research Goal:</strong> Evaluate advanced PSO variant for RL applications</p>
@@ -325,8 +320,8 @@ public:
       {/* Neural Network Integration */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🧠 Neural Network & MNIST Integration</h2>
-          
+          <h2>Neural Network & MNIST Integration</h2>
+
           <div className="code-section">
             <h3>Network Architecture</h3>
             <div className="code-highlight">
@@ -339,7 +334,7 @@ private:
     T rateActivate_;
 
 public:
-    NeuralNetPerceptron(const std::vector<int>& nNeuronInLayer, T rateActivate) 
+    NeuralNetPerceptron(const std::vector<int>& nNeuronInLayer, T rateActivate)
         : nNeuronInLayer_(nNeuronInLayer), rateActivate_(rateActivate) {}
 
     // Forward propagation for training
@@ -347,16 +342,16 @@ public:
         af::array input = xVal;
         af::array weights = pop;
         int weight_idx = 0;
-        
+
         // Process through each layer
         for (int layer = 0; layer < nLayer_ - 1; ++layer) {
             // Extract weights and biases for current layer
             af::array layer_weights = extractWeights(weights, weight_idx);
             af::array layer_biases = extractBiases(weights, weight_idx);
-            
+
             // Linear transformation: Wx + b
             af::array linear_output = af::matmul(layer_weights, input) + layer_biases;
-            
+
             // Apply activation function
             input = (layer < nLayer_ - 2) ? reLU(linear_output) : softMaxStable(linear_output);
         }
@@ -367,7 +362,7 @@ protected:
     af::array reLU(const af::array& xVal) const {
         return af::max(xVal, 0.0);
     }
-    
+
     af::array softMaxStable(const af::array& xVal) const {
         af::array shifted = xVal - af::max(xVal);
         af::array exp_vals = af::exp(shifted);
@@ -383,16 +378,16 @@ protected:
       {/* Results & Performance Analysis */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎯 Benchmarking Results</h2>
-          
+          <h2>Benchmarking Results</h2>
+
           <div className="results-showcase">
             <div className="validation-points">
               <h4>Performance Comparison: ADE vs RSO</h4>
               <p>
-                Benchmarking results comparing my ADE algorithm against RSO baseline 
+                Benchmarking results comparing my ADE algorithm against RSO baseline
                 across different neural network architectures on MNIST dataset.
               </p>
-              
+
               <div className="performance-table">
                 <table>
                   <thead>
@@ -441,7 +436,7 @@ protected:
                   </tbody>
                 </table>
               </div>
-              
+
               <div className="results-analysis">
                 <h4>Key Findings</h4>
                 <ul className="validation-list">
@@ -459,8 +454,8 @@ protected:
       {/* Project Impact */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🌟 Impact & Applications</h2>
-          
+          <h2>Impact & Applications</h2>
+
           <div className="metrics-grid">
             <div className="metric-category">
               <h4>Research Contributions</h4>
@@ -471,7 +466,7 @@ protected:
                 <li>Performance baselines for algorithm selection in RL applications</li>
               </ul>
             </div>
-            
+
             <div className="metric-category">
               <h4>Future Applications</h4>
               <ul className="metric-list">
@@ -488,8 +483,8 @@ protected:
       {/* Skills Demonstrated */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎖️ Skills Demonstrated</h2>
-          
+          <h2>Skills Demonstrated</h2>
+
           <div className="skills-demonstrated">
             <div className="skills-grid">
               <span className="skill-tag">Reinforcement Learning</span>

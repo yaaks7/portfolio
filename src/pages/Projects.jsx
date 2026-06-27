@@ -1,63 +1,57 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { TrendingUp, Cpu, Activity, Zap, Target, Eye, AlignLeft } from 'lucide-react'
 import './Page.css'
 
 const projects = [
   {
     id: 'grid-trading',
     title: "Grid Trading Backtester",
-    icon: "💹",
+    Icon: TrendingUp,
     color: "#34D399",
-    description: "Algorithmic trading system",
-    gif: "💹"
+    description: "Algorithmic trading system"
   },
   {
     id: 'ml-prediction',
     title: "ML Market Prediction",
-    icon: "🤖",
-    color: "#60A5FA", 
-    description: "Machine learning for financial markets",
-    gif: "🤖"
+    Icon: Cpu,
+    color: "#60A5FA",
+    description: "Machine learning for financial markets"
   },
   {
     id: 'options-pricing',
     title: "Options Pricing App",
-    icon: "📊",
+    Icon: Activity,
     color: "#F59E0B",
-    description: "Black-Scholes, Monte Carlo & Neural Networks",
-    gif: "📊"
+    description: "Black-Scholes, Monte Carlo & Neural Networks"
   },
   {
     id: 'energy-optimization',
     title: "Energy Production Model",
-    icon: "🔋",
+    Icon: Zap,
     color: "#10B981",
-    description: "Hydro-Québec optimization system",
-    gif: "🔋"
+    description: "Hydro-Québec optimization system"
   },
   {
     id: 'ml-optimization',
     title: "ML Optimization Algorithm",
-    icon: "⚙️",
+    Icon: Target,
     color: "#8B5CF6",
-    description: "Differential evolution in C++",
-    gif: "⚙️"
+    description: "Differential evolution in C++"
   },
   {
     id: 'attention-comparator',
     title: "AI Attention Comparator",
-    icon: "🧠",
+    Icon: Eye,
     color: "#EC4899",
-    description: "Analysis of transformers attention mechanisms",
-    gif: "🧠"
+    description: "Analysis of transformers attention mechanisms"
   },
   {
     id: 'sentiment-analysis',
     title: "Financial Sentiment Analysis",
-    icon: "📰",
+    Icon: AlignLeft,
     color: "#06B6D4",
-    description: "NLP for financial reports",
-    gif: "📰"
+    description: "NLP for financial reports"
   }
 ]
 
@@ -72,7 +66,7 @@ function Projects() {
       <div className="page-header">
         <h1>Projects</h1>
       </div>
-      
+
       <div className="projects-grid">
         {projects.map((project, index) => (
           <motion.div
@@ -84,23 +78,23 @@ function Projects() {
             whileTap={{ scale: 0.95 }}
           >
             <Link to={`/projects/${project.id}`} className="project-icon-card">
-              <div 
+              <div
                 className="project-icon-container"
                 style={{ backgroundColor: project.color }}
               >
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotate: [0, 5, -5, 0],
                     scale: [1, 1.1, 1, 1.05, 1]
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 2,
                     repeat: Infinity,
                     repeatType: "reverse"
                   }}
                   className="project-animated-icon"
                 >
-                  {project.gif}
+                  <project.Icon size={32} strokeWidth={1.5} />
                 </motion.div>
               </div>
               <h4 className="project-icon-title">{project.title}</h4>
@@ -109,7 +103,7 @@ function Projects() {
           </motion.div>
         ))}
       </div>
-      
+
     </motion.div>
   )
 }

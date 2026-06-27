@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
+import { FileText } from 'lucide-react'
 import './Page.css'
-// Import your portrait image here once it's added
 import portraitImg from '../assets/img/portrait.jpg'
 import resumePdf from '../assets/docs/Yanis_Aksas_Resume.pdf'
 
@@ -25,26 +25,14 @@ function AboutMe() {
             <div className="profile-info">
               <h3>Welcome to my portfolio</h3>
               <p>
-                I'm a passionate mechanical engineering student with a strong interest in 
-                quantitative finance, artificial intelligence, and software development. 
-                My journey blends rigorous academic training with hands-on experience in 
-                algorithmic trading, energy modeling, NLP, and AI optimization.
+                I studied mechanical engineering at Polytechnique Montréal, but shaped the degree
+                with quantitative finance in mind — picking courses in probability, numerical methods,
+                and data structures, spending a semester at City University of Hong Kong to study
+                derivatives and mathematical finance, and joining PolyFinances to work on real
+                portfolio problems. The projects here are part of the same thread. It all leads to
+                MSc Computational Finance at UCL, starting September 2026.
               </p>
             </div>
-          </div>
-          
-          <div className="profile-description">
-            <p>
-              At the intersection of mathematics and code, I build 
-              tools that solve problems from 
-              backtesting trading strategies and pricing financial derivatives to 
-              optimizing renewable energy systems.
-            </p>
-            
-            <p>
-              With a strong foundation in Python, C++, and React, I thrive on building 
-              elegant solutions that bridge theory and practice.
-            </p>
           </div>
           
           <div className="resume-section">
@@ -54,10 +42,10 @@ function AboutMe() {
               rel="noopener noreferrer"
               className="resume-button"
             >
-              <span className="resume-icon">📄</span>
+              <span className="resume-icon"><FileText size={22} strokeWidth={1.5} /></span>
               <span className="resume-text">
                 <strong>View Resume</strong>
-                <small>See my full experience & qualifications</small>
+                <small>PDF · 1 page</small>
               </span>
             </a>
           </div>
@@ -69,8 +57,7 @@ function AboutMe() {
             Beyond the screen, I'm someone who finds balance between logic and creativity. 
             I'm a lifelong basketball player, the rhythm of the game has shaped my mindset: 
             strategic, fast-paced, and resilient. I also have a deep love for music and 
-            sound design. As a former sound engineer and co-founder of a recording studio 
-            in France, I've spent countless hours mixing, mastering, and helping artists 
+            sound design. As a former sound engineer and co-founder of a recording studio, I've spent countless hours mixing, mastering, and helping artists 
             bring their vision to life.
           </p>
           
@@ -79,21 +66,6 @@ function AboutMe() {
             stop learning whether I'm on the court, in the studio, or writing code.
           </p>
           
-          <h4>What drives me</h4>
-          <ul className="no-bullets">
-            <li>🧠 Exploring AI and machine learning</li>
-            <li>📊 Applying quantitative methods to financial markets</li>
-            <li>⚙️ Building efficient, scalable software tools</li>
-            <li>📚 Bridging theory and real-world decision making</li>
-            <li>🚀 Lifelong learning and cross-disciplinary curiosity</li>
-          </ul>
-          
-          <p>
-            <em>
-              "At the convergence of mathematics, technology, and finance lies a world 
-              of infinite possibilities. I'm here to explore and build that future."
-            </em>
-          </p>
           </div>
         </div>
       </div>

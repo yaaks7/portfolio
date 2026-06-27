@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { GitBranch, ExternalLink, Zap, Shield, Database, Wrench, TrendingUp } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
 
@@ -27,18 +28,20 @@ function GridTradingProject() {
 
       {/* Project Header */}
       <div className="project-header">
-        <div className="project-icon">💹</div>
         <div className="project-title-section">
-          <h1>Grid Trading Strategy Backtester</h1>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <span style={{ display: 'flex', color: '#34D399' }}><TrendingUp size={28} strokeWidth={1.5} /></span>
+            <h1>Grid Trading Strategy Backtester</h1>
+          </div>
           <p className="project-subtitle">
             Algorithmic trading system with backtesting capabilities and risk management
           </p>
           <div className="project-links">
             <a href="https://github.com/yaaks7/grid-trading" target="_blank" rel="noopener noreferrer" className="project-link github">
-              <span>🖥️</span> View on GitHub
+              <GitBranch size={14} strokeWidth={1.5} /> View on GitHub
             </a>
             <a href="https://grid-trading.streamlit.app/" target="_blank" rel="noopener noreferrer" className="project-link demo">
-              <span>🚀</span> Website
+              <ExternalLink size={14} strokeWidth={1.5} /> Website
             </a>
           </div>
         </div>
@@ -47,13 +50,12 @@ function GridTradingProject() {
       {/* Project Overview */}
       <div className="note-card">
         <div className="note-content">
-          <h2>📊 Project Overview</h2>
+          <h2>Project Overview</h2>
           <p>
-            This project implements a grid trading algorithm with backtesting capabilities. This system combines
-            quantitative finance principles with a Streamlit interface to deliver a comprehensive
-            trading strategy analysis platform.
+            I built a grid trading backtester with dynamic threshold calibration from historical volatility,
+            multi-asset support, and a Streamlit dashboard for performance analysis.
           </p>
-          
+
           <div className="key-stats">
             <div className="stat-item">
               <div className="stat-number">48</div>
@@ -74,34 +76,30 @@ function GridTradingProject() {
       {/* Technical Architecture */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🏗️ Technical Architecture</h2>
-          
+          <h2>Technical Architecture</h2>
+
           <div className="tech-section">
             <h3>Core Technologies</h3>
             <div className="tech-grid">
               <div className="tech-item">
-                <span className="tech-icon">🐍</span>
                 <div>
                   <strong>Python</strong>
                   <p>Primary language for algorithmic logic and data processing</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">📊</span>
                 <div>
                   <strong>Pandas & NumPy</strong>
                   <p>Data manipulation and numerical computing</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">📈</span>
                 <div>
                   <strong>Plotly</strong>
                   <p>Interactive financial charting and visualization</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">🌐</span>
                 <div>
                   <strong>Streamlit</strong>
                   <p>Web interface for strategy configuration</p>
@@ -122,56 +120,50 @@ function GridTradingProject() {
       {/* Asset Coverage */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎯 Asset Coverage</h2>
+          <h2>Asset Coverage</h2>
           <p>
-            The system supports 48 selected assets across 6 major asset classes, providing 
+            The system supports 48 selected assets across 6 major asset classes, providing
             coverage for diversified trading strategies.
           </p>
-          
+
           <div className="asset-classes">
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">🏢</span>
                 <h4>Tech Stocks (10)</h4>
               </div>
               <div className="asset-list">AAPL, TSLA, META, NVDA, GOOGL, MSFT, AMZN, NFLX, AMD, CRM</div>
             </div>
-            
+
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">🏦</span>
                 <h4>Finance (11)</h4>
               </div>
               <div className="asset-list">JPM, V, MA, PYPL, BAC, WFC, GS, MS, AXP, C, BRK-B</div>
             </div>
-            
+
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">📈</span>
                 <h4>ETFs (7)</h4>
               </div>
               <div className="asset-list">SPY, QQQ, XLK, XLF, IWM, VTI, ARKK</div>
             </div>
-            
+
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">₿</span>
                 <h4>Cryptocurrency (6)</h4>
               </div>
               <div className="asset-list">BTC-USD, ETH-USD, SOL-USD, ADA-USD, DOT-USD, AVAX-USD</div>
             </div>
-            
+
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">💱</span>
                 <h4>Forex (7)</h4>
               </div>
               <div className="asset-list">EURUSD=X, GBPUSD=X, USDJPY=X, USDCAD=X, AUDUSD=X, NZDUSD=X, USDCHF=X</div>
             </div>
-            
+
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">🥇</span>
                 <h4>Commodities (7)</h4>
               </div>
               <div className="asset-list">GC=F, SI=F, CL=F, NG=F, ZC=F, ZS=F, KC=F</div>
@@ -183,15 +175,15 @@ function GridTradingProject() {
       {/* Grid Trading Strategy */}
       <div className="note-card">
         <div className="note-content">
-          <h2>⚙️ Grid Trading Strategy</h2>
-          
+          <h2>Grid Trading Strategy</h2>
+
           <h3>Strategy Mechanics</h3>
           <p>
-            Grid trading is a systematic approach that places buy and sell orders at predetermined 
-            price intervals around a central price point. The strategy profits from market volatility 
+            Grid trading is a systematic approach that places buy and sell orders at predetermined
+            price intervals around a central price point. The strategy profits from market volatility
             by capturing small price movements within a defined range.
           </p>
-          
+
           <div className="strategy-visual">
             <div className="grid-example">
               <div className="grid-level sell">Price Level 220 ──── [SELL]</div>
@@ -201,7 +193,7 @@ function GridTradingProject() {
               <div className="grid-level buy">Price Level 200 ──── [BUY]</div>
             </div>
           </div>
-          
+
           <h3>Key Parameters</h3>
           <div className="parameter-grid">
             <div className="parameter-item">
@@ -227,14 +219,14 @@ function GridTradingProject() {
       {/* Interface Showcase */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🌐 User Interface</h2>
-          
+          <h2>User Interface</h2>
+
           <h3>Two-Step Workflow</h3>
           <p>
-            The Streamlit interface follows a logical, pedagogical approach with an intuitive 
+            The Streamlit interface follows a logical, pedagogical approach with an intuitive
             two-step workflow designed.
           </p>
-          
+
           <div className="interface-section">
             <h4>Step 1: Data & Grid Configuration</h4>
             <div className="interface-screenshot">
@@ -247,7 +239,7 @@ function GridTradingProject() {
               <li>Interactive price chart with grid overlay</li>
             </ul>
           </div>
-          
+
           <div className="interface-section">
             <h4>Step 2: Backtesting & Analysis</h4>
             <div className="interface-screenshot">
@@ -266,8 +258,8 @@ function GridTradingProject() {
       {/* Performance Analytics */}
       <div className="note-card">
         <div className="note-content">
-          <h2>📈 Analytics</h2>
-          
+          <h2>Analytics</h2>
+
           <h3>Performance Metrics</h3>
           <div className="metrics-grid">
             <div className="metric-category">
@@ -295,7 +287,7 @@ function GridTradingProject() {
               </ul>
             </div>
           </div>
-          
+
           <div className="analytics-showcase">
             <div className="interface-screenshot">
               <img src={gridAnalytics} alt="Performance Analytics Dashboard" className="interface-img" />
@@ -307,29 +299,29 @@ function GridTradingProject() {
       {/* Implementation Highlights */}
       <div className="note-card">
         <div className="note-content">
-          <h2>💡 Implementation Highlights</h2>
-          
+          <h2>Implementation Highlights</h2>
+
           <div className="highlight-grid">
             <div className="highlight-item">
-              <div className="highlight-icon">⚡</div>
+              <div className="highlight-icon"><Zap size={18} strokeWidth={1.5} /></div>
               <h4>Performance Optimization</h4>
               <p>Smart grid generation with automatic level limiting (max 1000 levels) and optimized signal detection algorithms</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">🛡️</div>
+              <div className="highlight-icon"><Shield size={18} strokeWidth={1.5} /></div>
               <h4>Risk Management</h4>
               <p>ATR-based stop losses, position sizing controls, and maximum concurrent trades limitations</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">📊</div>
+              <div className="highlight-icon"><Database size={18} strokeWidth={1.5} /></div>
               <h4>Data Integration</h4>
               <p>Real-time Yahoo Finance API integration</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">🔧</div>
+              <div className="highlight-icon"><Wrench size={18} strokeWidth={1.5} /></div>
               <h4>Modular Architecture</h4>
               <p>Clean separation between data fetching, strategy logic, backtesting engine, and visualization components</p>
             </div>
@@ -340,8 +332,8 @@ function GridTradingProject() {
       {/* Technical Deep Dive */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🔬 Technical Deep Dive</h2>
-          
+          <h2>Technical Deep Dive</h2>
+
           <div className="code-section">
             <h3>Core Algorithm</h3>
             <div className="code-highlight">
@@ -352,33 +344,33 @@ function GridTradingProject() {
     start = self.midprice - self.grid_range
     end = self.midprice + self.grid_range
     grid = np.arange(start, end + self.grid_distance, self.grid_distance)
-    
+
     # Performance optimization: limit grid levels
     if len(grid) > 1000:
         grid = np.linspace(start, end, 1000)
-    
+
     return grid`}
               </pre>
             </div>
-            
+
             <div className="code-highlight">
               <h4>Signal Generation Logic</h4>
               <pre className="code-block">
 {`def generate_signals(self, data: pd.DataFrame) -> List[int]:
     """Generate trading signals when price crosses grid levels"""
     signals = [0] * len(data)
-    
+
     for i, (index, row) in enumerate(data.iterrows()):
         for level in self.grid_levels:
             if self._price_crosses_level(row, level):
                 signals[i] = 1
                 break
-    
+
     return signals`}
               </pre>
             </div>
           </div>
-          
+
           <div className="performance-section">
             <h3>Performance Optimizations</h3>
             <ul className="optimization-list">
@@ -394,15 +386,15 @@ function GridTradingProject() {
       {/* Results Showcase */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎯 Results & Validation</h2>
-          
+          <h2>Results & Validation</h2>
+
           <h3>Sample Backtest Results</h3>
           <div className="results-showcase">
             <div className="interface-screenshot">
               <img src={gridResults} alt="Sample Backtest Results" className="interface-img" />
             </div>
           </div>
-          
+
           <div className="validation-points">
             <h3>Validation & Testing</h3>
             <ul className="validation-list">
@@ -418,8 +410,8 @@ function GridTradingProject() {
       {/* Command Line Interface */}
       <div className="note-card">
         <div className="note-content">
-          <h2>💻 Command Line Interface</h2>
-          
+          <h2>Command Line Interface</h2>
+
           <div className="code-highlight">
             <h4>Quick Start Examples</h4>
             <pre className="code-block">
@@ -436,7 +428,7 @@ python main.py --asset EURUSD=X --dynamic --verbose
 python -m pytest tests/ -v`}
             </pre>
           </div>
-          
+
           <h3>Supported Arguments</h3>
           <div className="parameter-grid">
             <div className="parameter-item">
@@ -460,17 +452,16 @@ python -m pytest tests/ -v`}
               <p>Output directory for results (default: data/results)</p>
             </div>
           </div>
-          
+
         </div>
       </div>
 
       {/* Project Impact */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎖️ Skills Demonstrated</h2>
-          
+          <h2>Skills Demonstrated</h2>
+
           <div className="impact-summary">
-            
             <div className="skills-demonstrated">
               <div className="skills-grid">
                 <span className="skill-tag">Quantitative Finance</span>

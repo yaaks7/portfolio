@@ -1,126 +1,99 @@
 import { motion } from 'framer-motion'
 import { useParams, Link } from 'react-router-dom'
+import { GitBranch, ExternalLink } from 'lucide-react'
 import './Page.css'
 
 const projectsData = {
   'grid-trading': {
     title: "Grid Trading Strategy Backtester",
-    icon: "🔁",
-    color: "#34D399",
-    description: "Advanced algorithmic trading system implementing grid trading strategies with comprehensive backtesting capabilities and risk management features.",
+    description: "Grid trading backtester with dynamic threshold calibration, multi-asset support, and a Streamlit dashboard for strategy evaluation.",
     technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Algorithmic Trading"],
     features: [
-      "Real-time market data integration",
-      "Advanced backtesting engine", 
-      "Risk management algorithms",
+      "Dynamic grid parameter calibration from historical volatility",
+      "Multi-asset backtesting engine",
+      "Risk management with drawdown controls",
       "Performance analytics dashboard"
     ],
     github: "https://github.com/yaaks7/grid-trading",
-    demo: "https://grid-trading.streamlit.app/",
-    detailedDescription: `This sophisticated trading system implements grid trading strategies with advanced backtesting capabilities. 
-    The system analyzes historical market data to optimize grid parameters and provides comprehensive risk management tools.`
+    demo: "https://grid-trading.streamlit.app/"
   },
   'ml-prediction': {
-    title: "Machine Learning Market Prediction System",
-    icon: "🤖", 
-    color: "#60A5FA",
-    description: "Sophisticated ML system for financial market prediction using ensemble methods, feature engineering, and real-time data processing.",
-    technologies: ["Python", "Scikit-learn", "TensorFlow", "Feature Engineering", "Time Series"],
+    title: "ML Market Prediction System",
+    description: "Modular ML system predicting daily market direction across 15 assets. Benchmarked against 6 baseline strategies via a Streamlit interface.",
+    technologies: ["Python", "Scikit-learn", "Pandas", "Plotly", "Streamlit"],
     features: [
-      "Multiple ML algorithms ensemble",
-      "Real-time prediction pipeline",
-      "Feature importance analysis", 
-      "Model performance tracking"
+      "Random Forest and MLP models",
+      "Technical indicator feature engineering (MA, RSI, MACD, Bollinger)",
+      "6-strategy benchmark comparison",
+      "CLI and web interfaces"
     ],
-    github: "#",
-    demo: "#",
-    detailedDescription: `Advanced machine learning system that combines multiple algorithms to predict financial market movements. 
-    Features sophisticated feature engineering and real-time data processing capabilities.`
+    github: "https://github.com/yaaks7/ml-trading",
+    demo: "https://ml-trading.streamlit.app/"
   },
   'options-pricing': {
-    title: "Options Pricing Modelization App",
-    icon: "📊",
-    color: "#F59E0B", 
-    description: "Comprehensive options pricing application implementing Black-Scholes, Binomial, Monte Carlo, and Neural Network models.",
-    technologies: ["React", "Python", "Financial Mathematics", "Monte Carlo", "Neural Networks"],
+    title: "Options Pricing Modelization",
+    description: "Options pricing app with Black-Scholes, Binomial, Monte Carlo, and Neural Network models. Full Greeks calculation and P&L heatmaps via React + FastAPI.",
+    technologies: ["React", "FastAPI", "Python", "NumPy", "TensorFlow"],
     features: [
-      "Black-Scholes implementation",
-      "Binomial tree modeling",
-      "Monte Carlo simulations",
-      "Neural network pricing"
+      "4 pricing models with side-by-side comparison",
+      "Full Greeks (Δ Γ Θ ν ρ) calculation",
+      "P&L heatmaps and sensitivity analysis",
+      "RESTful API with auto-documentation"
     ],
-    github: "#",
-    demo: "#",
-    detailedDescription: `Complete options pricing solution implementing multiple mathematical models including Black-Scholes, 
-    Binomial trees, Monte Carlo simulations, and modern neural network approaches.`
+    github: "https://github.com/yaaks7/options-pricing",
+    demo: "https://optionspricing.vercel.app/"
   },
   'energy-optimization': {
-    title: "Energy Production Optimization Model",
-    icon: "⚡",
-    color: "#10B981",
-    description: "Data-driven model for Hydro-Québec optimizing energy production using hourly data analysis and CO2 emission optimization.",
-    technologies: ["Python", "Optimization", "Data Analysis", "Environmental Modeling"],
+    title: "Energy Production Model — HarmoniQ",
+    description: "Energy system optimization platform for Hydro-Québec. I built the network module: PyPSA-based grid topology, AC/DC power flow, and linear programming dispatch.",
+    technologies: ["Python", "PyPSA", "HiGHS", "Linear Programming", "Async"],
     features: [
-      "Hourly production optimization",
-      "CO2 emission reduction algorithms", 
-      "Predictive analytics",
-      "Real-time monitoring dashboard"
+      "5-source grid (hydro, wind, solar, nuclear, thermal)",
+      "AC/DC power flow analysis with constraint validation",
+      "Economic dispatch via HiGHS LP solver",
+      "Real-time weather data integration"
     ],
-    github: "#",
-    demo: "#",
-    detailedDescription: `Environmental optimization system designed for Hydro-Québec to maximize energy production efficiency 
-    while minimizing CO2 emissions through advanced predictive modeling.`
+    github: "https://github.com/Houjio/HarmoniQ",
+    demo: null
   },
   'ml-optimization': {
-    title: "Machine Learning Optimization Algorithm", 
-    icon: "🧠",
-    color: "#8B5CF6",
-    description: "High-performance differential evolution algorithm implemented in C++ for ML hyperparameter optimization.",
-    technologies: ["C++", "Optimization Algorithms", "Differential Evolution", "Performance Computing"],
+    title: "ML Optimization Algorithms",
+    description: "Benchmarking study comparing RSO, CLPSO, and my novel ADE algorithm for RL applications. Evaluated on MNIST neural network training in C++ with ArrayFire.",
+    technologies: ["C++", "ArrayFire", "MNIST", "PSO", "Differential Evolution"],
     features: [
-      "High-performance C++ implementation",
-      "Parallel processing capabilities",
-      "Adaptive parameter tuning",
-      "Benchmarking suite"
+      "Novel ADE (Adaptive Differential Evolution) algorithm",
+      "CLPSO implementation for comparison",
+      "Template-based C++ architecture",
+      "MNIST benchmarking framework"
     ],
-    github: "#",
-    demo: "#",
-    detailedDescription: `High-performance optimization algorithm implemented in C++ using differential evolution techniques 
-    for machine learning hyperparameter optimization and model selection.`
+    github: null,
+    demo: null
   },
   'attention-comparator': {
-    title: "AI Attention Maps Comparator",
-    icon: "👁",
-    color: "#EC4899",
-    description: "Advanced tool for comparing and analyzing attention mechanisms in neural networks.",
-    technologies: ["Python", "Deep Learning", "Attention Mechanisms", "Visualization", "Model Interpretability"],
+    title: "Transformer Attention Comparator",
+    description: "Comparative analysis of attention mechanisms across BERT, DistilBERT, and RoBERTa using BertViz and quantitative metrics (CLS aggregation, entropy, content/function ratio).",
+    technologies: ["Python", "PyTorch", "HuggingFace", "BertViz", "Plotly"],
     features: [
-      "Attention pattern visualization",
-      "Model comparison framework",
-      "Interactive analysis tools",
-      "Export capabilities"
+      "Head view and model view visualizations",
+      "4 quantitative attention metrics",
+      "Behavioral signature analysis per model",
+      "Layer-by-layer specialization study"
     ],
-    github: "#", 
-    demo: "#",
-    detailedDescription: `Comprehensive analysis tool for understanding and comparing attention mechanisms across different 
-    neural network architectures, providing insights into model interpretability.`
+    github: "https://github.com/yaaks7/portfolio-ia",
+    demo: "https://github.com/yaaks7/portfolio-ia/blob/main/projets/semaine-01-02-transformers/notebooks/01-comparateur-attention.ipynb"
   },
   'sentiment-analysis': {
-    title: "Financial Reports Sentiment Analysis",
-    icon: "💬",
-    color: "#06B6D4",
-    description: "NLP-powered system for analyzing sentiment in financial reports and market sentiment tracking.",
-    technologies: ["Python", "NLP", "Sentiment Analysis", "Financial Data", "Text Mining"],
+    title: "Financial Sentiment Analysis",
+    description: "Multi-model sentiment framework (BERT, FinBERT, VADER, TextBlob) on financial news for AAPL, MSFT, JPM, TSLA, NVDA. Includes sentiment-price correlation analysis.",
+    technologies: ["Python", "Transformers", "Pandas", "News API", "Yahoo Finance"],
     features: [
-      "Real-time sentiment scoring",
-      "Financial keyword extraction",
-      "Trend analysis dashboard", 
-      "Historical sentiment tracking"
+      "4 NLP models with normalized scoring",
+      "Sentiment-return correlation (Pearson + quintile analysis)",
+      "Temporal JPM case study",
+      "Statistical significance p < 0.05 for major tech stocks"
     ],
-    github: "#",
-    demo: "#", 
-    detailedDescription: `Natural Language Processing system specialized in financial document analysis, 
-    providing real-time sentiment scoring and trend analysis for investment decision support.`
+    github: "https://github.com/yaaks7/portfolio-ia",
+    demo: "https://github.com/yaaks7/portfolio-ia/blob/main/projets/semaine-01-02-transformers/notebooks/02-analyse-sentiment.ipynb"
   }
 }
 
@@ -149,12 +122,6 @@ function ProjectDetail() {
           ← Back to Projects
         </Link>
         <div className="project-detail-title">
-          <div 
-            className="project-detail-icon"
-            style={{ backgroundColor: project.color }}
-          >
-            {project.icon}
-          </div>
           <div>
             <h1>{project.title}</h1>
             <p className="page-subtitle">{project.description}</p>
@@ -164,12 +131,8 @@ function ProjectDetail() {
 
       <div className="note-card">
         <div className="note-content">
-          <div className="project-image-large">
-            [Project Screenshot/Demo Placeholder]
-          </div>
-          
           <h3>Project Overview</h3>
-          <p>{project.detailedDescription}</p>
+          <p>{project.description}</p>
           
           <div className="project-detail-grid">
             <div className="project-detail-section">
@@ -192,12 +155,16 @@ function ProjectDetail() {
           </div>
           
           <div className="project-links">
-            <a href={project.github} className="project-link primary">
-              📂 View on GitHub
-            </a>
-            <a href={project.demo} className="project-link">
-              🚀 Live Demo
-            </a>
+            {project.github && (
+              <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link primary">
+                <GitBranch size={14} strokeWidth={1.5} /> View on GitHub
+              </a>
+            )}
+            {project.demo && (
+              <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">
+                <ExternalLink size={14} strokeWidth={1.5} /> Live Demo
+              </a>
+            )}
           </div>
         </div>
       </div>

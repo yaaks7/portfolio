@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import './Page.css'
+import uclLogo from '../assets/img/ucl.svg'
 import polymtlLogo from '../assets/img/polymtl.png'
 import cityuLogo from '../assets/img/cityu.png'
 
@@ -16,12 +17,48 @@ function AcademicBackground() {
       </div>
       
       <div className="education-timeline">
+        {/* University College London — Upcoming */}
+        <div className="note-card education-card">
+          <div className="note-content">
+            <div className="education-header">
+              <div className="education-info">
+                <h2>Master in Computational Finance</h2>
+                <h3>
+                  <a
+                    href="https://www.ucl.ac.uk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="university-link"
+                  >
+                    University College London
+                  </a>
+                </h3>
+                <div className="education-meta">
+                  <span className="duration">Sep 2026 – Sep 2027</span>
+                </div>
+                <div className="education-achievements">
+                  <span className="achievement">Upcoming</span>
+                </div>
+              </div>
+              <div className="university-logo ucl-logo">
+                <a
+                  href="https://www.ucl.ac.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={uclLogo} alt="University College London" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Polytechnique Montréal */}
         <div className="note-card education-card">
           <div className="note-content">
             <div className="education-header">
               <div className="education-info">
-                <h2>Bachelor's in Mechanical Engineering</h2>
+                <h2>Bachelor in Mechanical Engineering</h2>
                 <h3>
                   <a 
                     href="https://www.polymtl.ca/" 
@@ -62,10 +99,6 @@ function AcademicBackground() {
                 <span className="course-item">Differential Equations</span>
               </div>
               
-              <p className="education-description">
-                A solid technical foundation combining analytical rigor, computational 
-                thinking, and real-world engineering problem-solving.
-              </p>
             </div>
           </div>
         </div>
@@ -109,10 +142,6 @@ function AcademicBackground() {
                 <span className="course-item">Foundations of Data Engineering</span>
               </div>
               
-              <p className="education-description">
-                Gained global perspective and exposure to advanced topics in finance 
-                and economics within a multicultural academic setting.
-              </p>
             </div>
           </div>
         </div>

@@ -1,15 +1,16 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { User, GraduationCap, Briefcase, Award, FolderGit2, Mail, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../App'
 import './Sidebar.css'
 
 const navigationItems = [
-  { path: '/about', label: 'About Me', icon: '👋' },
-  { path: '/academic', label: 'Academic Background', icon: '🎓' },
-  { path: '/experience', label: 'Professional Experience', icon: '💼' },
-  { path: '/certificates', label: 'Certificates', icon: '📜' },
-  { path: '/projects', label: 'Projects', icon: '🚀' },
-  { path: '/contact', label: 'Contact', icon: '📧' }
+  { path: '/about', label: 'About Me', icon: User },
+  { path: '/academic', label: 'Academic Background', icon: GraduationCap },
+  { path: '/experience', label: 'Professional Experience', icon: Briefcase },
+  { path: '/certificates', label: 'Certificates', icon: Award },
+  { path: '/projects', label: 'Projects', icon: FolderGit2 },
+  { path: '/contact', label: 'Contact', icon: Mail }
 ]
 
 function Sidebar() {
@@ -25,13 +26,16 @@ function Sidebar() {
     >
       <div className="sidebar-header">
         <h1 className="sidebar-title">Yanis Aksas</h1>
-        <p className="sidebar-subtitle">BEng Mechanical Engineering</p>
+        <div className="sidebar-degrees">
+          <p className="sidebar-subtitle">BEng Mechanical Engineering</p>
+          <p className="sidebar-subtitle">MSc Computer Science</p>
+        </div>
         <button 
           className="theme-toggle-sidebar"
           onClick={toggleTheme}
           title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         >
-          {isDarkMode ? '☀️' : '🌙'}
+          {isDarkMode ? <Sun size={14} strokeWidth={1.5} /> : <Moon size={14} strokeWidth={1.5} />}
         </button>
       </div>
       
@@ -45,11 +49,11 @@ function Sidebar() {
           >
             <NavLink
               to={item.path}
-              className={({ isActive }) => 
+              className={({ isActive }) =>
                 `nav-item ${isActive || (location.pathname === '/' && item.path === '/about') ? 'active' : ''}`
               }
             >
-              <span className="nav-icon">{item.icon}</span>
+              <span className="nav-icon"><item.icon size={16} strokeWidth={1.5} /></span>
               <span className="nav-label">{item.label}</span>
             </NavLink>
           </motion.div>
@@ -81,7 +85,7 @@ function Sidebar() {
             </svg>
           </a>
           <a 
-            href="https://www.instagram.com/yanis_aksas" 
+            href="https://www.instagram.com/yanisaksas" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-link instagram"

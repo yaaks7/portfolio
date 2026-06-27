@@ -23,7 +23,7 @@ function Experience() {
           <div className="note-content">
             <div className="education-header">
               <div className="education-info">
-                <h2>📊 Software Developer</h2>
+                <h2>Software Developer</h2>
                 <h3>
                   <a href="https://www.polyfinances.ca/" target="_blank" rel="noopener noreferrer" className="university-link">PolyFinances</a>
                 </h3>
@@ -59,7 +59,7 @@ function Experience() {
               <div className="coursework-grid">
                 <span className="course-item">Angular</span>
                 <span className="course-item">Python</span>
-                <span className="course-item">Flash</span>
+                <span className="course-item">Flask</span>
                 <span className="course-item">Financial APIs</span>
                 <span className="course-item">Data Visualization</span>
               </div>
@@ -72,7 +72,7 @@ function Experience() {
           <div className="note-content">
             <div className="education-header">
               <div className="education-info">
-                <h2>🚀 Co-founder & CTO</h2>
+                <h2>Co-founder & CTO</h2>
                 <h3>
                   <a href="https://data-rank.com/" target="_blank" rel="noopener noreferrer" className="university-link">DataRank</a>
                 </h3>
@@ -121,7 +121,7 @@ function Experience() {
           <div className="note-content">
             <div className="education-header">
               <div className="education-info">
-                <h2>🛠 Freelance Developer</h2>
+                <h2>Software Developer</h2>
                 <h3>
                   <a href="https://mmprod.org/" target="_blank" rel="noopener noreferrer" className="university-link">MMPROD</a>
                 </h3>
@@ -170,7 +170,7 @@ function Experience() {
           <div className="note-content">
             <div className="education-header">
               <div className="education-info">
-                <h2>🌐 Software Engineer Intern</h2>
+                <h2>Software Engineer Intern</h2>
                 <h3>
                   <a href="https://fxhotsauce.com/" target="_blank" rel="noopener noreferrer" className="university-link">FENIX</a>
                 </h3>

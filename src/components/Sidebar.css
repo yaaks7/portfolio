@@ -34,6 +34,18 @@
   line-height: 1.4;
 }
 
+.sidebar-degrees {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: var(--spacing-xs);
+}
+
+.sidebar-degrees .sidebar-subtitle {
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+}
+
 .theme-toggle-sidebar {
   position: absolute;
   top: var(--spacing-lg);
@@ -100,10 +112,13 @@
 }
 
 .nav-icon {
-  font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: var(--spacing-sm);
   width: 20px;
-  text-align: center;
+  flex-shrink: 0;
+  color: var(--text-secondary);
 }
 
 .nav-label {

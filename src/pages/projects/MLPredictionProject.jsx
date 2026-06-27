@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { GitBranch, ExternalLink, Cpu, Layers, Wrench, BarChart2, Zap } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
 
@@ -26,18 +27,20 @@ function MLPredictionProject() {
 
       {/* Project Header */}
       <div className="project-header">
-        <div className="project-icon">🤖</div>
         <div className="project-title-section">
-          <h1>ML Market Prediction System</h1>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <span style={{ display: 'flex', color: '#60A5FA' }}><Cpu size={28} strokeWidth={1.5} /></span>
+            <h1>ML Market Prediction System</h1>
+          </div>
           <p className="project-subtitle">
             Modular machine learning system for financial market directional prediction with Streamlit interface and benchmark strategies
           </p>
           <div className="project-links">
             <a href="https://github.com/yaaks7/ml-trading" target="_blank" rel="noopener noreferrer" className="project-link github">
-              <span>🖥️</span> View on GitHub
+              <GitBranch size={14} strokeWidth={1.5} /> View on GitHub
             </a>
             <a href="https://ml-trading.streamlit.app/" target="_blank" rel="noopener noreferrer" className="project-link demo">
-              <span>🚀</span> Website
+              <ExternalLink size={14} strokeWidth={1.5} /> Website
             </a>
           </div>
         </div>
@@ -46,13 +49,12 @@ function MLPredictionProject() {
       {/* Project Overview */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎯 Project Overview</h2>
+          <h2>Project Overview</h2>
           <p>
-            This project implements machine learning models to predict the direction (up/down) of financial markets 
-            with a modular architecture. The system supports multiple asset classes and provides both CLI and web 
-            interfaces for evaluation against benchmark strategies.
+            I built a modular ML system that predicts daily market direction (up/down) across 15 assets.
+            Random Forest and MLP models, compared against 6 baseline strategies through both a CLI and a Streamlit interface.
           </p>
-          
+
           <div className="key-stats">
             <div className="stat-item">
               <div className="stat-number">15</div>
@@ -77,41 +79,36 @@ function MLPredictionProject() {
       {/* Technical Architecture */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🏗️ Technical Architecture</h2>
-          
+          <h2>Technical Architecture</h2>
+
           <div className="tech-section">
             <h3>Core Technologies</h3>
             <div className="tech-grid">
               <div className="tech-item">
-                <span className="tech-icon">🐍</span>
                 <div>
                   <strong>Python</strong>
                   <p>Primary language for ML algorithms and data processing</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">🤖</span>
                 <div>
                   <strong>Scikit-learn</strong>
                   <p>Machine learning models and evaluation metrics</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">📊</span>
                 <div>
                   <strong>Pandas & NumPy</strong>
                   <p>Data manipulation and numerical computing</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">📈</span>
                 <div>
                   <strong>Plotly</strong>
                   <p>Interactive financial charting and visualization</p>
                 </div>
               </div>
               <div className="tech-item">
-                <span className="tech-icon">🌐</span>
                 <div>
                   <strong>Streamlit</strong>
                   <p>Web interface for model configuration and evaluation</p>
@@ -125,40 +122,36 @@ function MLPredictionProject() {
       {/* Asset Coverage */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎯 Asset Portfolio Coverage</h2>
+          <h2>Asset Portfolio Coverage</h2>
           <p>
-            The system supports 15 selected assets across 4 major asset classes, providing 
+            The system supports 15 selected assets across 4 major asset classes, providing
             coverage for diversified ML prediction strategies.
           </p>
-          
+
           <div className="asset-classes">
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">📈</span>
                 <h4>Stock Indices (3)</h4>
               </div>
               <div className="asset-list">S&P 500 (^GSPC), NASDAQ (^IXIC), Dow Jones (^DJI)</div>
             </div>
-            
+
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">🏢</span>
                 <h4>Individual Stocks (7)</h4>
               </div>
               <div className="asset-list">AAPL, MSFT, GOOGL, TSLA, NVDA, META, AMZN</div>
             </div>
-            
+
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">₿</span>
                 <h4>Cryptocurrencies (3)</h4>
               </div>
               <div className="asset-list">Bitcoin (BTC-USD), Ethereum (ETH-USD), Solana (SOL-USD)</div>
             </div>
-            
+
             <div className="asset-class">
               <div className="asset-header">
-                <span className="asset-icon">🥇</span>
                 <h4>Commodities (2)</h4>
               </div>
               <div className="asset-list">Gold Futures (GC=F), Crude Oil Futures (CL=F)</div>
@@ -170,17 +163,17 @@ function MLPredictionProject() {
       {/* ML Models & Strategies */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🤖 Machine Learning Models</h2>
-          
+          <h2>Machine Learning Models</h2>
+
           <div className="highlight-grid">
             <div className="highlight-item">
-              <div className="highlight-icon">🌳</div>
+              <div className="highlight-icon"><GitBranch size={20} strokeWidth={1.5} /></div>
               <h4>Random Forest</h4>
               <p>Ensemble method with multiple decision trees, feature importance analysis, and robust performance across different market conditions</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">🧠</div>
+              <div className="highlight-icon"><Cpu size={20} strokeWidth={1.5} /></div>
               <h4>Multi-Layer Perceptron (MLP)</h4>
               <p>Neural network with configurable hidden layers, early stopping, and adaptive learning for complex pattern recognition</p>
             </div>
@@ -188,10 +181,10 @@ function MLPredictionProject() {
 
           <h3>Benchmark Strategies</h3>
           <p>
-            Evaluation against 6 benchmark strategies to ensure ML models provide meaningful improvements 
+            Evaluation against 6 benchmark strategies to ensure ML models provide meaningful improvements
             over simple baselines.
           </p>
-          
+
           <div className="parameter-grid">
             <div className="parameter-item">
               <h4>Always Up/Down</h4>
@@ -220,14 +213,14 @@ function MLPredictionProject() {
       {/* Interface Showcase */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🌐 User Interface</h2>
-          
+          <h2>User Interface</h2>
+
           <h3>Three-Step Workflow</h3>
           <p>
-            The Streamlit interface follows a logical, pedagogical approach with an intuitive 
+            The Streamlit interface follows a logical, pedagogical approach with an intuitive
             three-step workflow for comprehensive ML evaluation.
           </p>
-          
+
           <div className="interface-section">
             <h4>Step 1: Data Configuration & Features</h4>
             <div className="project-screenshot">
@@ -240,7 +233,7 @@ function MLPredictionProject() {
               <li>Interactive price charts with feature visualization</li>
             </ul>
           </div>
-          
+
           <div className="interface-section">
             <h4>Step 2: Model Configuration</h4>
             <div className="project-screenshot">
@@ -253,7 +246,7 @@ function MLPredictionProject() {
               <li>Training progress tracking</li>
             </ul>
           </div>
-          
+
           <div className="interface-section">
             <h4>Step 3: Results & Evaluation</h4>
             <div className="project-screenshot">
@@ -272,8 +265,8 @@ function MLPredictionProject() {
       {/* Technical Features */}
       <div className="note-card">
         <div className="note-content">
-          <h2>⚙️ Technical Features</h2>
-          
+          <h2>Technical Features</h2>
+
           <h3>Advanced Technical Indicators</h3>
           <div className="metrics-grid">
             <div className="metric-category">
@@ -302,29 +295,29 @@ function MLPredictionProject() {
       {/* Implementation Highlights */}
       <div className="note-card">
         <div className="note-content">
-          <h2>💡 Implementation Highlights</h2>
-          
+          <h2>Implementation Highlights</h2>
+
           <div className="highlight-grid">
             <div className="highlight-item">
-              <div className="highlight-icon">🏗️</div>
+              <div className="highlight-icon"><Layers size={20} strokeWidth={1.5} /></div>
               <h4>Modular Architecture</h4>
               <p>Separation between data fetching, feature engineering, model training, and evaluation components</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">🔧</div>
+              <div className="highlight-icon"><Wrench size={20} strokeWidth={1.5} /></div>
               <h4>Extensible Design</h4>
               <p>Easy addition of new models, strategies, and technical indicators through abstract base classes</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">📊</div>
+              <div className="highlight-icon"><BarChart2 size={20} strokeWidth={1.5} /></div>
               <h4>Comprehensive Evaluation</h4>
               <p>Multiple metrics, cross-validation, and statistical significance testing for robust model assessment</p>
             </div>
-            
+
             <div className="highlight-item">
-              <div className="highlight-icon">⚡</div>
+              <div className="highlight-icon"><Zap size={20} strokeWidth={1.5} /></div>
               <h4>Performance Optimization</h4>
               <p>Efficient data processing, vectorized operations, and smart caching for fast execution</p>
             </div>
@@ -335,8 +328,8 @@ function MLPredictionProject() {
       {/* Technical Deep Dive */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🔬 Technical Deep Dive</h2>
-          
+          <h2>Technical Deep Dive</h2>
+
           <div className="code-section">
             <h3>Core Architecture</h3>
             <div className="code-highlight">
@@ -344,18 +337,18 @@ function MLPredictionProject() {
               <pre className="code-block">
 {`class BaseMLModel(ABC):
     """Base class for all ML models"""
-    
+
     def __init__(self, name: str, **kwargs):
         self.name = name
         self.model = None
         self.is_fitted = False
         self.feature_names = None
-        
+
     @abstractmethod
     def create_model(self, **kwargs):
         """Create the underlying model with given parameters"""
         pass
-    
+
     def predict_proba(self, X: pd.DataFrame) -> np.ndarray:
         """Get prediction probabilities"""
         if hasattr(self.model, 'predict_proba'):
@@ -369,33 +362,33 @@ function MLPredictionProject() {
             return proba`}
               </pre>
             </div>
-            
+
             <div className="code-highlight">
               <h4>Feature Engineering Pipeline</h4>
               <pre className="code-block">
 {`def add_technical_indicators(self, data: pd.DataFrame) -> pd.DataFrame:
     """Add comprehensive technical indicators"""
     result_df = data.copy()
-    
+
     # Price-based features
     result_df['Returns'] = result_df['Close'].pct_change()
     result_df['Log_Returns'] = np.log(result_df['Close'] / result_df['Close'].shift(1))
-    
+
     # Moving averages
     for period in [5, 10, 20, 50, 100, 200]:
         result_df[f'MA_{period}'] = result_df['Close'].rolling(window=period).mean()
         result_df[f'MA_Ratio_{period}'] = result_df['Close'] / result_df[f'MA_{period}']
-    
+
     # RSI, MACD, Bollinger Bands, etc.
     result_df['RSI'] = self.calculate_rsi(result_df['Close'])
     macd_data = self.calculate_macd(result_df['Close'])
     bb_data = self.calculate_bollinger_bands(result_df['Close'])
-    
+
     return result_df`}
               </pre>
             </div>
           </div>
-          
+
           <div className="performance-section">
             <h3>Model Performance Optimizations</h3>
             <ul className="optimization-list">
@@ -411,15 +404,15 @@ function MLPredictionProject() {
       {/* Results & Validation */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎯 Results & Validation</h2>
-          
+          <h2>Results & Validation</h2>
+
           <h3>Sample Model Performance</h3>
           <div className="results-showcase">
             <div className="project-screenshot">
               <img src={mlCompare} alt="Example results showing model comparison, performance metrics, and feature importance analysis" className="interface-img" />
             </div>
           </div>
-          
+
           <div className="validation-points">
             <h3>Validation Methodology</h3>
             <ul className="validation-list">
@@ -436,8 +429,8 @@ function MLPredictionProject() {
       {/* CLI Interface */}
       <div className="note-card">
         <div className="note-content">
-          <h2>💻 Command Line Interface</h2>
-          
+          <h2>Command Line Interface</h2>
+
           <div className="code-highlight">
             <h4>Quick Start Examples</h4>
             <pre className="code-block">
@@ -454,7 +447,7 @@ python main.py --asset ^GSPC --strategies all --verbose
 python main.py --test`}
             </pre>
           </div>
-          
+
           <h3>Supported Arguments</h3>
           <div className="parameter-grid">
             <div className="parameter-item">
@@ -477,11 +470,11 @@ python main.py --test`}
         </div>
       </div>
 
-      {/* Project Impact */}
+      {/* Skills Demonstrated */}
       <div className="note-card">
         <div className="note-content">
-          <h2>🎖️ Skills Demonstrated</h2>
-          
+          <h2>Skills Demonstrated</h2>
+
           <div className="impact-summary">
             <div className="skills-demonstrated">
               <div className="skills-grid">

@@ -120,8 +120,11 @@
 }
 
 .project-animated-icon {
-  font-size: var(--font-size-2xl);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
 .project-icon-title {
@@ -152,7 +155,9 @@
   }
   
   .project-animated-icon {
-    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .project-icon-title {
@@ -702,6 +707,11 @@
   height: 100%;
   object-fit: contain;
   border-radius: var(--border-radius-md);
+}
+
+/* UCL logo has a very dark primary fill (#361A54) — boost brightness in dark mode */
+.dark-theme .ucl-logo img {
+  filter: brightness(2.5) saturate(1.2);
 }
 
 .education-content h4 {

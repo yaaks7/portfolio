@@ -10,13 +10,13 @@ function Contact() {
       className="page-container"
     >
       <div className="page-header">
-        <h1>📬 Contact</h1>
+        <h1>Contact</h1>
       </div>
       
       <div className="note-card">
         <div className="note-content">
           <p>
-            I'm always interested in discussing new opportunities, collaborating on innovative projects, or connecting with fellow professionals in quantitative finance, AI/ML, and software development.
+            Open to quant finance roles, ML engineering positions, and research collaborations. Starting MSc Computational Finance at UCL in September 2026.
           </p>
           
           <div className="section-grid" style={{ marginTop: 'var(--spacing-2xl)' }}>
@@ -43,7 +43,6 @@ function Contact() {
                     yanis.aksas@gmail.com
                   </a>
                 </p>
-                <p>Feel free to reach out for collaborations, job opportunities, or general inquiries.</p>
               </div>
             </motion.div>
             
@@ -72,7 +71,7 @@ function Contact() {
                     linkedin.com/in/yanisaks
                   </a>
                 </p>
-                <p>Connect with me to stay updated on my professional journey and latest projects.</p>
+                <p>Stay connected.</p>
               </div>
             </motion.div>
             
@@ -101,7 +100,7 @@ function Contact() {
                     github.com/yaaks7
                   </a>
                 </p>
-                <p>Explore my open-source projects, trading systems, AI experiments, and technical contributions.</p>
+                <p>Source code for all projects on this site.</p>
               </div>
             </motion.div>
           </div>
@@ -118,7 +117,7 @@ function Contact() {
               textAlign: 'center'
             }}
           >
-            <h4>🔍 What I'm Looking For</h4>
+            <h4>What I'm looking for</h4>
             <div style={{ marginTop: 'var(--spacing-lg)' }}>
               <span className="tag">Quantitative Finance Roles</span>
               <span className="tag">AI/ML Engineering</span>
@@ -128,7 +127,7 @@ function Contact() {
               <span className="tag">Research Collaborations</span>
             </div>
             <p style={{ marginTop: 'var(--spacing-lg)', marginBottom: 0 }}>
-              Whether you're looking for someone to bridge the gap between mathematics and real-world applications, or just want to chat about ideas — I'd love to hear from you.
+              Available for internships and part-time roles while at UCL (Sep 2026–Sep 2027).
             </p>
           </motion.div>
         </div>
