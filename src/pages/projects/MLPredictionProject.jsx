@@ -33,7 +33,7 @@ function MLPredictionProject() {
             <h1>ML Market Prediction System</h1>
           </div>
           <p className="project-subtitle">
-            Modular machine learning system for financial market directional prediction with Streamlit interface and benchmark strategies
+            Random Forest and MLP models for next-day market direction, benchmarked against 6 naive baselines
           </p>
           <div className="project-links">
             <a href="https://github.com/yaaks7/ml-trading" target="_blank" rel="noopener noreferrer" className="project-link github">
@@ -51,8 +51,8 @@ function MLPredictionProject() {
         <div className="note-content">
           <h2>Project Overview</h2>
           <p>
-            I built a modular ML system that predicts daily market direction (up/down) across 15 assets.
-            Random Forest and MLP models, compared against 6 baseline strategies through both a CLI and a Streamlit interface.
+            I built a modular ML system that predicts next-day market direction (up/down) across 15 assets,
+            using Random Forest and MLP models scored against 6 naive baseline strategies.
           </p>
 
           <div className="key-stats">
@@ -181,8 +181,9 @@ function MLPredictionProject() {
 
           <h3>Benchmark Strategies</h3>
           <p>
-            Evaluation against 6 benchmark strategies to ensure ML models provide meaningful improvements
-            over simple baselines.
+            Six naive baselines that assume no market skill at all — Bullish, Bearish, Random,
+            Historical Frequency, Momentum, and Mean Reversion. Every model result is reported alongside
+            these baselines rather than in isolation, so a model is only interesting if it clears them.
           </p>
 
           <div className="parameter-grid">
@@ -313,7 +314,8 @@ function MLPredictionProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><BarChart2 size={20} strokeWidth={1.5} /></div>
               <h4>Comprehensive Evaluation</h4>
-              <p>Multiple metrics, cross-validation, and statistical significance testing for robust model assessment</p>
+              <p>Multiple metrics, an overfitting check via the train/test accuracy gap, and every model
+                scored against naive baselines rather than in isolation</p>
             </div>
 
             <div className="highlight-item">
@@ -406,7 +408,26 @@ function MLPredictionProject() {
         <div className="note-content">
           <h2>Results & Validation</h2>
 
-          <h3>Sample Model Performance</h3>
+          <h3>Model Rankings (S&amp;P 500)</h3>
+          <p>
+            Every model and baseline is ranked by test-set accuracy, with the train/test gap reported
+            alongside as an overfitting check. The two ML models sit below the simplest baseline:
+          </p>
+          <div className="key-stats">
+            <div className="stat-item">
+              <div className="stat-number">0.571</div>
+              <div className="stat-label">Bullish Baseline (Best)</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">0.490</div>
+              <div className="stat-label">MLP Test Accuracy</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">0.435</div>
+              <div className="stat-label">Random Forest Test Accuracy</div>
+            </div>
+          </div>
+
           <div className="results-showcase">
             <div className="project-screenshot">
               <img src={mlCompare} alt="Example results showing model comparison, performance metrics, and feature importance analysis" className="interface-img" />
@@ -416,10 +437,10 @@ function MLPredictionProject() {
           <div className="validation-points">
             <h3>Validation Methodology</h3>
             <ul className="validation-list">
-              <li>Rigorous train-test split with temporal ordering</li>
-              <li>Multiple evaluation metrics (Accuracy, Precision, Recall, F1-Score)</li>
-              <li>Statistical significance testing against benchmarks</li>
-              <li>Cross-validation for robust performance estimation</li>
+              <li>Chronological train/test split, never shuffled, to avoid look-ahead leakage</li>
+              <li>Multiple evaluation metrics (Accuracy, Precision, Recall, F1-Score, confusion matrix)</li>
+              <li>Train/test accuracy gap tracked explicitly as an overfitting check</li>
+              <li>27 automated tests (pytest), covering models, features, and benchmarks</li>
               <li>Feature importance analysis for model interpretability</li>
             </ul>
           </div>

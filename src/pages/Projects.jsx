@@ -9,14 +9,14 @@ const projects = [
     title: "Grid Trading Backtester",
     Icon: TrendingUp,
     color: "#34D399",
-    description: "Algorithmic trading system"
+    description: "Hedged grid strategy backtester"
   },
   {
     id: 'ml-prediction',
     title: "ML Market Prediction",
     Icon: Cpu,
     color: "#60A5FA",
-    description: "Machine learning for financial markets"
+    description: "ML vs. naive baselines for next-day market direction"
   },
   {
     id: 'options-pricing',
@@ -51,7 +51,7 @@ const projects = [
     title: "Financial Sentiment Analysis",
     Icon: AlignLeft,
     color: "#06B6D4",
-    description: "NLP for financial reports"
+    description: "Does news sentiment predict next-day returns?"
   }
 ]
 

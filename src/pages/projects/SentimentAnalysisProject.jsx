@@ -31,13 +31,14 @@ function SentimentAnalysisProject() {
             <h1>Financial Sentiment Analysis</h1>
           </div>
           <p className="project-subtitle">
-            Multi-model sentiment analysis for financial news and reports using BERT, FinBERT, and traditional NLP approaches
+            Does news sentiment predict what a stock does the next day? A 4-model NLP pipeline (BERT,
+            FinBERT, VADER, TextBlob) tests that question rigorously — and finds a well-powered null.
           </p>
           <div className="project-links">
-            <a href="https://github.com/yaaks7/portfolio-ia" target="_blank" rel="noopener noreferrer" className="project-link github">
+            <a href="https://github.com/yaaks7/financial-sentiment" target="_blank" rel="noopener noreferrer" className="project-link github">
               <GitBranch size={14} strokeWidth={1.5} /> View on Github
             </a>
-            <a href="https://github.com/yaaks7/portfolio-ia/blob/main/projets/semaine-01-02-transformers/notebooks/02-analyse-sentiment.ipynb" target="_blank" rel="noopener noreferrer" className="project-link demo">
+            <a href="https://github.com/yaaks7/financial-sentiment/blob/main/sentiment-analysis.ipynb" target="_blank" rel="noopener noreferrer" className="project-link demo">
               <ExternalLink size={14} strokeWidth={1.5} /> Notebook
             </a>
           </div>
@@ -49,8 +50,8 @@ function SentimentAnalysisProject() {
         <div className="note-content">
           <h2>Project Overview</h2>
           <p>
-            I built a 4-model sentiment pipeline (BERT, FinBERT, VADER, TextBlob) for financial news,
-            then correlated daily sentiment scores against forward returns for AAPL, MSFT, JPM, TSLA, and NVDA.
+            I built a 4-model sentiment pipeline (BERT, FinBERT, VADER, TextBlob) for financial news, then
+            correlated daily sentiment scores against forward returns for 12 large-cap companies.
           </p>
 
           <div className="key-stats">
@@ -59,8 +60,12 @@ function SentimentAnalysisProject() {
               <div className="stat-label">NLP Models</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">5</div>
+              <div className="stat-number">12</div>
               <div className="stat-label">Companies Analyzed</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">141</div>
+              <div className="stat-label">Ticker-Days (Pooled Sample)</div>
             </div>
           </div>
         </div>
@@ -83,7 +88,8 @@ function SentimentAnalysisProject() {
               <div className="tech-item">
                 <div>
                   <strong>Multi-Company Coverage</strong>
-                  <p>AAPL, MSFT, JPM, TSLA, NVDA across technology and financial sectors</p>
+                  <p>12 large-cap tickers across tech, finance, and energy: AAPL, MSFT, JPM, TSLA, NVDA,
+                    GOOGL, AMZN, META, AMD, BAC, WMT, XOM</p>
                 </div>
               </div>
               <div className="tech-item">
@@ -204,55 +210,26 @@ function SentimentAnalysisProject() {
         <div className="note-content">
           <h2>Key Research Findings</h2>
 
-          <h3>Model Performance Comparison</h3>
-          <div className="performance-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Model</th>
-                  <th>Approach</th>
-                  <th>Avg Score Range</th>
-                  <th>Positive %</th>
-                  <th>Negative %</th>
-                  <th>Neutral %</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="model-name">BERT General</td>
-                  <td>Deep Learning</td>
-                  <td>[-0.8, +0.8]</td>
-                  <td>35%</td>
-                  <td>25%</td>
-                  <td>40%</td>
-                </tr>
-                <tr>
-                  <td className="model-name">FinBERT</td>
-                  <td>Finance-Specialized</td>
-                  <td>[-0.9, +0.9]</td>
-                  <td className="best-value">42%</td>
-                  <td>28%</td>
-                  <td>30%</td>
-                </tr>
-                <tr>
-                  <td className="model-name">VADER</td>
-                  <td>Lexicon-Based</td>
-                  <td>[-1.0, +1.0]</td>
-                  <td>38%</td>
-                  <td>22%</td>
-                  <td>40%</td>
-                </tr>
-                <tr>
-                  <td className="model-name">TextBlob</td>
-                  <td>Pattern-Based</td>
-                  <td>[-1.0, +1.0]</td>
-                  <td>45%</td>
-                  <td>18%</td>
-                  <td className="best-value">37%</td>
-                </tr>
-              </tbody>
-            </table>
+          <h3>Model Agreement</h3>
+          <p>
+            Running all four models on the same headlines shows they don't agree with each other very much,
+            which matters for how much weight to put on any single one of them.
+          </p>
+          <div className="key-stats">
+            <div className="stat-item">
+              <div className="stat-number">~37%</div>
+              <div className="stat-label">BERT General vs FinBERT Agreement</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">~27%</div>
+              <div className="stat-label">BERT General vs TextBlob Agreement</div>
+            </div>
           </div>
+          <p>
+            Because agreement is this low, averaging the models would cancel out information rather than
+            combine it. Only <strong>FinBERT</strong>, the finance-specialized model, is carried forward
+            into the price correlation test.
+          </p>
 
           <h3>Model Distribution Analysis</h3>
           <div className="interface-section">
@@ -260,10 +237,13 @@ function SentimentAnalysisProject() {
               <img src={sentimentCompare} alt="Comparative analysis of sentiment model distributions showing BERT General, FinBERT, TextBlob, and VADER behavioral patterns with correlation heatmap" className="interface-img" />
             </div>
             <p>
-              The comparative analysis reveals distinct behavioral patterns across models: BERT General shows
-              bimodal distribution with extreme sentiment peaks, FinBERT demonstrates balanced scoring with
-              financial domain expertise, TextBlob exhibits Gaussian distribution around neutral-positive territory,
-              and VADER displays positive skewness optimized for social media content.
+              The four models produce distinct score distributions: BERT General is bimodal with extreme
+              positive and negative peaks and little middle ground; FinBERT concentrates heavily around
+              neutral with smaller positive and negative tails, reflecting its finance-specific training;
+              TextBlob is roughly Gaussian and centered near neutral-to-positive; and VADER is positively
+              skewed, consistent with a lexicon tuned for informal, social-media-style text. The correlation
+              heatmap in the same figure confirms these are measuring meaningfully different things, not
+              just noisy versions of the same signal.
             </p>
           </div>
 
@@ -280,9 +260,9 @@ function SentimentAnalysisProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><TrendingUp size={20} strokeWidth={1.5} /></div>
               <h4>FinBERT - Domain Expert</h4>
-              <p><strong>Pattern:</strong> Balanced distribution with nuanced scoring</p>
+              <p><strong>Pattern:</strong> Neutral-concentrated with positive/negative tails</p>
               <p><strong>Strength:</strong> Financial terminology expertise, context awareness</p>
-              <p><strong>Advantage:</strong> Highest positive detection rate (42%)</p>
+              <p><strong>Role:</strong> The only model used for the price correlation test</p>
             </div>
 
             <div className="highlight-item">
@@ -298,7 +278,7 @@ function SentimentAnalysisProject() {
               <h4>TextBlob - Optimistic Baseline</h4>
               <p><strong>Pattern:</strong> Gaussian distribution, neutral concentration</p>
               <p><strong>Characteristic:</strong> Conservative approach, positive bias</p>
-              <p><strong>Reliability:</strong> Consistent baseline for model comparison</p>
+              <p><strong>Reliability:</strong> Consistent lexicon-based baseline for comparison</p>
             </div>
           </div>
         </div>
@@ -329,35 +309,38 @@ function SentimentAnalysisProject() {
             </div>
           </div>
 
-          <h3>Quintile Analysis Results</h3>
+          <h3>Sentiment-Return Correlation Results</h3>
           <div className="code-highlight">
-            <h4>Sentiment-Return Correlation Results</h4>
             <pre className="code-block">
-{`# Sentiment Quintile Performance Analysis
-sentiment_quintiles = {
-    "Very Negative": {"return_mean": -0.008, "observations": 45},
-    "Negative": {"return_mean": -0.003, "observations": 48},
-    "Neutral": {"return_mean": 0.001, "observations": 52},
-    "Positive": {"return_mean": 0.004, "observations": 47},
-    "Very Positive": {"return_mean": 0.009, "observations": 43}
+{`# FinBERT sentiment vs next-day forward return
+# Pooled across 12 companies, z-scored within each ticker
+result = {
+    "r": 0.000,
+    "p_value": 1.000,
+    "n": 141,  # ticker-days
+    "bootstrap_95_ci": [-0.187, 0.177],
 }
 
-# Clear directional relationship observed
-correlation_strength = "Moderate positive correlation (0.15-0.25)"
-statistical_significance = "p < 0.05 for major tech stocks"`}
+interpretation = "No detectable relationship - consistent with sentiment already being priced in"`}
             </pre>
           </div>
+          <p>
+            The 95% confidence interval is tight enough to rule out a moderate-to-large effect. A small one
+            (r ≈ 0.05–0.10) could still exist below what this sample can detect — the collection window is
+            18 trading days, capped by the NewsAPI free tier, and a few tickers have too few articles to
+            trust individually.
+          </p>
 
           <h3>Temporal Analysis Case Study</h3>
           <div className="interface-section">
             <div className="project-screenshot">
-              <img src={sentimentCorrelation} alt="Temporal analysis of JPM showing sentiment vs price correlation over time, with volume of articles and volatility patterns" className="interface-img" />
+              <img src={sentimentCorrelation} alt="Temporal analysis of XOM showing FinBERT sentiment vs price over time, with article volume and volatility patterns" className="interface-img" />
             </div>
             <p>
-              The temporal analysis of JPMorgan Chase demonstrates the dynamic relationship between news sentiment
-              and stock performance. The upper chart shows FinBERT sentiment scores alongside price movements,
-              revealing correlation patterns and sentiment-driven price reactions. The lower chart correlates
-              article volume with market volatility, highlighting how news intensity impacts market stability.
+              Temporal analysis of ExxonMobil (XOM): the top chart tracks FinBERT sentiment against the
+              stock's price over the same window, and the bottom chart tracks article volume against 5-day
+              realized volatility — together illustrating the kind of case that feeds into the pooled result
+              above.
             </p>
           </div>
         </div>
@@ -435,33 +418,31 @@ statistical_significance = "p < 0.05 for major tech stocks"`}
         <div className="note-content">
           <h2>Research Insights</h2>
 
-          <h3>Model Divergence Analysis</h3>
           <div className="highlight-grid">
             <div className="highlight-item">
               <div className="highlight-icon"><GitBranch size={20} strokeWidth={1.5} /></div>
               <h4>Inter-Model Agreement</h4>
-              <p><strong>BERT vs FinBERT:</strong> 34% agreement rate</p>
-              <p><strong>BERT vs TextBlob:</strong> 22% agreement rate</p>
-              <p><strong>Insight:</strong> Complementary perspectives reveal analysis depth</p>
+              <p><strong>BERT vs FinBERT:</strong> ~37% agreement</p>
+              <p><strong>BERT vs TextBlob:</strong> ~27% agreement</p>
+              <p><strong>Implication:</strong> Only FinBERT is used for the price test</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><BarChart2 size={20} strokeWidth={1.5} /></div>
-              <h4>Correlation Patterns</h4>
-              <p><strong>Financial News:</strong> Weak to moderate correlations</p>
-              <p><strong>Extreme Events:</strong> Stronger correlation during high volatility</p>
-              <p><strong>Temporal Decay:</strong> Sentiment impact diminishes over 3-5 days</p>
+              <h4>Predictive Value</h4>
+              <p><strong>Result:</strong> r ≈ 0.000, p = 1.000, n = 141</p>
+              <p><strong>Interpretation:</strong> Consistent with market efficiency</p>
+              <p><strong>Not ruled out:</strong> A small effect below detection threshold</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Target size={20} strokeWidth={1.5} /></div>
-              <h4>Predictive Value</h4>
-              <p><strong>Best Performer:</strong> FinBERT for financial context</p>
-              <p><strong>Ensemble Approach:</strong> Combined models outperform individuals</p>
-              <p><strong>Application:</strong> Risk management and trading signals</p>
+              <h4>Scope & Next Steps</h4>
+              <p><strong>Window:</strong> 18 trading days, 12 tickers</p>
+              <p><strong>Biggest lever:</strong> More calendar time, not more tickers</p>
+              <p><strong>Unresolved:</strong> A mild U-shaped quintile pattern, untested</p>
             </div>
           </div>
-
         </div>
       </div>
 

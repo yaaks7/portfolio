@@ -52,22 +52,23 @@ function GridTradingProject() {
         <div className="note-content">
           <h2>Project Overview</h2>
           <p>
-            I built a grid trading backtester with dynamic threshold calibration from historical volatility,
-            multi-asset support, and a Streamlit dashboard for performance analysis.
+            I built a backtester for a grid trading strategy using <code>backtesting.py</code>, with dynamic
+            threshold calibration from historical volatility, multi-asset support, and a Streamlit dashboard
+            for performance analysis.
           </p>
 
           <div className="key-stats">
             <div className="stat-item">
-              <div className="stat-number">48</div>
+              <div className="stat-number">12</div>
               <div className="stat-label">Supported Assets</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">6</div>
+              <div className="stat-number">5</div>
               <div className="stat-label">Asset Classes</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">100+</div>
-              <div className="stat-label">Grid Levels</div>
+              <div className="stat-number">1,080</div>
+              <div className="stat-label">Backtests Run to Tune Defaults</div>
             </div>
           </div>
         </div>
@@ -122,51 +123,43 @@ function GridTradingProject() {
         <div className="note-content">
           <h2>Asset Coverage</h2>
           <p>
-            The system supports 48 selected assets across 6 major asset classes, providing
-            coverage for diversified trading strategies.
+            The system supports 12 assets across 5 major asset classes.
           </p>
 
           <div className="asset-classes">
             <div className="asset-class">
               <div className="asset-header">
-                <h4>Tech Stocks (10)</h4>
+                <h4>Tech Stocks (4)</h4>
               </div>
-              <div className="asset-list">AAPL, TSLA, META, NVDA, GOOGL, MSFT, AMZN, NFLX, AMD, CRM</div>
+              <div className="asset-list">AAPL, NVDA, TSLA, GOOGL</div>
             </div>
 
             <div className="asset-class">
               <div className="asset-header">
-                <h4>Finance (11)</h4>
+                <h4>ETFs (2)</h4>
               </div>
-              <div className="asset-list">JPM, V, MA, PYPL, BAC, WFC, GS, MS, AXP, C, BRK-B</div>
+              <div className="asset-list">SPY, QQQ</div>
             </div>
 
             <div className="asset-class">
               <div className="asset-header">
-                <h4>ETFs (7)</h4>
+                <h4>Cryptocurrency (2)</h4>
               </div>
-              <div className="asset-list">SPY, QQQ, XLK, XLF, IWM, VTI, ARKK</div>
+              <div className="asset-list">BTC-USD, ETH-USD</div>
             </div>
 
             <div className="asset-class">
               <div className="asset-header">
-                <h4>Cryptocurrency (6)</h4>
+                <h4>Forex (2)</h4>
               </div>
-              <div className="asset-list">BTC-USD, ETH-USD, SOL-USD, ADA-USD, DOT-USD, AVAX-USD</div>
+              <div className="asset-list">EURUSD=X, USDJPY=X</div>
             </div>
 
             <div className="asset-class">
               <div className="asset-header">
-                <h4>Forex (7)</h4>
+                <h4>Commodities (2)</h4>
               </div>
-              <div className="asset-list">EURUSD=X, GBPUSD=X, USDJPY=X, USDCAD=X, AUDUSD=X, NZDUSD=X, USDCHF=X</div>
-            </div>
-
-            <div className="asset-class">
-              <div className="asset-header">
-                <h4>Commodities (7)</h4>
-              </div>
-              <div className="asset-list">GC=F, SI=F, CL=F, NG=F, ZC=F, ZS=F, KC=F</div>
+              <div className="asset-list">GC=F, CL=F</div>
             </div>
           </div>
         </div>
@@ -179,9 +172,10 @@ function GridTradingProject() {
 
           <h3>Strategy Mechanics</h3>
           <p>
-            Grid trading is a systematic approach that places buy and sell orders at predetermined
-            price intervals around a central price point. The strategy profits from market volatility
-            by capturing small price movements within a defined range.
+            On every grid-level crossing, the system opens a <strong>hedged long/short pair</strong> rather
+            than betting on a single direction. Each leg is bracketed by an ATR-based stop-loss and a
+            take-profit set as a multiple of that stop (<code>tp_sl_ratio</code>), so whichever side the
+            market moves toward rides to its target while the other side is stopped out.
           </p>
 
           <div className="strategy-visual">
@@ -233,7 +227,7 @@ function GridTradingProject() {
               <img src={gridStep1} alt="Step 1: Data Loading & Grid Configuration Interface" className="interface-img" />
             </div>
             <ul className="feature-list">
-              <li>Asset selection from 48 supported instruments</li>
+              <li>Asset selection from 12 supported instruments</li>
               <li>Flexible date range configuration</li>
               <li>Real-time grid parameter adjustment</li>
               <li>Interactive price chart with grid overlay</li>
@@ -389,6 +383,25 @@ function GridTradingProject() {
           <h2>Results & Validation</h2>
 
           <h3>Sample Backtest Results</h3>
+          <div className="key-stats">
+            <div className="stat-item">
+              <div className="stat-number">78.34%</div>
+              <div className="stat-label">Total Return</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">0.99</div>
+              <div className="stat-label">Sharpe Ratio</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">-24.81%</div>
+              <div className="stat-label">Max Drawdown</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">67.65%</div>
+              <div className="stat-label">Win Rate (136 trades)</div>
+            </div>
+          </div>
+
           <div className="results-showcase">
             <div className="interface-screenshot">
               <img src={gridResults} alt="Sample Backtest Results" className="interface-img" />
@@ -398,10 +411,11 @@ function GridTradingProject() {
           <div className="validation-points">
             <h3>Validation & Testing</h3>
             <ul className="validation-list">
-              <li>Comprehensive unit testing with pytest framework</li>
-              <li>Historical data validation across multiple timeframes</li>
-              <li>Performance benchmarking against buy-and-hold strategies</li>
-              <li>Cross-asset class testing for strategy robustness</li>
+              <li>1,080 backtests (12 assets × 3 years × full <code>tp_sl_ratio</code>/grid-width parameter
+                grid) run to select the default configuration</li>
+              <li>Comprehensive unit testing with the pytest framework</li>
+              <li>Cross-asset class testing across stocks, ETFs, crypto, forex, and commodities</li>
+              <li>Historical data validation across multiple market conditions and timeframes</li>
             </ul>
           </div>
         </div>

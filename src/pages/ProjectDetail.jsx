@@ -84,16 +84,16 @@ const projectsData = {
   },
   'sentiment-analysis': {
     title: "Financial Sentiment Analysis",
-    description: "Multi-model sentiment framework (BERT, FinBERT, VADER, TextBlob) on financial news for AAPL, MSFT, JPM, TSLA, NVDA. Includes sentiment-price correlation analysis.",
+    description: "Multi-model sentiment framework (BERT, FinBERT, VADER, TextBlob) on financial news for 12 large-cap companies, testing whether sentiment predicts next-day returns.",
     technologies: ["Python", "Transformers", "Pandas", "News API", "Yahoo Finance"],
     features: [
-      "4 NLP models with normalized scoring",
-      "Sentiment-return correlation (Pearson + quintile analysis)",
-      "Temporal JPM case study",
-      "Statistical significance p < 0.05 for major tech stocks"
+      "4 NLP models with normalized scoring, low inter-model agreement (~27-37%)",
+      "Sentiment-return correlation, pooled and z-scored across 12 tickers (n=141)",
+      "Temporal XOM case study",
+      "Well-powered null result: r ≈ 0.000, p = 1.000, 95% CI centered on zero"
     ],
-    github: "https://github.com/yaaks7/portfolio-ia",
-    demo: "https://github.com/yaaks7/portfolio-ia/blob/main/projets/semaine-01-02-transformers/notebooks/02-analyse-sentiment.ipynb"
+    github: "https://github.com/yaaks7/financial-sentiment",
+    demo: "https://github.com/yaaks7/financial-sentiment/blob/main/sentiment-analysis.ipynb"
   }
 }
 

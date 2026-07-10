@@ -34,10 +34,10 @@ function AttentionComparatorProject() {
             Analysis and visualization of attention mechanisms across BERT, DistilBERT, and RoBERTa models using BertViz
           </p>
           <div className="project-links">
-            <a href="https://github.com/yaaks7/portfolio-ia" target="_blank" rel="noopener noreferrer" className="project-link github">
+            <a href="https://github.com/yaaks7/GE1356_project" target="_blank" rel="noopener noreferrer" className="project-link github">
               <GitBranch size={14} strokeWidth={1.5} /> View on Github
             </a>
-            <a href="https://github.com/yaaks7/portfolio-ia/blob/main/projets/semaine-01-02-transformers/notebooks/01-comparateur-attention.ipynb" target="_blank" rel="noopener noreferrer" className="project-link demo">
+            <a href="https://github.com/yaaks7/GE1356_project/blob/main/attention-comparison.ipynb" target="_blank" rel="noopener noreferrer" className="project-link demo">
               <ExternalLink size={14} strokeWidth={1.5} /> Notebook
             </a>
           </div>
