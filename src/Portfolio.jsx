@@ -14,6 +14,7 @@ import AttentionComparatorProject from './pages/projects/AttentionComparatorProj
 import SentimentAnalysisProject from './pages/projects/SentimentAnalysisProject'
 import EnergyOptimizationProject from './pages/projects/EnergyOptimizationProject'
 import MLOptimizationProject from './pages/projects/MLOptimizationProject'
+import DeepOfiProject from './pages/projects/DeepOfiProject'
 import Contact from './pages/Contact'
 
 function Portfolio() {
@@ -41,6 +42,7 @@ function Portfolio() {
             <Route path="/projects/sentiment-analysis" element={<SentimentAnalysisProject />} />
             <Route path="/projects/energy-optimization" element={<EnergyOptimizationProject />} />
             <Route path="/projects/ml-optimization" element={<MLOptimizationProject />} />
+            <Route path="/projects/deep-ofi" element={<DeepOfiProject />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

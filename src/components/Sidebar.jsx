@@ -28,7 +28,7 @@ function Sidebar() {
         <h1 className="sidebar-title">Yanis Aksas</h1>
         <div className="sidebar-degrees">
           <p className="sidebar-subtitle">BEng Mechanical Engineering</p>
-          <p className="sidebar-subtitle">MSc Computer Science</p>
+          <p className="sidebar-subtitle">MSc Computational Finance</p>
         </div>
         <button 
           className="theme-toggle-sidebar"

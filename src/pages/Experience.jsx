@@ -4,6 +4,7 @@ import mmprodLogo from '../assets/img/mmprod.png'
 import fenixLogo from '../assets/img/fenix.png'
 import polyfinanceLogo from '../assets/img/polyfinances.png'
 import datarankLogo from '../assets/img/datarank.png'
+import cityuLogo from '../assets/img/cityu.png'
 
 function Experience() {
   return (
@@ -18,6 +19,56 @@ function Experience() {
       </div>
       
       <div className="education-timeline">
+        {/* City University of Hong Kong — Research Assistant */}
+        <div className="note-card education-card">
+          <div className="note-content">
+            <div className="education-header">
+              <div className="education-info">
+                <h2>Research Assistant</h2>
+                <h3>
+                  <a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener noreferrer" className="university-link">City University of Hong Kong</a>
+                </h3>
+                <div className="education-meta">
+                  <span className="duration">Oct 2025 – Dec 2025</span>
+                </div>
+              </div>
+              <div className="university-logo">
+                <a
+                  href="https://www.cityu.edu.hk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={cityuLogo} alt="City University of Hong Kong" />
+                </a>
+              </div>
+            </div>
+
+            <div className="education-content">
+              <p className="education-description">
+                Designed an automated LLM-driven optimization system for a Hong Kong brokerage's algorithmic
+                trading platform, replacing a manual human-in-the-loop workflow with a supervised agent pipeline.
+              </p>
+
+              <h4>Key Achievements:</h4>
+              <ul>
+                <li>Conducted a literature review on multi-agent LLM trading systems</li>
+                <li>Co-designed a 4-module agent architecture for strategy optimization</li>
+                <li>Designed a multi-objective scoring system inspired by published LLM-trading research</li>
+              </ul>
+
+              <h4>Technologies Used:</h4>
+              <div className="coursework-grid">
+                <span className="course-item">Multi-Agent LLM Systems</span>
+                <span className="course-item">Bayesian Optimization</span>
+                <span className="course-item">Reinforcement Learning</span>
+                <span className="course-item">Knowledge Graphs</span>
+                <span className="course-item">Quantitative Trading</span>
+                <span className="course-item">Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* PolyFinance */}
         <div className="note-card education-card">
           <div className="note-content">

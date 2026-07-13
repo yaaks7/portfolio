@@ -22,7 +22,7 @@ function AcademicBackground() {
           <div className="note-content">
             <div className="education-header">
               <div className="education-info">
-                <h2>Master in Computational Finance</h2>
+                <h2>Master’s in Computational Finance</h2>
                 <h3>
                   <a
                     href="https://www.ucl.ac.uk/"
@@ -58,7 +58,7 @@ function AcademicBackground() {
           <div className="note-content">
             <div className="education-header">
               <div className="education-info">
-                <h2>Bachelor in Mechanical Engineering</h2>
+                <h2>Bachelor’s in Mechanical Engineering</h2>
                 <h3>
                   <a 
                     href="https://www.polymtl.ca/" 

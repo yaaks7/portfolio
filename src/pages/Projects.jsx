@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { TrendingUp, Cpu, Activity, Zap, Target, Eye, AlignLeft } from 'lucide-react'
+import { TrendingUp, Cpu, Activity, Zap, Target, Eye, AlignLeft, Waves } from 'lucide-react'
 import './Page.css'
 
 const projects = [
+  {
+    id: 'deep-ofi',
+    title: "Deep Order Flow Imbalance",
+    Icon: Waves,
+    color: "#6366F1",
+    description: "Deep learning for limit order book alpha"
+  },
   {
     id: 'grid-trading',
     title: "Grid Trading Backtester",
