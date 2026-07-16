@@ -177,7 +177,7 @@ function Experience() {
                   <a href="https://mmprod.org/" target="_blank" rel="noopener noreferrer" className="university-link">MMPROD</a>
                 </h3>
                 <div className="education-meta">
-                  <span className="duration">Sept. 2024 – Dec. 2024</span>
+                  <span className="duration">Sept. 2024 – Feb. 2025</span>
                 </div>
               </div>
               <div className="university-logo">
