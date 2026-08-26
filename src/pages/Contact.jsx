@@ -16,7 +16,7 @@ function Contact() {
       <div className="note-card">
         <div className="note-content">
           <p>
-            Open to quant finance roles, ML engineering positions, and research collaborations. Starting MSc Computational Finance at UCL in September 2026.
+            Open to quant finance roles, ML engineering positions, and research collaborations. {/* Starting MSc Computational Finance at UCL in September 2026. */}
           </p>
           
           <div className="section-grid" style={{ marginTop: 'var(--spacing-2xl)' }}>
@@ -127,7 +127,7 @@ function Contact() {
               <span className="tag">Research Collaborations</span>
             </div>
             <p style={{ marginTop: 'var(--spacing-lg)', marginBottom: 0 }}>
-              Available for internships and part-time roles while at UCL (Sep 2026–Sep 2027).
+              Available for internships and part-time roles while at UCL {/* (Sep 2026–Sep 2027). */}
             </p>
           </motion.div>
         </div>

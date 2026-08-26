@@ -18,7 +18,7 @@ function AcademicBackground() {
       
       <div className="education-timeline">
         {/* University College London — Upcoming */}
-        <div className="note-card education-card">
+        {/* <div className="note-card education-card">
           <div className="note-content">
             <div className="education-header">
               <div className="education-info">
@@ -51,7 +51,7 @@ function AcademicBackground() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Polytechnique Montréal */}
         <div className="note-card education-card">

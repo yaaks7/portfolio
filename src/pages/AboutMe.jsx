@@ -29,8 +29,8 @@ function AboutMe() {
                 with quantitative finance in mind — picking courses in probability, numerical methods,
                 and data structures, spending a semester at City University of Hong Kong to study
                 derivatives and mathematical finance, and joining PolyFinances to work on real
-                portfolio problems. The projects here are part of the same thread. It all leads to
-                MSc Computational Finance at UCL, starting September 2026.
+                portfolio problems. The projects here are part of the same thread. {/* It all leads to
+                MSc Computational Finance at UCL, starting September 2026. */}
               </p>
             </div>
           </div>
