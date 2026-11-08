@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { GitBranch, ExternalLink, Waves, Layers } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
+import StackDiagram from '../../components/stack/StackDiagram'
+import deepOfiStack from '../../components/stack/deepOfiStack'
 
 // Import Deep OFI figures
 import ofiR2Boxplot from '../../assets/img/ofi_r2_boxplot.png'
@@ -373,6 +375,8 @@ function DeepOfiProject() {
       <div className="note-card">
         <div className="note-content">
           <h2>Tech Stack</h2>
+
+          <StackDiagram data={deepOfiStack} />
 
           <div className="tech-grid">
             <div className="tech-item">
