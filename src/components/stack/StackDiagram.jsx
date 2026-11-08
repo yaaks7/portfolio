@@ -109,10 +109,6 @@ function StackDiagram({ data, caption }) {
         <span><i className="sd-sw sd-sw--link" />used by / reads</span>
       </div>
       {caption && <figcaption className="sd-caption">{caption}</figcaption>}
-      <p className="sd-credit">
-        Logos from svgl, devicon, gilbarbara/logos, Lucide and each project's own repository. Brand logos are
-        trademarks of their owners.
-      </p>
     </figure>
   )
 }
