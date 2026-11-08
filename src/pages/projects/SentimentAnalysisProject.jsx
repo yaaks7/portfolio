@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { GitBranch, ExternalLink, Target, TrendingUp, BarChart2, AlignLeft } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
+import StackDiagram from '../../components/stack/StackDiagram'
+import sentimentStack from '../../components/stack/sentimentStack'
 
 // Import images
 import sentimentCompare from '../../assets/img/sentiment_compare.png'
@@ -100,6 +102,18 @@ function SentimentAnalysisProject() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Tech Stack */}
+      <div className="note-card">
+        <div className="note-content">
+          <h2>Tech Stack</h2>
+          <p>
+            Two notebooks: the first collects news and prices into CSV files, the second scores every article
+            with four models and tests FinBERT sentiment against next-day returns.
+          </p>
+          <StackDiagram data={sentimentStack} />
         </div>
       </div>
 
