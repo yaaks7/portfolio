@@ -1,0 +1,232 @@
+/* Stack diagram. Every colour comes from the site tokens in styles/globals.css,
+   so the .dark-theme class on .app restyles it without any extra rules.
+   Brand logos sit on white tiles in both themes (they are drawn for light grounds). */
+
+.stack-diagram {
+  --sd-canvas: var(--bg-secondary);
+  --sd-ink: var(--text-primary);
+  --sd-ink-2: var(--text-secondary);
+  --sd-rule: var(--border-light);
+  --sd-rule-2: var(--border-medium);
+  /* the accent is too pale for thin lines on a light page, so darken it there */
+  --sd-flow: color-mix(in srgb, var(--stack-accent) 78%, #000);
+  --sd-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+
+  margin: var(--spacing-xl) 0 0;
+  padding: 0;
+}
+
+.dark-theme .stack-diagram {
+  --sd-flow: var(--stack-accent);
+}
+
+.sd-frame {
+  position: relative;
+  min-height: 160px;
+  overflow: hidden;
+  background: var(--sd-canvas);
+  border: 1px solid var(--sd-rule);
+  border-radius: var(--border-radius-lg);
+}
+
+.sd-stage {
+  position: absolute;
+  top: 0;
+  transform-origin: top left;
+}
+
+/* ---- groups */
+.sd-group {
+  position: absolute;
+  border: 1.5px solid var(--sd-rule-2);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--sd-ink) 3%, transparent);
+}
+
+.sd-group--accent {
+  border-color: var(--sd-flow);
+  background: color-mix(in srgb, var(--sd-flow) 9%, transparent);
+}
+
+.sd-glabel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sd-ink-2);
+  white-space: nowrap;
+}
+
+.sd-group--accent .sd-glabel {
+  color: var(--sd-ink);
+}
+
+.sd-glabel img {
+  width: 14px;
+  height: 14px;
+}
+
+.sd-glabel--tl { top: 12px; left: 12px; }
+.sd-glabel--tr { top: 12px; right: 12px; }
+.sd-glabel--bl { bottom: 12px; left: 12px; }
+.sd-glabel--br { bottom: 12px; right: 12px; }
+
+/* ---- edges */
+.sd-edges {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.sd-edge {
+  fill: none;
+}
+
+.sd-edge--flow {
+  stroke: var(--sd-flow);
+  stroke-width: 1.8;
+}
+
+.sd-edge--link {
+  stroke: var(--sd-ink-2);
+  stroke-width: 1.4;
+}
+
+.sd-edge--dash {
+  stroke-dasharray: 4 5;
+}
+
+.sd-arrow--flow { fill: var(--sd-flow); }
+.sd-arrow--link { fill: var(--sd-ink-2); }
+
+.sd-el {
+  font-family: var(--sd-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  fill: var(--sd-ink);
+  /* halo so a crossing line never strikes through the text */
+  paint-order: stroke;
+  stroke: var(--sd-canvas);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ---- nodes */
+.sd-node {
+  position: absolute;
+  width: 132px;
+  text-align: center;
+}
+
+.sd-tile {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.sd-tile img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.sd-tile--wide img {
+  width: 44px;
+}
+
+.sd-name,
+.sd-role {
+  line-height: 1.25;
+}
+
+.sd-name {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sd-ink);
+}
+
+.sd-role {
+  margin-top: 2px;
+  font-family: var(--sd-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.01em;
+  color: var(--sd-ink-2);
+}
+
+/* translucent veil so a crossing edge fades behind the text instead of striking through it */
+.sd-name span,
+.sd-role span {
+  padding: 0 4px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--sd-canvas) 78%, transparent);
+}
+
+/* ---- below the frame */
+.sd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+  font-family: var(--sd-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.sd-sw {
+  display: inline-block;
+  width: 28px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border-top: 2px solid var(--sd-ink-2);
+}
+
+.sd-sw--flow {
+  border-top-color: var(--sd-flow);
+}
+
+.sd-caption {
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.sd-credit {
+  margin: var(--spacing-md) 0 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.sd-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* On phones use the whole card width: the card's own padding would otherwise shrink the diagram. */
+@media (max-width: 768px) {
+  .stack-diagram .sd-frame {
+    margin-inline: calc(var(--spacing-xl) * -1);
+    border-inline: 0;
+    border-radius: 0;
+  }
+}
