@@ -91,7 +91,7 @@ function StackDiagram({ data, caption }) {
 
             {layout.nodes.map((n) => (
               <div key={n.id} className="sd-node" style={{ left: n.cx - 66, top: n.top }}>
-                <div className={`sd-tile${n.tile === 'wide' ? ' sd-tile--wide' : ''}`}>
+                <div className={`sd-tile${n.tile === 'wide' ? ' sd-tile--wide' : ''}${n.tile === 'dark' ? ' sd-tile--dark' : ''}`}>
                   <img src={data.icons[n.icon]} alt="" />
                 </div>
                 <div className="sd-name"><span>{n.name}</span></div>

@@ -20,6 +20,11 @@
   --sd-flow: var(--stack-accent);
 }
 
+/* when the diagram sits above existing content (a list in the same card), keep a gap below it */
+.stack-diagram + * {
+  margin-top: var(--spacing-xl);
+}
+
 .sd-frame {
   position: relative;
   min-height: 160px;
@@ -142,6 +147,12 @@
 
 .sd-tile--wide img {
   width: 44px;
+}
+
+/* pale logos (white or light) go on a dark tile instead of being recoloured */
+.sd-tile--dark {
+  background: #262b33;
+  border-color: #262b33;
 }
 
 .sd-name,
