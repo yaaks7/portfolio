@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { GitBranch, Layers, Zap, BarChart2, Globe, TrendingUp, RefreshCw, Leaf } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
+import StackDiagram from '../../components/stack/StackDiagram'
+import harmoniqStack from '../../components/stack/harmoniqStack'
 
 // Import interface screenshots
 import harmoniQInterface from '../../assets/img/harmoniq_interface.png'
@@ -114,6 +116,18 @@ function EnergyOptimizationProject() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Tech Stack */}
+      <div className="note-card">
+        <div className="note-content">
+          <h2>Tech Stack</h2>
+          <p>
+            A request from the browser reaches the network module, which builds the grid with PyPSA and
+            dispatches production. The highlighted block is the module I built.
+          </p>
+          <StackDiagram data={harmoniqStack} />
         </div>
       </div>
 
