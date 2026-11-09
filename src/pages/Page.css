@@ -82,14 +82,22 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-2xl);
+}
+
+/* Every cell fills its grid row so all cards share one height */
+.project-card-cell {
+  height: 100%;
 }
 
 .project-icon-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  box-sizing: border-box;
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -133,6 +141,11 @@
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
   font-family: var(--font-display);
+  line-height: 1.3;
+  min-height: 2.6em; /* room for a two-line title in every card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-icon-description {
@@ -140,6 +153,10 @@
   color: var(--text-secondary);
   margin: 0;
   line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -148,12 +165,16 @@
     gap: var(--spacing-lg);
   }
   
+  .project-icon-card {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
   .project-icon-container {
     width: 60px;
     height: 60px;
     border-radius: 15px;
   }
-  
+
   .project-animated-icon {
     display: flex;
     align-items: center;

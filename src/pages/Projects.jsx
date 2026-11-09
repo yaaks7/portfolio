@@ -78,6 +78,7 @@ function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
+            className="project-card-cell"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1, duration: 0.4 }}
