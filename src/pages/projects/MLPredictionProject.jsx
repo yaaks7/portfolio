@@ -188,7 +188,7 @@ function MLPredictionProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Cpu size={20} strokeWidth={1.5} /></div>
               <h4>Multi-Layer Perceptron (MLP)</h4>
-              <p>Neural network with configurable hidden layers, early stopping, and adaptive learning</p>
+              <p>Neural network (scikit-learn MLPClassifier) with configurable hidden layers and early stopping</p>
             </div>
           </div>
 
@@ -333,7 +333,7 @@ function MLPredictionProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Zap size={20} strokeWidth={1.5} /></div>
               <h4>Performance Optimization</h4>
-              <p>Efficient data processing, vectorized operations, and smart caching for fast execution</p>
+              <p>Vectorized pandas and NumPy operations for fast execution</p>
             </div>
           </div>
         </div>
@@ -408,7 +408,6 @@ function MLPredictionProject() {
             <ul className="optimization-list">
               <li><strong>Efficient data processing:</strong> Vectorized operations with pandas and NumPy for fast computation</li>
               <li><strong>Early stopping:</strong> Neural network training with validation-based early stopping</li>
-              <li><strong>Memory management:</strong> Optimized data structures and garbage collection</li>
             </ul>
           </div>
         </div>

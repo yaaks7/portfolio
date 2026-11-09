@@ -352,7 +352,6 @@ function EnergyOptimizationProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Zap size={20} strokeWidth={1.5} /></div>
               <h4>Real-Time Optimization</h4>
-              <p><strong>Performance:</strong> Sub-second optimization for hourly dispatch</p>
               <p><strong>Technology:</strong> HiGHS linear programming solver integration</p>
               <p><strong>Impact:</strong> Enables real-time grid management and emergency response</p>
             </div>
@@ -417,7 +416,7 @@ function EnergyOptimizationProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Leaf size={20} strokeWidth={1.5} /></div>
               <h4>Environmental Impact</h4>
-              <p><strong>Clean Energy:</strong> 95%+ renewable energy integration</p>
+              <p><strong>Clean Energy:</strong> Non-dispatchable renewable sources are used first</p>
               <p><strong>Efficiency:</strong> Optimized hydro reservoir management</p>
               <p><strong>Sustainability:</strong> Reduced environmental flow violations</p>
             </div>

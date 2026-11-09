@@ -1198,3 +1198,50 @@ ul, ol, li {
     margin: var(--spacing-md) 0;
   }
 }
+
+/* Result tables: fit narrow screens without spilling out of the card */
+@media (max-width: 768px) {
+  .performance-table {
+    overflow-x: auto;
+  }
+
+  .performance-table table {
+    margin: 0;
+  }
+
+  .performance-table th,
+  .performance-table td {
+    padding: var(--spacing-sm) var(--spacing-xs);
+    font-size: 0.75rem;
+  }
+
+  .performance-table th {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* A wide child (table) must not stretch its grid track beyond the card */
+  .results-showcase {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .validation-points {
+    min-width: 0;
+    padding: var(--spacing-sm);
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 6px 2px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .results-table th,
+  .results-table td {
+    padding: 6px 1px;
+    font-size: 0.64rem;
+  }
+}

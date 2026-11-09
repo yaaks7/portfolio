@@ -400,47 +400,53 @@ protected:
                 ADE against the RSO baseline on three neural network architectures, trained on MNIST.
               </p>
 
-              <div className="performance-table">
+              <div className="performance-table results-table">
                 <table>
                   <thead>
                     <tr>
-                      <th rowSpan="2">Architecture</th>
-                      <th colSpan="3">ADE (My Algorithm)</th>
-                      <th colSpan="3">RSO (Baseline)</th>
-                    </tr>
-                    <tr>
-                      <th>Precision (%)</th>
-                      <th>Nb Evaluations</th>
-                      <th>Time (s)</th>
-                      <th>Precision (%)</th>
-                      <th>Nb Evaluations</th>
-                      <th>Time (s)</th>
+                      <th>Network</th>
+                      <th>Method</th>
+                      <th>Train accuracy (%)</th>
+                      <th>Evals</th>
+                      <th>Time (min)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>(784, 10, 10)</td>
-                      <td className="highlight-cell">77.57</td>
+                      <td rowSpan="2">(784, 10, 10)</td>
+                      <td>ADE</td>
+                      <td>77.57</td>
                       <td>970,200</td>
                       <td>85.41</td>
-                      <td>83.56</td>
+                    </tr>
+                    <tr>
+                      <td>RSO</td>
+                      <td className="highlight-cell">83.56</td>
                       <td>890,100</td>
                       <td>86.69</td>
                     </tr>
                     <tr>
-                      <td>(784, 30, 10)</td>
+                      <td rowSpan="2">(784, 30, 10)</td>
+                      <td>ADE</td>
                       <td className="highlight-cell">85.22</td>
                       <td>860,200</td>
                       <td>69.56</td>
+                    </tr>
+                    <tr>
+                      <td>RSO</td>
                       <td>81.76</td>
                       <td>1,610,100</td>
                       <td>129.13</td>
                     </tr>
                     <tr>
-                      <td>(784, 60, 10)</td>
+                      <td rowSpan="2">(784, 60, 10)</td>
+                      <td>ADE</td>
                       <td>85.28</td>
                       <td>1,160,200</td>
                       <td>133.48</td>
+                    </tr>
+                    <tr>
+                      <td>RSO</td>
                       <td className="highlight-cell">89.34</td>
                       <td>3,488,600</td>
                       <td>394.66</td>
@@ -452,9 +458,9 @@ protected:
               <div className="results-analysis">
                 <h4>Key Findings</h4>
                 <ul className="validation-list">
-                  <li><strong>ADE efficiency:</strong> My algorithm shows competitive accuracy with significantly fewer evaluations</li>
-                  <li><strong>Scalability:</strong> ADE maintains better performance as network complexity increases</li>
-                  <li><strong>Time efficiency:</strong> ADE converges faster on medium-sized architectures</li>
+                  <li><strong>ADE efficiency:</strong> On the 784-30-10 and 784-60-10 networks, ADE reaches a comparable accuracy with far fewer evaluations than RSO</li>
+                  <li><strong>Scalability:</strong> On the largest network, RSO ends at a higher accuracy (about 89% against 85%) but needs about 3 times more evaluations, while ADE gets within a few points with far fewer</li>
+                  <li><strong>Time efficiency:</strong> ADE is faster on the two larger networks (69.6 against 129.1 minutes on 784-30-10, 133.5 against 394.7 on 784-60-10)</li>
                   <li><strong>RL potential:</strong> These results are on MNIST only and do not test reinforcement learning, but they suggest ADE is worth trying there</li>
                 </ul>
               </div>

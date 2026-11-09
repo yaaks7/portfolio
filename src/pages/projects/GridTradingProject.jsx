@@ -194,11 +194,13 @@ function GridTradingProject() {
 
           <div className="strategy-visual">
             <div className="grid-example">
-              <div className="grid-level sell">Price Level 220 ──── [SELL]</div>
-              <div className="grid-level sell">Price Level 215 ──── [SELL]</div>
+              <div className="grid-level">Price Level 220 ────</div>
+              <div className="grid-level">Price Level 215 ────</div>
               <div className="grid-level center">Price Level 210 ──── [MIDPRICE] ← Center</div>
-              <div className="grid-level buy">Price Level 205 ──── [BUY]</div>
-              <div className="grid-level buy">Price Level 200 ──── [BUY]</div>
+              <div className="grid-level">Price Level 205 ────</div>
+              <div className="grid-level">Price Level 200 ────</div>
+              <div className="grid-level buy">Candle crosses any level → [LONG] SL = price − stop, TP = price + stop × tp_sl_ratio</div>
+              <div className="grid-level sell">Candle crosses any level → [SHORT] SL = price + stop, TP = price − stop × tp_sl_ratio</div>
             </div>
           </div>
 
@@ -313,7 +315,7 @@ function GridTradingProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Zap size={18} strokeWidth={1.5} /></div>
               <h4>Performance Optimization</h4>
-              <p>Grid generation with automatic level limiting (max 1000 levels) and vectorized signal detection</p>
+              <p>Grid generation that downsamples grids above 1000 levels, and vectorized signal detection</p>
             </div>
 
             <div className="highlight-item">
@@ -348,14 +350,13 @@ function GridTradingProject() {
               <h4>Grid Level Generation</h4>
               <pre className="code-block">
 {`def _generate_grid(self) -> np.ndarray:
-    """Generate symmetric grid levels around midprice"""
     start = self.midprice - self.grid_range
     end = self.midprice + self.grid_range
     grid = np.arange(start, end + self.grid_distance, self.grid_distance)
 
-    # Performance optimization: limit grid levels
-    if len(grid) > 1000:
-        grid = np.linspace(start, end, 1000)
+    if len(grid) > MAX_GRID_LEVELS:  # 1000
+        step = max(1, len(grid) // DOWNSAMPLE_TARGET)  # 500
+        grid = grid[::step]
 
     return grid`}
               </pre>
@@ -364,16 +365,17 @@ function GridTradingProject() {
             <div className="code-highlight">
               <h4>Signal Generation Logic</h4>
               <pre className="code-block">
-{`def generate_signals(self, data: pd.DataFrame) -> List[int]:
-    """Generate trading signals when price crosses grid levels"""
-    signals = [0] * len(data)
+{`def generate_signals(self, data: pd.DataFrame) -> np.ndarray:
+    """1 where the candle's [Low, High] range contains a grid level."""
+    lows = data['Low'].to_numpy()
+    highs = data['High'].to_numpy()
 
-    for i, (index, row) in enumerate(data.iterrows()):
-        for level in self.grid_levels:
-            if self._price_crosses_level(row, level):
-                signals[i] = 1
-                break
+    # Index of the first grid level >= each candle's low
+    idx = np.searchsorted(self.grid_levels, lows, side='left')
 
+    signals = np.zeros(len(data), dtype=int)
+    in_bounds = idx < len(self.grid_levels)
+    signals[in_bounds] = self.grid_levels[idx[in_bounds]] <= highs[in_bounds]
     return signals`}
               </pre>
             </div>
@@ -382,10 +384,10 @@ function GridTradingProject() {
           <div className="performance-section">
             <h3>Performance Optimizations</h3>
             <ul className="optimization-list">
-              <li><strong>Grid limiting:</strong> Automatic reduction to max 1000 levels for UI performance</li>
-              <li><strong>Vectorized calculations:</strong> NumPy-based operations for signal generation</li>
+              <li><strong>Grid limiting:</strong> Grids above 1000 levels are downsampled to about 500</li>
+              <li><strong>Vectorized calculations:</strong> NumPy <code>searchsorted</code> for signal generation instead of a per-candle loop</li>
               <li><strong>Data handling:</strong> Pandas operations on the downloaded price history</li>
-              <li><strong>Memory management:</strong> Data copying and cleanup</li>
+              <li><strong>Input safety:</strong> Input data is copied rather than modified in place</li>
             </ul>
           </div>
         </div>
