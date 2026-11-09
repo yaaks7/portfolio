@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { GitBranch, ExternalLink, Target, Zap, TrendingUp, Cpu, Eye, BarChart2 } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
+import StackDiagram from '../../components/stack/StackDiagram'
+import attentionComparatorStack from '../../components/stack/attentionComparatorStack'
 
 // Import attention visualization images
 import attentionModel from '../../assets/img/attention_model.png'
@@ -34,10 +36,10 @@ function AttentionComparatorProject() {
             Analysis and visualization of attention mechanisms across BERT, DistilBERT, and RoBERTa models using BertViz
           </p>
           <div className="project-links">
-            <a href="https://github.com/yaaks7/GE1356_project" target="_blank" rel="noopener noreferrer" className="project-link github">
+            <a href="https://github.com/yaaks7/GE1356_SDSC1001_project" target="_blank" rel="noopener noreferrer" className="project-link github">
               <GitBranch size={14} strokeWidth={1.5} /> View on Github
             </a>
-            <a href="https://github.com/yaaks7/GE1356_project/blob/main/attention-comparison.ipynb" target="_blank" rel="noopener noreferrer" className="project-link demo">
+            <a href="https://github.com/yaaks7/GE1356_SDSC1001_project/blob/main/attention-comparison.ipynb" target="_blank" rel="noopener noreferrer" className="project-link demo">
               <ExternalLink size={14} strokeWidth={1.5} /> Notebook
             </a>
           </div>
@@ -74,6 +76,8 @@ function AttentionComparatorProject() {
       <div className="note-card">
         <div className="note-content">
           <h2>Technical Stack</h2>
+
+          <StackDiagram data={attentionComparatorStack} />
 
           <div className="tech-section">
             <h3>Core Libraries & Frameworks</h3>
