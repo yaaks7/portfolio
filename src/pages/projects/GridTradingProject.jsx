@@ -36,7 +36,7 @@ function GridTradingProject() {
             <h1>Grid Trading Strategy Backtester</h1>
           </div>
           <p className="project-subtitle">
-            Algorithmic trading system with backtesting capabilities and risk management
+            Backtester for a hedged grid trading strategy, with risk management and a Streamlit dashboard
           </p>
           <div className="project-links">
             <a href="https://github.com/yaaks7/grid-trading" target="_blank" rel="noopener noreferrer" className="project-link github">
@@ -54,9 +54,9 @@ function GridTradingProject() {
         <div className="note-content">
           <h2>Project Overview</h2>
           <p>
-            I built a backtester for a grid trading strategy using <code>backtesting.py</code>, with dynamic
-            threshold calibration from historical volatility, multi-asset support, and a Streamlit dashboard
-            for performance analysis.
+            I built a backtester for a grid trading strategy using <code>backtesting.py</code>. Grid settings
+            are tuned per asset on historical data, it covers 12 assets, and a Streamlit dashboard shows the
+            performance analysis.
           </p>
 
           <div className="key-stats">
@@ -99,7 +99,7 @@ function GridTradingProject() {
               <div className="tech-item">
                 <div>
                   <strong>Plotly</strong>
-                  <p>Interactive financial charting and visualization</p>
+                  <p>Interactive financial charts</p>
                 </div>
               </div>
               <div className="tech-item">
@@ -186,10 +186,10 @@ function GridTradingProject() {
 
           <h3>Strategy Mechanics</h3>
           <p>
-            On every grid-level crossing, the system opens a <strong>hedged long/short pair</strong> rather
-            than betting on a single direction. Each leg is bracketed by an ATR-based stop-loss and a
-            take-profit set as a multiple of that stop (<code>tp_sl_ratio</code>), so whichever side the
-            market moves toward rides to its target while the other side is stopped out.
+            On every grid-level crossing, the system opens a <strong>hedged long/short pair</strong> instead
+            of betting on one direction. Each leg has a stop-loss set as a multiple of the grid distance and
+            a take-profit set as a multiple of that stop (<code>tp_sl_ratio</code>), so the side the market
+            moves toward rides to its target while the other side is stopped out.
           </p>
 
           <div className="strategy-visual">
@@ -210,7 +210,7 @@ function GridTradingProject() {
             </div>
             <div className="parameter-item">
               <h4>Grid Distance</h4>
-              <p>ATR-based spacing between grid levels</p>
+              <p>Fixed spacing between grid levels, set per asset</p>
             </div>
             <div className="parameter-item">
               <h4>Grid Range</h4>
@@ -218,7 +218,7 @@ function GridTradingProject() {
             </div>
             <div className="parameter-item">
               <h4>Risk Management</h4>
-              <p>ATR-based stop losses and take profit ratios</p>
+              <p>Stop losses sized from the grid distance, plus a take-profit ratio</p>
             </div>
           </div>
         </div>
@@ -231,8 +231,8 @@ function GridTradingProject() {
 
           <h3>Two-Step Workflow</h3>
           <p>
-            The Streamlit interface follows a logical, pedagogical approach with an intuitive
-            two-step workflow designed.
+            The Streamlit app is organized as two steps: load the data and configure the grid, then run
+            and analyze the backtest.
           </p>
 
           <div className="interface-section">
@@ -256,7 +256,7 @@ function GridTradingProject() {
             <ul className="feature-list">
               <li>Portfolio and position sizing configuration</li>
               <li>Advanced risk management parameters</li>
-              <li>Comprehensive performance metrics</li>
+              <li>Performance metrics</li>
               <li>Interactive equity curve and drawdown analysis</li>
             </ul>
           </div>
@@ -313,13 +313,13 @@ function GridTradingProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Zap size={18} strokeWidth={1.5} /></div>
               <h4>Performance Optimization</h4>
-              <p>Smart grid generation with automatic level limiting (max 1000 levels) and optimized signal detection algorithms</p>
+              <p>Grid generation with automatic level limiting (max 1000 levels) and vectorized signal detection</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Shield size={18} strokeWidth={1.5} /></div>
               <h4>Risk Management</h4>
-              <p>ATR-based stop losses, position sizing controls, and maximum concurrent trades limitations</p>
+              <p>Stop losses sized from the grid distance, position sizing controls, and a limit on concurrent trades</p>
             </div>
 
             <div className="highlight-item">
@@ -331,7 +331,7 @@ function GridTradingProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Wrench size={18} strokeWidth={1.5} /></div>
               <h4>Modular Architecture</h4>
-              <p>Clean separation between data fetching, strategy logic, backtesting engine, and visualization components</p>
+              <p>Data fetching, strategy logic, the backtesting engine, and the charts each live in their own module</p>
             </div>
           </div>
         </div>
@@ -382,10 +382,10 @@ function GridTradingProject() {
           <div className="performance-section">
             <h3>Performance Optimizations</h3>
             <ul className="optimization-list">
-              <li><strong>Smart Grid Limiting:</strong> Automatic reduction to max 1000 levels for UI performance</li>
-              <li><strong>Vectorized Calculations:</strong> NumPy-based operations for signal generation</li>
-              <li><strong>Efficient Data Handling:</strong> Pandas optimizations for large datasets</li>
-              <li><strong>Memory Management:</strong> Strategic data copying and cleanup</li>
+              <li><strong>Grid limiting:</strong> Automatic reduction to max 1000 levels for UI performance</li>
+              <li><strong>Vectorized calculations:</strong> NumPy-based operations for signal generation</li>
+              <li><strong>Data handling:</strong> Pandas operations on the downloaded price history</li>
+              <li><strong>Memory management:</strong> Data copying and cleanup</li>
             </ul>
           </div>
         </div>
@@ -427,7 +427,7 @@ function GridTradingProject() {
             <ul className="validation-list">
               <li>1,080 backtests (12 assets × 3 years × full <code>tp_sl_ratio</code>/grid-width parameter
                 grid) run to select the default configuration</li>
-              <li>Comprehensive unit testing with the pytest framework</li>
+              <li>Unit tests with pytest</li>
               <li>Cross-asset class testing across stocks, ETFs, crypto, forex, and commodities</li>
               <li>Historical data validation across multiple market conditions and timeframes</li>
             </ul>
@@ -449,8 +449,8 @@ python main.py
 # Custom asset and dates
 python main.py --asset BTC-USD --start 2024-06-01 --end 2024-12-31
 
-# Dynamic midprice with verbose output
-python main.py --asset EURUSD=X --dynamic --verbose
+# Fixed default midprice with verbose output
+python main.py --asset EURUSD=X --static-midprice --verbose
 
 # Quick system test
 python -m pytest tests/ -v`}
@@ -468,8 +468,8 @@ python -m pytest tests/ -v`}
               <p>Date range for analysis (YYYY-MM-DD format)</p>
             </div>
             <div className="parameter-item">
-              <h4>--dynamic</h4>
-              <p>Use dynamic midprice (MA-20) instead of static</p>
+              <h4>--static-midprice</h4>
+              <p>Use the fixed default midprice instead of the dynamic one (MA-20, the default)</p>
             </div>
             <div className="parameter-item">
               <h4>--verbose</h4>

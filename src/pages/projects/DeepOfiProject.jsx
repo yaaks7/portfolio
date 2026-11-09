@@ -35,7 +35,7 @@ function DeepOfiProject() {
             <h1>Deep Order Flow Imbalance</h1>
           </div>
           <p className="project-subtitle">
-            Replicating and extending Kolm, Turiel &amp; Westray (2021) — deep learning for high-frequency
+            Replicating and extending Kolm, Turiel &amp; Westray (2021): deep learning for high-frequency
             return forecasting from limit order book data
           </p>
           <div className="project-links">
@@ -97,8 +97,8 @@ function DeepOfiProject() {
               <div className="tech-item">
                 <div>
                   <strong>Data Source</strong>
-                  <p>Databento XNAS.ITCH (mbp-10) converted to LOBSTER format — AAPL, MSFT, AMZN, GOOG, META
-                    over 32 trading days (May–June 2024), ~171M events / 56GB</p>
+                  <p>Databento XNAS.ITCH (mbp-10) converted to LOBSTER format. AAPL, MSFT, AMZN, GOOG and META
+                    over 32 trading days (May to June 2024), about 171M events / 56GB</p>
                 </div>
               </div>
               <div className="tech-item">
@@ -110,8 +110,44 @@ function DeepOfiProject() {
               <div className="tech-item">
                 <div>
                   <strong>Chronological Split</strong>
-                  <p>60/20/20 train/validation/test by calendar date (19/6/7 days) — no shuffling, no lookahead</p>
+                  <p>60/20/20 train/validation/test by calendar date (19/6/7 days), with no shuffling and no lookahead</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Tech Stack */}
+      <div className="note-card">
+        <div className="note-content">
+          <h2>Tech Stack</h2>
+
+          <StackDiagram data={deepOfiStack} />
+
+          <div className="tech-grid">
+            <div className="tech-item">
+              <div>
+                <strong>PyTorch</strong>
+                <p>MLP, LSTM and cross-asset LSTM models</p>
+              </div>
+            </div>
+            <div className="tech-item">
+              <div>
+                <strong>scikit-learn &amp; statsmodels</strong>
+                <p>Ridge/OLS baseline; augmented Dickey-Fuller stationarity testing</p>
+              </div>
+            </div>
+            <div className="tech-item">
+              <div>
+                <strong>pandas &amp; polars</strong>
+                <p>Processing about 171M order book events</p>
+              </div>
+            </div>
+            <div className="tech-item">
+              <div>
+                <strong>Databento</strong>
+                <p>Nasdaq order book data (XNAS.ITCH, 10-level MBP-10 feed)</p>
               </div>
             </div>
           </div>
@@ -127,8 +163,8 @@ function DeepOfiProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Layers size={20} strokeWidth={1.5} /></div>
               <h4>Ridge / OLS</h4>
-              <p>Linear baseline — RidgeCV with penalty swept over 13 values; unpenalized OLS reported
-                alongside as a sanity check</p>
+              <p>Linear baseline: RidgeCV with the penalty swept over 13 values, with unpenalized OLS
+                reported alongside as a sanity check</p>
             </div>
 
             <div className="highlight-item">
@@ -195,8 +231,8 @@ function DeepOfiProject() {
             </div>
           </div>
           <p>
-            R² decreases as the forecast horizon lengthens for every model — signal decays the further out
-            the prediction reaches.
+            R² decreases as the forecast horizon lengthens, for every model: the signal decays the further
+            out the prediction reaches.
           </p>
         </div>
       </div>
@@ -206,9 +242,9 @@ function DeepOfiProject() {
         <div className="note-content">
           <h2>Learning-Rate Investigation</h2>
           <p>
-            An initial sweep (lr=10⁻³) had the MLP beating the LSTM on 12 of 15 combinations — discordant
-            with the source paper. Traced to a 100× learning-rate mismatch against Kolm et al.'s reported
-            setting.
+            An initial sweep (lr=10⁻³) had the MLP beating the LSTM on 12 of 15 combinations, which
+            disagrees with the source paper. The cause was a 100× learning-rate mismatch with the setting
+            Kolm et al. report.
           </p>
 
           <div className="performance-table">
@@ -234,7 +270,7 @@ function DeepOfiProject() {
                   <td className="model-name">META</td>
                   <td>1.510</td>
                   <td>1.436</td>
-                  <td className="best-value">1.579</td>
+                  <td className="best-value">1.577</td>
                   <td>1.500</td>
                 </tr>
                 <tr>
@@ -249,8 +285,8 @@ function DeepOfiProject() {
           </div>
           <p>
             LSTM test R² (%) at h=20. After adopting lr=10⁻⁴, mean LSTM test R² across all 15 combinations
-            rose from 0.74% to 0.83%, and its win-rate against ridge rose from 9/15 to 11/15 — the MLP still
-            wins 10 of 15, so the discordance is narrowed, not fully resolved.
+            rose from 0.74% to 0.83%, and its win rate against ridge rose from 9/15 to 11/15. The MLP still
+            wins 10 of 15, so the discrepancy is narrowed but not fully resolved.
           </p>
         </div>
       </div>
@@ -260,8 +296,8 @@ function DeepOfiProject() {
         <div className="note-content">
           <h2>Cross-Asset Extension</h2>
           <p>
-            Testing whether peer-stock order flow adds predictive power beyond a stock's own order flow
-            (Cont, Cucuringu &amp; Zhang 2023), before and after the learning-rate fix above.
+            This tests whether peer-stock order flow adds predictive power beyond a stock's own order flow
+            (Cont, Cucuringu &amp; Zhang 2021), before and after the learning-rate fix above.
           </p>
 
           <div className="performance-table">
@@ -348,8 +384,8 @@ function DeepOfiProject() {
             </div>
           </div>
           <p>
-            Permutation importance by OFI price level (LSTM, AAPL, h=20) — level 1 dominates almost
-            completely, with levels 2–10 contributing negligible measurable importance.
+            Permutation importance by OFI price level (LSTM, AAPL, h=20): level 1 dominates almost
+            completely, and levels 2 to 10 add negligible importance.
           </p>
         </div>
       </div>
@@ -361,48 +397,12 @@ function DeepOfiProject() {
 
           <div className="validation-points">
             <ul className="validation-list">
-              <li>The MLP-over-LSTM discordance is narrowed, not resolved — the MLP still wins 10 of 15 combinations</li>
-              <li>The cross-asset null is the corrected, final verdict — not the original finding</li>
+              <li>The MLP-over-LSTM discrepancy is narrowed but not resolved: the MLP still wins 10 of 15 combinations</li>
+              <li>The cross-asset null is the corrected, final result and replaces the original finding</li>
               <li>A single static 60/20/20 date split, versus Kolm et al.'s 18 rolling windows across 11 months</li>
-              <li>A volume-vs-R² cross-sectional check has zero residual degrees of freedom (5 stocks, 5 parameters) — descriptive only</li>
-              <li>Reported Sharpe ratios are elevated by a small test sample (~7 days per stock), not an unusually large edge</li>
+              <li>A volume-vs-R² cross-sectional check has zero residual degrees of freedom (5 stocks, 5 parameters), so it is descriptive only</li>
+              <li>Reported Sharpe ratios are inflated by a small test sample (~7 days per stock) and do not indicate an unusually large edge</li>
             </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Tech Stack */}
-      <div className="note-card">
-        <div className="note-content">
-          <h2>Tech Stack</h2>
-
-          <StackDiagram data={deepOfiStack} />
-
-          <div className="tech-grid">
-            <div className="tech-item">
-              <div>
-                <strong>PyTorch</strong>
-                <p>Deep learning models (MLP, LSTM, Cross-Asset LSTM)</p>
-              </div>
-            </div>
-            <div className="tech-item">
-              <div>
-                <strong>scikit-learn &amp; statsmodels</strong>
-                <p>Ridge/OLS baseline and augmented Dickey-Fuller stationarity testing</p>
-              </div>
-            </div>
-            <div className="tech-item">
-              <div>
-                <strong>pandas &amp; polars</strong>
-                <p>High-throughput processing of ~171M order book events</p>
-              </div>
-            </div>
-            <div className="tech-item">
-              <div>
-                <strong>Databento</strong>
-                <p>Direct acquisition of Nasdaq TotalView-ITCH order book data</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

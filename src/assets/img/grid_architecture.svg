@@ -22,7 +22,7 @@
   <text x="140" y="80" text-anchor="middle" class="subtitle">📊 DATA SOURCES</text>
   <text x="140" y="100" text-anchor="middle" class="description">Yahoo Finance API</text>
   <text x="140" y="115" text-anchor="middle" class="description">Market Data (OHLCV)</text>
-  <text x="140" y="130" text-anchor="middle" class="description">48 Assets • 6 Classes</text>
+  <text x="140" y="130" text-anchor="middle" class="description">12 Assets • 5 Classes</text>
   <text x="140" y="150" text-anchor="middle" class="description">Configuration Settings</text>
   
   <!-- Step 2: Data Processing -->

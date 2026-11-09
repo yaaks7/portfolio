@@ -107,7 +107,7 @@ function MLPredictionProject() {
               <div className="tech-item">
                 <div>
                   <strong>Plotly</strong>
-                  <p>Interactive financial charting and visualization</p>
+                  <p>Interactive financial charts</p>
                 </div>
               </div>
               <div className="tech-item">
@@ -138,8 +138,7 @@ function MLPredictionProject() {
         <div className="note-content">
           <h2>Asset Portfolio Coverage</h2>
           <p>
-            The system supports 15 selected assets across 4 major asset classes, providing
-            coverage for diversified ML prediction strategies.
+            The system supports 15 assets across 4 asset classes.
           </p>
 
           <div className="asset-classes">
@@ -183,21 +182,21 @@ function MLPredictionProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><GitBranch size={20} strokeWidth={1.5} /></div>
               <h4>Random Forest</h4>
-              <p>Ensemble method with multiple decision trees, feature importance analysis, and robust performance across different market conditions</p>
+              <p>Ensemble method built from many decision trees</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Cpu size={20} strokeWidth={1.5} /></div>
               <h4>Multi-Layer Perceptron (MLP)</h4>
-              <p>Neural network with configurable hidden layers, early stopping, and adaptive learning for complex pattern recognition</p>
+              <p>Neural network with configurable hidden layers, early stopping, and adaptive learning</p>
             </div>
           </div>
 
           <h3>Benchmark Strategies</h3>
           <p>
-            Six naive baselines that assume no market skill at all — Bullish, Bearish, Random,
-            Historical Frequency, Momentum, and Mean Reversion. Every model result is reported alongside
-            these baselines rather than in isolation, so a model is only interesting if it clears them.
+            Six naive baselines that assume no market skill: Bullish, Bearish, Random, Historical
+            Frequency, Momentum, and Mean Reversion. Every model result is reported next to these
+            baselines, so a model only matters if it beats them.
           </p>
 
           <div className="parameter-grid">
@@ -232,8 +231,8 @@ function MLPredictionProject() {
 
           <h3>Three-Step Workflow</h3>
           <p>
-            The Streamlit interface follows a logical, pedagogical approach with an intuitive
-            three-step workflow for comprehensive ML evaluation.
+            The Streamlit app is organized as three steps: data and features, model configuration, then
+            results and evaluation.
           </p>
 
           <div className="interface-section">
@@ -265,13 +264,12 @@ function MLPredictionProject() {
           <div className="interface-section">
             <h4>Step 3: Results & Evaluation</h4>
             <div className="project-screenshot">
-              <img src={mlResults} alt="Complete results with performance metrics, model comparison, confusion matrices, and feature importance analysis" className="interface-img" />
+              <img src={mlResults} alt="Results with performance metrics, model comparison, and confusion matrices" className="interface-img" />
             </div>
             <ul className="feature-list">
-              <li>Comprehensive performance metrics (Accuracy, Precision, Recall, F1)</li>
+              <li>Performance metrics (Accuracy, Precision, Recall, F1)</li>
               <li>Model ranking and comparison tables</li>
               <li>Confusion matrices and classification reports</li>
-              <li>Feature importance visualization</li>
             </ul>
           </div>
         </div>
@@ -282,7 +280,7 @@ function MLPredictionProject() {
         <div className="note-content">
           <h2>Technical Features</h2>
 
-          <h3>Advanced Technical Indicators</h3>
+          <h3>Technical Indicators</h3>
           <div className="metrics-grid">
             <div className="metric-category">
               <h4>Price & Volume</h4>
@@ -316,20 +314,20 @@ function MLPredictionProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Layers size={20} strokeWidth={1.5} /></div>
               <h4>Modular Architecture</h4>
-              <p>Separation between data fetching, feature engineering, model training, and evaluation components</p>
+              <p>Data fetching, feature engineering, model training, and evaluation are separate components</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Wrench size={20} strokeWidth={1.5} /></div>
               <h4>Extensible Design</h4>
-              <p>Easy addition of new models, strategies, and technical indicators through abstract base classes</p>
+              <p>New models, strategies, and technical indicators plug in through abstract base classes</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><BarChart2 size={20} strokeWidth={1.5} /></div>
-              <h4>Comprehensive Evaluation</h4>
-              <p>Multiple metrics, an overfitting check via the train/test accuracy gap, and every model
-                scored against naive baselines rather than in isolation</p>
+              <h4>Evaluation</h4>
+              <p>Several metrics, an overfitting check from the train/test accuracy gap, and every model
+                scored against naive baselines</p>
             </div>
 
             <div className="highlight-item">
@@ -408,10 +406,9 @@ function MLPredictionProject() {
           <div className="performance-section">
             <h3>Model Performance Optimizations</h3>
             <ul className="optimization-list">
-              <li><strong>Efficient Data Processing:</strong> Vectorized operations with pandas and NumPy for fast computation</li>
-              <li><strong>Smart Feature Selection:</strong> Automated feature importance ranking and selection</li>
-              <li><strong>Early Stopping:</strong> Neural network training with validation-based early stopping</li>
-              <li><strong>Memory Management:</strong> Optimized data structures and garbage collection</li>
+              <li><strong>Efficient data processing:</strong> Vectorized operations with pandas and NumPy for fast computation</li>
+              <li><strong>Early stopping:</strong> Neural network training with validation-based early stopping</li>
+              <li><strong>Memory management:</strong> Optimized data structures and garbage collection</li>
             </ul>
           </div>
         </div>
@@ -444,7 +441,7 @@ function MLPredictionProject() {
 
           <div className="results-showcase">
             <div className="project-screenshot">
-              <img src={mlCompare} alt="Example results showing model comparison, performance metrics, and feature importance analysis" className="interface-img" />
+              <img src={mlCompare} alt="Example results showing model comparison and performance metrics" className="interface-img" />
             </div>
           </div>
 
@@ -455,7 +452,6 @@ function MLPredictionProject() {
               <li>Multiple evaluation metrics (Accuracy, Precision, Recall, F1-Score, confusion matrix)</li>
               <li>Train/test accuracy gap tracked explicitly as an overfitting check</li>
               <li>27 automated tests (pytest), covering models, features, and benchmarks</li>
-              <li>Feature importance analysis for model interpretability</li>
             </ul>
           </div>
         </div>

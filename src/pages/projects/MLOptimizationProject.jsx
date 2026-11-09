@@ -31,7 +31,7 @@ function MLOptimizationProject() {
             <h1>Machine Learning Optimization Algorithms</h1>
           </div>
           <p className="project-subtitle">
-            Benchmarking study of optimization algorithms (CLPSO, ADE vs RSO) for reinforcement learning applications using MNIST neural network training
+            Benchmarking study of optimization algorithms (CLPSO, ADE vs RSO) for neural network training on MNIST, with reinforcement learning as the intended use case
           </p>
           <div className="project-links">
             <a href="#" target="_blank" rel="noopener noreferrer" className="project-link github">
@@ -46,16 +46,16 @@ function MLOptimizationProject() {
         <div className="note-content">
           <h2>Project Overview</h2>
           <p>
-            I benchmarked three optimization algorithms for RL applications: RSO as the baseline,
-            my CLPSO implementation, and ADE — a novel hybrid I designed. All tested on MNIST neural
-            network training in C++ with ArrayFire.
-            and algorithm effectiveness in machine learning contexts.
+            I benchmarked three gradient-free optimizers: RSO as the baseline, my CLPSO implementation,
+            and ADE, a hybrid I designed. All were tested on MNIST neural network training in C++ with
+            ArrayFire. The intended use case is reinforcement learning, but the benchmark itself is MNIST
+            classification; no RL environment is trained.
           </p>
 
           <div className="key-stats">
             <div className="stat-item">
-              <div className="stat-number">RL</div>
-              <div className="stat-label">Target Application</div>
+              <div className="stat-number">C++</div>
+              <div className="stat-label">Implementation Language</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">MNIST</div>
@@ -98,13 +98,13 @@ function MLOptimizationProject() {
               <div className="tech-item">
                 <div>
                   <strong>Performance Analyzer</strong>
-                  <p>Comprehensive metrics and visualization tools for algorithm performance evaluation</p>
+                  <p>Metrics and visualization tools for algorithm performance evaluation</p>
                 </div>
               </div>
               <div className="tech-item">
                 <div>
                   <strong>Memory Management</strong>
-                  <p>Efficient ArrayFire-based memory handling for GPU acceleration</p>
+                  <p>ArrayFire-based memory handling for GPU acceleration</p>
                 </div>
               </div>
               <div className="tech-item">
@@ -137,11 +137,11 @@ function MLOptimizationProject() {
           <h2>Algorithm Benchmarking</h2>
 
           <p>
-            As the lead researcher, I conducted a comprehensive benchmarking study to evaluate the
-            efficiency of new optimization algorithms for reinforcement learning applications. I implemented
-            CLPSO (Comprehensive Learning Particle Swarm Optimization) and created my novel ADE
-            (Adaptive Differential Evolution) algorithm, comparing both against RSO baseline using
-            MNIST neural network training as the primary benchmark.
+            As the lead researcher, I ran a benchmarking study of gradient-free optimizers for neural
+            network training. I implemented CLPSO (Comprehensive Learning Particle Swarm Optimization) and
+            designed ADE (Adaptive Differential Evolution), then compared both against an RSO baseline,
+            using MNIST neural network training as the main benchmark. Reinforcement learning is the
+            intended use case; MNIST is the benchmark used here.
           </p>
 
           <div className="highlight-grid">
@@ -149,15 +149,15 @@ function MLOptimizationProject() {
               <div className="highlight-icon"><Target size={20} strokeWidth={1.5} /></div>
               <h4>CLPSO Implementation</h4>
               <p><strong>Algorithm:</strong> Comprehensive Learning Particle Swarm Optimization</p>
-              <p><strong>Purpose:</strong> Benchmark advanced PSO variant for RL optimization</p>
+              <p><strong>Purpose:</strong> Benchmark an advanced PSO variant for neural network optimization</p>
               <p><strong>Result:</strong> Enhanced exploration capabilities for neural network training</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Shuffle size={20} strokeWidth={1.5} /></div>
               <h4>ADE Creation (My Algorithm)</h4>
-              <p><strong>Innovation:</strong> Novel hybrid combining RSO adaptive search with DE evolution</p>
-              <p><strong>Objective:</strong> Test efficiency for reinforcement learning applications</p>
+              <p><strong>Innovation:</strong> Hybrid combining RSO adaptive search with DE evolution</p>
+              <p><strong>Objective:</strong> Test efficiency for neural network training, with RL as the intended use</p>
               <p><strong>Benchmark:</strong> MNIST neural network training performance evaluation</p>
             </div>
 
@@ -166,15 +166,15 @@ function MLOptimizationProject() {
               <h4>MNIST Benchmarking</h4>
               <p><strong>Dataset:</strong> MNIST digit recognition for neural network training</p>
               <p><strong>Comparison:</strong> CLPSO and ADE performance vs RSO baseline</p>
-              <p><strong>Focus:</strong> Evaluation for reinforcement learning optimization potential</p>
+              <p><strong>Focus:</strong> Whether these optimizers are worth trying for reinforcement learning later</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Wrench size={20} strokeWidth={1.5} /></div>
               <h4>Research Framework</h4>
               <p><strong>Architecture:</strong> Template-based C++ design for algorithm comparison</p>
-              <p><strong>Validation:</strong> Comprehensive benchmarking on MNIST dataset</p>
-              <p><strong>Application:</strong> Foundation for reinforcement learning optimization research</p>
+              <p><strong>Validation:</strong> Benchmarking on the MNIST dataset</p>
+              <p><strong>Application:</strong> Foundation for later reinforcement learning experiments</p>
             </div>
           </div>
         </div>
@@ -298,7 +298,7 @@ public:
 
           <div className="comparison-grid">
             <div className="algorithm-comparison">
-              <h4>Random Search Optimization (RSO) — Baseline</h4>
+              <h4>Random Search Optimization (RSO): Baseline</h4>
               <div className="algorithm-details">
                 <p><strong>Role:</strong> Baseline algorithm for benchmarking comparison</p>
                 <p><strong>Characteristics:</strong> Simple implementation, random exploration strategy</p>
@@ -308,10 +308,10 @@ public:
             </div>
 
             <div className="algorithm-comparison">
-              <h4>Adaptive Differential Evolution (My Innovation)</h4>
+              <h4>Adaptive Differential Evolution (My Algorithm)</h4>
               <div className="algorithm-details">
-                <p><strong>Innovation:</strong> My novel hybrid combining RSO adaptive search with DE evolution</p>
-                <p><strong>Objective:</strong> Test efficiency for reinforcement learning optimization</p>
+                <p><strong>Innovation:</strong> My hybrid combining RSO adaptive search with DE evolution</p>
+                <p><strong>Objective:</strong> Test efficiency for neural network training (RL is the intended use)</p>
                 <p><strong>Benchmark:</strong> MNIST performance comparison against RSO baseline</p>
                 <p><strong>Target:</strong> Enhanced optimization for machine learning applications</p>
               </div>
@@ -321,7 +321,7 @@ public:
               <h4>CLPSO (My Implementation)</h4>
               <div className="algorithm-details">
                 <p><strong>Implementation:</strong> Comprehensive learning particle swarm optimization</p>
-                <p><strong>Research Goal:</strong> Evaluate advanced PSO variant for RL applications</p>
+                <p><strong>Research Goal:</strong> Evaluate an advanced PSO variant for neural network training</p>
                 <p><strong>Benchmark:</strong> MNIST neural network training performance vs RSO</p>
                 <p><strong>Focus:</strong> Enhanced diversity and exploration for machine learning</p>
               </div>
@@ -397,8 +397,7 @@ protected:
             <div className="validation-points">
               <h4>Performance Comparison: ADE vs RSO</h4>
               <p>
-                Benchmarking results comparing my ADE algorithm against RSO baseline
-                across different neural network architectures on MNIST dataset.
+                ADE against the RSO baseline on three neural network architectures, trained on MNIST.
               </p>
 
               <div className="performance-table">
@@ -453,10 +452,10 @@ protected:
               <div className="results-analysis">
                 <h4>Key Findings</h4>
                 <ul className="validation-list">
-                  <li><strong>ADE Efficiency:</strong> My algorithm shows competitive accuracy with significantly fewer evaluations</li>
+                  <li><strong>ADE efficiency:</strong> My algorithm shows competitive accuracy with significantly fewer evaluations</li>
                   <li><strong>Scalability:</strong> ADE maintains better performance as network complexity increases</li>
-                  <li><strong>Time Efficiency:</strong> ADE demonstrates faster convergence on medium-sized architectures</li>
-                  <li><strong>RL Potential:</strong> Results validate ADE's suitability for reinforcement learning applications</li>
+                  <li><strong>Time efficiency:</strong> ADE converges faster on medium-sized architectures</li>
+                  <li><strong>RL potential:</strong> These results are on MNIST only and do not test reinforcement learning, but they suggest ADE is worth trying there</li>
                 </ul>
               </div>
             </div>
@@ -473,10 +472,10 @@ protected:
             <div className="metric-category">
               <h4>Research Contributions</h4>
               <ul className="metric-list">
-                <li>Novel ADE algorithm hybridizing RSO with Differential Evolution</li>
-                <li>Advanced CLPSO implementation with comprehensive learning</li>
-                <li>MNIST benchmarking framework for RL optimization evaluation</li>
-                <li>Performance baselines for algorithm selection in RL applications</li>
+                <li>ADE, a hybrid of RSO and Differential Evolution</li>
+                <li>CLPSO implementation with comprehensive learning</li>
+                <li>MNIST benchmarking framework for comparing optimizers</li>
+                <li>Performance baselines for choosing an optimizer, including for later RL work</li>
               </ul>
             </div>
 
@@ -500,7 +499,6 @@ protected:
 
           <div className="skills-demonstrated">
             <div className="skills-grid">
-              <span className="skill-tag">Reinforcement Learning</span>
               <span className="skill-tag">Algorithm Design</span>
               <span className="skill-tag">MNIST Benchmarking</span>
               <span className="skill-tag">C++</span>

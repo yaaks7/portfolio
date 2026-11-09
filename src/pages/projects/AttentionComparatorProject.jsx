@@ -33,7 +33,7 @@ function AttentionComparatorProject() {
             <h1>Transformer Attention Comparator</h1>
           </div>
           <p className="project-subtitle">
-            Analysis and visualization of attention mechanisms across BERT, DistilBERT, and RoBERTa models using BertViz
+            Comparing the attention patterns of BERT, DistilBERT, and RoBERTa with metrics and BertViz
           </p>
           <div className="project-links">
             <a href="https://github.com/yaaks7/GE1356_SDSC1001_project" target="_blank" rel="noopener noreferrer" className="project-link github">
@@ -51,8 +51,8 @@ function AttentionComparatorProject() {
         <div className="note-content">
           <h2>Project Overview</h2>
           <p>
-            I ran a quantitative comparison of attention mechanisms across BERT, DistilBERT, and RoBERTa —
-            four metrics per model, 5 test sentences, visualized head-by-head with BertViz.
+            I compared the attention patterns of BERT, DistilBERT, and RoBERTa on 100 news sentences, using
+            four metrics per model, and visualized one sentence head by head with BertViz.
           </p>
 
           <div className="key-stats">
@@ -65,7 +65,7 @@ function AttentionComparatorProject() {
               <div className="stat-label">Attention Metrics</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">5</div>
+              <div className="stat-number">100</div>
               <div className="stat-label">Test Sentences</div>
             </div>
           </div>
@@ -139,7 +139,7 @@ function AttentionComparatorProject() {
               <div className="highlight-icon"><Target size={20} strokeWidth={1.5} /></div>
               <h4>BERT</h4>
               <p><strong>Architecture:</strong> 12 layers, 768 hidden size, 12 attention heads</p>
-              <p><strong>Signature:</strong> Generalist adaptive approach with flexible contextual patterns</p>
+              <p><strong>Signature:</strong> Generalist, with flexible contextual patterns</p>
               <p><strong>Parameters:</strong> ~110M trainable parameters</p>
             </div>
 
@@ -147,7 +147,7 @@ function AttentionComparatorProject() {
               <div className="highlight-icon"><Zap size={20} strokeWidth={1.5} /></div>
               <h4>DistilBERT</h4>
               <p><strong>Architecture:</strong> 6 layers, 768 hidden size, 12 attention heads</p>
-              <p><strong>Signature:</strong> Compressed efficiency with stability</p>
+              <p><strong>Signature:</strong> Compressed version with stable metrics</p>
               <p><strong>Parameters:</strong> ~66M trainable parameters (-39% vs BERT)</p>
             </div>
 
@@ -155,7 +155,7 @@ function AttentionComparatorProject() {
               <div className="highlight-icon"><TrendingUp size={20} strokeWidth={1.5} /></div>
               <h4>RoBERTa</h4>
               <p><strong>Architecture:</strong> 12 layers, 768 hidden size, 12 attention heads</p>
-              <p><strong>Signature:</strong> Optimized specialist with extreme specialization</p>
+              <p><strong>Signature:</strong> Optimized training, with more concentrated attention</p>
               <p><strong>Parameters:</strong> ~125M trainable parameters</p>
             </div>
           </div>
@@ -187,12 +187,12 @@ function AttentionComparatorProject() {
           <div className="metrics-grid">
             <div className="metric-category">
               <h4>CLS Attention Max</h4>
-              <p>Maximum attention score toward [CLS] token - measures aggregation efficiency</p>
+              <p>Maximum attention score toward the [CLS] token, a measure of aggregation efficiency</p>
             </div>
 
             <div className="metric-category">
               <h4>Self-Attention Mean</h4>
-              <p>Average self-attention across diagonal - contextual vs intrinsic processing</p>
+              <p>Average self-attention along the diagonal, separating contextual from intrinsic processing</p>
             </div>
 
             <div className="metric-category">
@@ -202,7 +202,7 @@ function AttentionComparatorProject() {
 
             <div className="metric-category">
               <h4>Attention Entropy</h4>
-              <p>Distribution concentration measure - decision precision</p>
+              <p>How concentrated the attention distribution is (decision precision)</p>
             </div>
           </div>
         </div>
@@ -229,27 +229,27 @@ function AttentionComparatorProject() {
               <tbody>
                 <tr>
                   <td className="model-name">BERT</td>
-                  <td>0.198</td>
-                  <td>0.145</td>
-                  <td>14.9</td>
-                  <td>19.1</td>
+                  <td>0.117</td>
+                  <td>0.106</td>
+                  <td>4.79</td>
+                  <td>55.9</td>
                   <td>1.00x</td>
                 </tr>
                 <tr>
                   <td className="model-name">DistilBERT</td>
-                  <td>0.279</td>
-                  <td>0.123</td>
-                  <td>15.4</td>
-                  <td>20.3</td>
-                  <td className="best-value">2.82x</td>
+                  <td>0.191</td>
+                  <td>0.084</td>
+                  <td>4.64</td>
+                  <td>58.3</td>
+                  <td className="best-value">1.99x</td>
                 </tr>
                 <tr>
                   <td className="model-name">RoBERTa</td>
-                  <td className="best-value">0.332</td>
-                  <td>0.152</td>
-                  <td className="best-value">54.2</td>
-                  <td>20.0</td>
-                  <td>1.55x</td>
+                  <td className="best-value">0.275</td>
+                  <td>0.130</td>
+                  <td className="best-value">32.9</td>
+                  <td>54.8</td>
+                  <td>1.00x</td>
                 </tr>
               </tbody>
             </table>
@@ -259,25 +259,25 @@ function AttentionComparatorProject() {
           <div className="highlight-grid">
             <div className="highlight-item">
               <div className="highlight-icon"><Target size={20} strokeWidth={1.5} /></div>
-              <h4>BERT - The Generalist Adaptive</h4>
+              <h4>BERT: The Generalist Adaptive</h4>
               <p><strong>Signature:</strong> Flexible contextual adaptation with variable entropy</p>
-              <p><strong>Strength:</strong> Balanced syntax/semantics, polyvalent processing</p>
+              <p><strong>Strength:</strong> Balanced between syntax and semantics, general-purpose</p>
               <p><strong>Use case:</strong> General tasks, exploratory applications</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Zap size={20} strokeWidth={1.5} /></div>
-              <h4>DistilBERT - The Efficient Compressor</h4>
-              <p><strong>Signature:</strong> Remarkable stability with intelligent compression</p>
-              <p><strong>Strength:</strong> 282% speed improvement, consistent metrics</p>
-              <p><strong>Use case:</strong> Resource-constrained, production environments</p>
+              <h4>DistilBERT: The Efficient Compressor</h4>
+              <p><strong>Signature:</strong> Stable metrics despite the compression</p>
+              <p><strong>Strength:</strong> About 2x faster than BERT, consistent metrics</p>
+              <p><strong>Use case:</strong> Resource-constrained and production environments</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><TrendingUp size={20} strokeWidth={1.5} /></div>
-              <h4>RoBERTa - The Optimized Specialist</h4>
-              <p><strong>Signature:</strong> Extreme specialization with deterministic patterns</p>
-              <p><strong>Strength:</strong> Sharp decisions, semantic focus (90.9:1 ratio)</p>
+              <h4>RoBERTa: The Optimized Specialist</h4>
+              <p><strong>Signature:</strong> Highest CLS attention of the three, strongly content-focused</p>
+              <p><strong>Strength:</strong> Concentrated attention, semantic focus (content/function ratio of 32.9, against about 4.7 for BERT and DistilBERT)</p>
               <p><strong>Use case:</strong> Specialized domains, maximum performance</p>
             </div>
           </div>
@@ -370,7 +370,7 @@ def load_model_and_tokenizer(model_name):
 
           <h3>BertViz Interactive Visualizations</h3>
           <p>
-            The project leverages BertViz for comprehensive attention pattern analysis across different model architectures.
+            BertViz renders the attention of each of the three models for a sample sentence.
           </p>
 
           <div className="interface-section">
@@ -378,7 +378,7 @@ def load_model_and_tokenizer(model_name):
             <div className="project-screenshot">
               <img src={attentionView} alt="BertViz Head View showing 12x12 grid of attention patterns across layers and heads" className="interface-img" />
             </div>
-            <p>12x12 grid visualization revealing specialized attention patterns for each head across all transformer layers</p>
+            <p>12x12 grid showing the attention pattern of each head in each transformer layer</p>
           </div>
 
           <div className="interface-section">
@@ -386,7 +386,7 @@ def load_model_and_tokenizer(model_name):
             <div className="project-screenshot">
               <img src={attentionModel} alt="BertViz Model View showing token-to-token attention flow with interactive layer navigation" className="interface-img" />
             </div>
-            <p>Interactive attention flow visualization with layer-by-layer navigation and detailed token-to-token attention mapping</p>
+            <p>Interactive view of token-to-token attention, with navigation from layer to layer</p>
           </div>
         </div>
       </div>
@@ -419,7 +419,7 @@ def load_model_and_tokenizer(model_name):
               <h4>Model Optimization Trade-offs</h4>
               <p><strong>Compression (DistilBERT):</strong> Maintains performance with 50% fewer layers</p>
               <p><strong>Training optimization (RoBERTa):</strong> Sharper attention patterns</p>
-              <p><strong>Baseline robustness (BERT):</strong> Consistent general-purpose performance</p>
+              <p><strong>Baseline (BERT):</strong> Consistent general-purpose behavior</p>
             </div>
           </div>
         </div>
