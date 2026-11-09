@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { GitBranch, Target, Shuffle, TrendingUp, Wrench } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
-
+import StackDiagram from '../../components/stack/StackDiagram'
+import mlOptimizationStack from '../../components/stack/mlOptimizationStack'
 
 import optimizationGraph from '../../assets/img/opti_graph.png'
 
@@ -117,6 +118,18 @@ function MLOptimizationProject() {
         </div>
       </div>
 
+
+      {/* Tech Stack */}
+      <div className="note-card">
+        <div className="note-content">
+          <h2>Tech Stack</h2>
+          <p>
+            A C++17 library of optimizers trains a small MNIST network without gradients, running on the
+            GPU through ArrayFire.
+          </p>
+          <StackDiagram data={mlOptimizationStack} />
+        </div>
+      </div>
 
       {/* My Contributions - CLPSO & ADE Algorithm */}
       <div className="note-card">
