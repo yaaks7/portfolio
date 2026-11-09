@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { GitBranch, ExternalLink, Zap, Shield, Database, Wrench, TrendingUp } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
+import StackDiagram from '../../components/stack/StackDiagram'
+import gridTradingStack from '../../components/stack/gridTradingStack'
 
 // Import Grid Trading images
 import gridArchitecture from '../../assets/img/grid_architecture.svg?url'
@@ -115,6 +117,18 @@ function GridTradingProject() {
               <img src={gridArchitecture} alt="Grid Trading System Architecture" className="architecture-diagram-img" />
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Tech Stack */}
+      <div className="note-card">
+        <div className="note-content">
+          <h2>Tech Stack</h2>
+          <p>
+            Yahoo Finance prices go through pandas and pandas-ta, a NumPy grid finds the crossings,
+            and backtesting.py runs the trades. Results are shown in a Streamlit app or exported from the command line.
+          </p>
+          <StackDiagram data={gridTradingStack} />
         </div>
       </div>
 
