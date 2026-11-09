@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { GitBranch, ExternalLink, Activity, Shuffle, Cpu, Target, Zap, Wrench, Layers } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
+import StackDiagram from '../../components/stack/StackDiagram'
+import optionsPricingStack from '../../components/stack/optionsPricingStack'
 
 // Import Options Pricing images
 import optionsStep1 from '../../assets/img/options_step1.png'
@@ -125,6 +127,18 @@ function OptionsPricingProject() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Tech Stack */}
+      <div className="note-card">
+        <div className="note-content">
+          <h2>Tech Stack</h2>
+          <p>
+            A React app calls a FastAPI backend, which prices options with NumPy and SciPy formulas
+            and with a Keras neural network. The frontend runs on Vercel and the API on Koyeb.
+          </p>
+          <StackDiagram data={optionsPricingStack} />
         </div>
       </div>
 
