@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { GitBranch, ExternalLink, Cpu, Layers, Wrench, BarChart2, Zap } from 'lucide-react'
 import '../Page.css'
 import './ProjectStyles.css'
+import StackDiagram from '../../components/stack/StackDiagram'
+import mlPredictionStack from '../../components/stack/mlPredictionStack'
 
 // Import ML Prediction images
 import mlStep1 from '../../assets/img/ml_step1.png'
@@ -116,6 +118,18 @@ function MLPredictionProject() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Tech Stack */}
+      <div className="note-card">
+        <div className="note-content">
+          <h2>Tech Stack</h2>
+          <p>
+            Yahoo Finance prices become about 44 indicator features. scikit-learn models are scored against
+            six naive baselines, and the results are shown in a Streamlit app.
+          </p>
+          <StackDiagram data={mlPredictionStack} />
         </div>
       </div>
 
