@@ -33,7 +33,7 @@ function EnergyOptimizationProject() {
             <h1>Energy Production Model</h1>
           </div>
           <p className="project-subtitle">
-            HarmoniQ - Energy system optimization platform for Hydro-Québec with network modeling and multi-source integration
+            HarmoniQ: an energy system optimization platform for Hydro-Québec, with network modeling and multi-source integration
           </p>
           <div className="project-links">
             <a href="https://github.com/Houjio/HarmoniQ" target="_blank" rel="noopener noreferrer" className="project-link github">
@@ -137,9 +137,9 @@ function EnergyOptimizationProject() {
           <h2>HarmoniQ Platform Interface</h2>
 
           <p>
-            The HarmoniQ platform provides an intuitive web-based interface for energy system modeling,
-            scenario planning, and real-time optimization. The interface was designed for power system
-            operators and energy planners to visualize and control the Quebec electrical grid.
+            HarmoniQ has a web interface for energy system modeling, scenario planning, and real-time
+            optimization. It is designed for power system operators and energy planners to visualize and
+            control the Quebec electrical grid.
           </p>
 
           <div className="image-showcase">
@@ -152,10 +152,10 @@ function EnergyOptimizationProject() {
               <div className="image-caption">
                 <h4>Interactive Network Map & Control Panel</h4>
                 <p>
-                  Real-time visualization of the Quebec electrical grid with infrastructure controls.
-                  The interface allows operators to configure scenarios, select energy sources, and
-                  monitor system status across different regions including hydroelectric dams,
-                  wind farms, solar installations, and thermal plants.
+                  Real-time map of the Quebec electrical grid with infrastructure controls.
+                  Operators can configure scenarios, select energy sources, and monitor system status
+                  across regions, including hydroelectric dams, wind farms, solar installations, and
+                  thermal plants.
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ function EnergyOptimizationProject() {
 
               <div className="feature-item">
                 <h4>Scenario Configuration</h4>
-                <p>Easy setup of different operational scenarios with customizable parameters</p>
+                <p>Setup of operational scenarios with customizable parameters</p>
               </div>
 
               <div className="feature-item">
@@ -193,10 +193,8 @@ function EnergyOptimizationProject() {
           <h2>Energy Production Analytics</h2>
 
           <p>
-            Advanced time-series analytics and visualization tools provide detailed insights into
-            energy production patterns, demand forecasting, and system optimization results.
-            The platform integrates weather data, historical patterns, and real-time measurements
-            to deliver comprehensive energy management capabilities.
+            Time-series charts show energy production patterns, demand forecasts, and optimization
+            results. The platform combines weather data, historical patterns, and real-time measurements.
           </p>
 
           <div className="image-showcase">
@@ -209,10 +207,9 @@ function EnergyOptimizationProject() {
               <div className="image-caption">
                 <h4>Multi-Source Energy Production Dashboard</h4>
                 <p>
-                  Comprehensive time-series visualization showing coordinated production from all energy sources:
-                  hydroelectric (both run-of-river and reservoir), wind, solar, thermal, and nuclear power.
-                  The dashboard includes demand forecasting, import/export tracking, and optimal dispatch
-                  scheduling across the Quebec grid.
+                  Time series of production from all energy sources: hydroelectric (run-of-river and
+                  reservoir), wind, solar, thermal, and nuclear. The dashboard also shows demand forecasts,
+                  import/export tracking, and optimal dispatch scheduling across the Quebec grid.
                 </p>
               </div>
             </div>
@@ -258,10 +255,10 @@ function EnergyOptimizationProject() {
           <h2>My Contribution: Network Module</h2>
 
           <p>
-            As the lead developer for the network optimization module, I designed and implemented the core
-            infrastructure for electrical grid modeling, optimization, and analysis using PyPSA (Python for
-            Power System Analysis). This module serves as the central orchestrator for all energy sources
-            and ensures optimal power flow across the Québec electrical grid.
+            As lead developer of the network optimization module, I designed and implemented the core of
+            the grid modeling, optimization, and analysis using PyPSA (Python for Power System Analysis).
+            The module coordinates all energy sources and computes optimal power flow across the Québec
+            electrical grid.
           </p>
 
           <div className="highlight-grid">
@@ -278,7 +275,7 @@ function EnergyOptimizationProject() {
               <h4>Power Flow Analyzer</h4>
               <p><strong>Responsibility:</strong> AC/DC power flow calculations</p>
               <p><strong>Features:</strong> Line loading analysis, critical line identification, loss calculation</p>
-              <p><strong>Technology:</strong> Advanced power flow algorithms with constraint validation</p>
+              <p><strong>Technology:</strong> Power flow algorithms with constraint validation</p>
             </div>
 
             <div className="highlight-item">
@@ -336,11 +333,11 @@ function EnergyOptimizationProject() {
             </div>
             <div className="parameter-item">
               <h4>Grid Stability</h4>
-              <p>Ensures voltage stability, frequency regulation, and line loading within operational limits</p>
+              <p>Keeps voltage, frequency, and line loading within operational limits</p>
             </div>
             <div className="parameter-item">
               <h4>Import/Export Optimization</h4>
-              <p>Maximizes economic benefits from interconnections with neighboring grids</p>
+              <p>Maximizes the economic benefit of interconnections with neighboring grids</p>
             </div>
           </div>
         </div>
@@ -364,13 +361,13 @@ function EnergyOptimizationProject() {
               <div className="highlight-icon"><RefreshCw size={20} strokeWidth={1.5} /></div>
               <h4>Modular Architecture</h4>
               <p><strong>Design:</strong> Plug-and-play energy source integration</p>
-              <p><strong>Scalability:</strong> Easy addition of new generation technologies</p>
-              <p><strong>Maintainability:</strong> Clean separation of concerns and interfaces</p>
+              <p><strong>Scalability:</strong> New generation technologies can be added as modules</p>
+              <p><strong>Maintainability:</strong> Separate modules with defined interfaces</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><TrendingUp size={20} strokeWidth={1.5} /></div>
-              <h4>Advanced Analytics</h4>
+              <h4>Analytics</h4>
               <p><strong>Capabilities:</strong> Critical line identification, loss analysis</p>
               <p><strong>Visualization:</strong> Interactive network maps and time series</p>
               <p><strong>Decision Support:</strong> Marginal cost-based reservoir management</p>

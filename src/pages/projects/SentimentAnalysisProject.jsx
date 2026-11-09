@@ -34,7 +34,7 @@ function SentimentAnalysisProject() {
           </div>
           <p className="project-subtitle">
             Does news sentiment predict what a stock does the next day? A 4-model NLP pipeline (BERT,
-            FinBERT, VADER, TextBlob) tests that question rigorously — and finds a well-powered null.
+            FinBERT, VADER, TextBlob) tests it and finds no detectable relationship.
           </p>
           <div className="project-links">
             <a href="https://github.com/yaaks7/financial-sentiment" target="_blank" rel="noopener noreferrer" className="project-link github">
@@ -167,7 +167,7 @@ function SentimentAnalysisProject() {
           <div className="parameter-grid">
             <div className="parameter-item">
               <h4>Content Extraction</h4>
-              <p>Intelligent combination of article titles and descriptions with deduplication</p>
+              <p>Article titles and descriptions combined, then deduplicated</p>
             </div>
             <div className="parameter-item">
               <h4>Financial Text Cleaning</h4>
@@ -175,7 +175,7 @@ function SentimentAnalysisProject() {
             </div>
             <div className="parameter-item">
               <h4>Length Filtering</h4>
-              <p>Quality control with minimum 10 and maximum 2000 character limits</p>
+              <p>Minimum 10 and maximum 2000 characters per text</p>
             </div>
           </div>
 
@@ -226,8 +226,8 @@ function SentimentAnalysisProject() {
 
           <h3>Model Agreement</h3>
           <p>
-            Running all four models on the same headlines shows they don't agree with each other very much,
-            which matters for how much weight to put on any single one of them.
+            Run on the same headlines, the four models often disagree, so no single one deserves much
+            weight on its own.
           </p>
           <div className="key-stats">
             <div className="stat-item">
@@ -240,9 +240,9 @@ function SentimentAnalysisProject() {
             </div>
           </div>
           <p>
-            Because agreement is this low, averaging the models would cancel out information rather than
-            combine it. Only <strong>FinBERT</strong>, the finance-specialized model, is carried forward
-            into the price correlation test.
+            Because agreement is this low, averaging the models would cancel out information, so only{' '}
+            <strong>FinBERT</strong>, the finance-specialized model, is carried forward into the price
+            correlation test.
           </p>
 
           <h3>Model Distribution Analysis</h3>
@@ -256,8 +256,7 @@ function SentimentAnalysisProject() {
               neutral with smaller positive and negative tails, reflecting its finance-specific training;
               TextBlob is roughly Gaussian and centered near neutral-to-positive; and VADER is positively
               skewed, consistent with a lexicon tuned for informal, social-media-style text. The correlation
-              heatmap in the same figure confirms these are measuring meaningfully different things, not
-              just noisy versions of the same signal.
+              heatmap in the same figure shows that they measure meaningfully different things.
             </p>
           </div>
 
@@ -265,7 +264,7 @@ function SentimentAnalysisProject() {
           <div className="highlight-grid">
             <div className="highlight-item">
               <div className="highlight-icon"><Target size={20} strokeWidth={1.5} /></div>
-              <h4>BERT General - Conservative Analyzer</h4>
+              <h4>BERT General: Conservative Analyzer</h4>
               <p><strong>Pattern:</strong> Bimodal distribution with extreme peaks</p>
               <p><strong>Strength:</strong> Clear decisional boundaries, low ambiguity</p>
               <p><strong>Weakness:</strong> Limited financial context understanding</p>
@@ -273,7 +272,7 @@ function SentimentAnalysisProject() {
 
             <div className="highlight-item">
               <div className="highlight-icon"><TrendingUp size={20} strokeWidth={1.5} /></div>
-              <h4>FinBERT - Domain Expert</h4>
+              <h4>FinBERT: Domain Expert</h4>
               <p><strong>Pattern:</strong> Neutral-concentrated with positive/negative tails</p>
               <p><strong>Strength:</strong> Financial terminology expertise, context awareness</p>
               <p><strong>Role:</strong> The only model used for the price correlation test</p>
@@ -281,7 +280,7 @@ function SentimentAnalysisProject() {
 
             <div className="highlight-item">
               <div className="highlight-icon"><BarChart2 size={20} strokeWidth={1.5} /></div>
-              <h4>VADER - Social Media Optimized</h4>
+              <h4>VADER: Social Media Optimized</h4>
               <p><strong>Pattern:</strong> Positive skewness, intensifier sensitive</p>
               <p><strong>Strength:</strong> Amplifier detection, informal language</p>
               <p><strong>Speed:</strong> Fastest processing for real-time applications</p>
@@ -289,7 +288,7 @@ function SentimentAnalysisProject() {
 
             <div className="highlight-item">
               <div className="highlight-icon"><AlignLeft size={20} strokeWidth={1.5} /></div>
-              <h4>TextBlob - Optimistic Baseline</h4>
+              <h4>TextBlob: Optimistic Baseline</h4>
               <p><strong>Pattern:</strong> Gaussian distribution, neutral concentration</p>
               <p><strong>Characteristic:</strong> Conservative approach, positive bias</p>
               <p><strong>Reliability:</strong> Consistent lexicon-based baseline for comparison</p>
@@ -340,9 +339,9 @@ interpretation = "No detectable relationship - consistent with sentiment already
           </div>
           <p>
             The 95% confidence interval is tight enough to rule out a moderate-to-large effect. A small one
-            (r ≈ 0.05–0.10) could still exist below what this sample can detect — the collection window is
-            18 trading days, capped by the NewsAPI free tier, and a few tickers have too few articles to
-            trust individually.
+            (r ≈ 0.05 to 0.10) could still exist below what this sample can detect. The collection window
+            is only 18 trading days, capped by the NewsAPI free tier, and a few tickers have too few
+            articles to trust individually.
           </p>
 
           <h3>Temporal Analysis Case Study</h3>
@@ -353,8 +352,7 @@ interpretation = "No detectable relationship - consistent with sentiment already
             <p>
               Temporal analysis of ExxonMobil (XOM): the top chart tracks FinBERT sentiment against the
               stock's price over the same window, and the bottom chart tracks article volume against 5-day
-              realized volatility — together illustrating the kind of case that feeds into the pooled result
-              above.
+              realized volatility. It is one example of the data behind the pooled result above.
             </p>
           </div>
         </div>

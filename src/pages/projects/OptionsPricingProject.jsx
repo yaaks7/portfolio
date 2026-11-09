@@ -36,7 +36,7 @@ function OptionsPricingProject() {
             <h1>Options Pricing Modelization</h1>
           </div>
           <p className="project-subtitle">
-            Four pricing models — Black-Scholes, Binomial, Monte Carlo, Neural Network — with full Greeks (Δ Γ Θ ν ρ) and P&amp;L heatmaps. React + FastAPI.
+            Four pricing models (Black-Scholes, Binomial, Monte Carlo, Neural Network) with the five Greeks (Δ Γ Θ ν ρ) and P&amp;L heatmaps. React + FastAPI.
           </p>
           <div className="project-links">
             <a href="https://github.com/yaaks7/options-pricing" target="_blank" rel="noopener noreferrer" className="project-link github">
@@ -54,8 +54,8 @@ function OptionsPricingProject() {
         <div className="note-content">
           <h2>Project Overview</h2>
           <p>
-            I built this to compare four options pricing models side-by-side. Each model exposes its own
-            FastAPI endpoint; the React frontend visualizes prices, Greeks, and P&amp;L heatmaps in real time.
+            I built this to compare four options pricing models side by side. Each model has its own
+            FastAPI endpoint, and the React frontend shows prices, Greeks, and P&amp;L heatmaps in real time.
           </p>
 
           <div className="key-stats">
@@ -110,7 +110,7 @@ function OptionsPricingProject() {
               <div className="tech-item">
                 <div>
                   <strong>NumPy & SciPy</strong>
-                  <p>Scientific computing libraries for numerical computations</p>
+                  <p>Scientific computing for the pricing models</p>
                 </div>
               </div>
               <div className="tech-item">
@@ -151,25 +151,25 @@ function OptionsPricingProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Activity size={20} strokeWidth={1.5} /></div>
               <h4>Black-Scholes Model</h4>
-              <p>Analytical solution for European options pricing using geometric Brownian motion assumptions with constant volatility and interest rates</p>
+              <p>Closed-form price for European options, assuming geometric Brownian motion with constant volatility and interest rates</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><GitBranch size={20} strokeWidth={1.5} /></div>
               <h4>Binomial Tree Model</h4>
-              <p>Discrete-time model supporting both American and European options with configurable steps for accuracy vs performance trade-offs</p>
+              <p>Discrete-time model supporting both American and European options, with a configurable number of steps to trade accuracy against speed</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Shuffle size={20} strokeWidth={1.5} /></div>
               <h4>Monte Carlo Simulation</h4>
-              <p>Stochastic simulation approach with 10,000+ paths for complex payoffs and exotic options pricing</p>
+              <p>Stochastic simulation with 10,000+ paths for complex payoffs and exotic options pricing</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Cpu size={20} strokeWidth={1.5} /></div>
               <h4>Neural Network Model</h4>
-              <p>Machine learning approach trained on artificial data using TensorFlow</p>
+              <p>Neural network trained on synthetic data with TensorFlow</p>
             </div>
           </div>
         </div>
@@ -180,8 +180,8 @@ function OptionsPricingProject() {
         <div className="note-content">
           <h2>Greeks Analysis</h2>
           <p>
-            Calculation of option sensitivities (Greeks) to assess risk and price sensitivity
-            to various market parameters using the Black-Scholes framework.
+            Option sensitivities (Greeks), computed with the Black-Scholes framework, show how the price
+            reacts to each market parameter.
           </p>
 
           <div className="parameter-grid">
@@ -195,7 +195,7 @@ function OptionsPricingProject() {
             </div>
             <div className="parameter-item">
               <h4>Theta (Θ)</h4>
-              <p>Time decay - price sensitivity to time passage</p>
+              <p>Time decay: price sensitivity to the passage of time</p>
             </div>
             <div className="parameter-item">
               <h4>Vega (ν)</h4>
@@ -203,7 +203,7 @@ function OptionsPricingProject() {
             </div>
             <div className="parameter-item">
               <h4>Rho (ρ)</h4>
-              <p>Interest rate sensitivity analysis</p>
+              <p>Interest rate sensitivity</p>
             </div>
           </div>
         </div>
@@ -216,8 +216,7 @@ function OptionsPricingProject() {
 
           <h3>Multi-Tab Interface</h3>
           <p>
-            The application features an interface with multiple analysis tabs
-            for comprehensive options evaluation and comparison.
+            The interface is split into tabs for pricing, Greeks, and P&amp;L heatmaps with sensitivity analysis.
           </p>
 
           <div className="interface-section">
@@ -266,19 +265,19 @@ function OptionsPricingProject() {
             <div className="metric-category">
               <h4>RESTful Endpoints</h4>
               <ul className="metric-list">
-                <li>/price/blackscholes - Analytical pricing</li>
-                <li>/price/binomial - Tree-based calculation</li>
-                <li>/price/montecarlo - Simulation pricing</li>
-                <li>/price/neuralnetwork - ML predictions</li>
+                <li>/price/blackscholes: Analytical pricing</li>
+                <li>/price/binomial: Tree-based calculation</li>
+                <li>/price/montecarlo: Simulation pricing</li>
+                <li>/price/neuralnetwork: ML predictions</li>
               </ul>
             </div>
             <div className="metric-category">
               <h4>Analysis Endpoints</h4>
               <ul className="metric-list">
-                <li>/greeks - Sensitivity calculations</li>
-                <li>/heatmap_pnl - P&L visualizations</li>
-                <li>/option_sensitivity - Parameter analysis</li>
-                <li>/greeks_sensitivity - Greeks analysis</li>
+                <li>/greeks: Sensitivity calculations</li>
+                <li>/heatmap_pnl: P&L visualizations</li>
+                <li>/option_sensitivity: Parameter analysis</li>
+                <li>/greeks_sensitivity: Greeks analysis</li>
               </ul>
             </div>
           </div>
@@ -294,19 +293,19 @@ function OptionsPricingProject() {
             <div className="highlight-item">
               <div className="highlight-icon"><Target size={20} strokeWidth={1.5} /></div>
               <h4>Model Accuracy</h4>
-              <p>Testing suite with theoretical value validation and cross-model comparison for accuracy verification</p>
+              <p>Test suite that checks values against theoretical results and compares the models with each other</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Zap size={20} strokeWidth={1.5} /></div>
               <h4>Performance Optimization</h4>
-              <p>Vectorized NumPy calculations, preloaded ML models, and efficient data structures for real-time computation</p>
+              <p>Vectorized NumPy calculations and preloaded ML models for real-time computation</p>
             </div>
 
             <div className="highlight-item">
               <div className="highlight-icon"><Wrench size={20} strokeWidth={1.5} /></div>
               <h4>Modular Design</h4>
-              <p>Separation between pricing models, Greeks calculation, visualization, and API layers for maintainability</p>
+              <p>Pricing models, Greeks calculation, visualization, and API layers are separate</p>
             </div>
 
             <div className="highlight-item">
@@ -400,7 +399,7 @@ function OptionsPricingProject() {
             <h3>Validation Methodology</h3>
             <ul className="validation-list">
               <li>Theoretical value comparison using established Black-Scholes benchmarks</li>
-              <li>Cross-model validation to ensure consistency across pricing approaches</li>
+              <li>Cross-model validation for consistency across pricing approaches</li>
               <li>Greeks accuracy validation against analytical solutions</li>
             </ul>
           </div>
@@ -434,7 +433,7 @@ python api_requests.py`}
           <div className="parameter-grid">
             <div className="parameter-item">
               <h4>Automated Testing</h4>
-              <p>Comprehensive test suite validating all models against theoretical values</p>
+              <p>Test suite validating all models against theoretical values</p>
             </div>
             <div className="parameter-item">
               <h4>API Development</h4>
