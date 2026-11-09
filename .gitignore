@@ -43,3 +43,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Playwright MCP browser artifacts
+.playwright-mcp/
