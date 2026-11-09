@@ -28,7 +28,7 @@ const mlPredictionStack = {
   ...{
  "accent": "#60A5FA",
  "label": "Tech stack of the ML Market Prediction project",
- "description": "Price data comes from Yahoo Finance through yfinance. pandas and NumPy build about 44 technical indicator features and a next-day up or down target. scikit-learn trains a Random Forest and a neural network with feature scaling, and six naive baseline strategies are scored alongside them. A Streamlit app with Plotly charts shows the results and is hosted on Streamlit Community Cloud. A GitHub Actions cron job uses Playwright to keep the hosted app awake, and pytest runs 27 test cases.",
+ "description": "Price data comes from Yahoo Finance through yfinance. pandas and NumPy build about 44 features (technical indicators plus the raw price columns) and a next-day up or down target. scikit-learn trains a Random Forest and a neural network with feature scaling, and six naive baseline strategies are scored alongside them. A Streamlit app with Plotly charts shows the results and is hosted on Streamlit Community Cloud. A GitHub Actions cron job uses Playwright to keep the hosted app awake, and pytest runs 27 test cases.",
  "breakpoint": 640,
  "wide": {
   "w": 630,
@@ -95,7 +95,7 @@ const mlPredictionStack = {
     "top": 80,
     "icon": "pandas",
     "name": "pandas",
-    "role": "~44 indicators",
+    "role": "~44 features",
     "tile": ""
    },
    {
@@ -328,7 +328,7 @@ const mlPredictionStack = {
     "top": 80,
     "icon": "pandas",
     "name": "pandas",
-    "role": "~44 indicators",
+    "role": "~44 features",
     "tile": ""
    },
    {

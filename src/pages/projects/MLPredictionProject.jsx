@@ -126,7 +126,7 @@ function MLPredictionProject() {
         <div className="note-content">
           <h2>Tech Stack</h2>
           <p>
-            Yahoo Finance prices become about 44 indicator features. scikit-learn models are scored against
+            Yahoo Finance prices become about 44 features. scikit-learn models are scored against
             six naive baselines, and the results are shown in a Streamlit app.
           </p>
           <StackDiagram data={mlPredictionStack} />
